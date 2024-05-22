@@ -139,6 +139,9 @@
   <data name="collapse_x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\collapse_x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="contentcopy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\contentcopy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="database1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\database1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
