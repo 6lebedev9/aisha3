@@ -15,10 +15,38 @@ namespace aisha3
         public MainForm()
         {
             InitializeComponent();
+            WindowLocSaveLoad("Load");
+            WindowBorderColorLoad();
         }
+        //Settings save/load
+        private void WindowLocSaveLoad(string LoadOrSave)
+        {
+            if (LoadOrSave == "Load")
+            {
+                this.Location = Properties.Settings.Default.LastWinLocation;
+            }
+            else
+            {
+                Properties.Settings.Default.LastWinLocation = RestoreBounds.Location;
+                Properties.Settings.Default.Save();
+            }
+        }
+        private void WindowBorderColorLoad()
+        {
+            System.Drawing.Color borderColor = Properties.Settings.Default.FormBorderColor;
+            ControlPanelOuter.BackColor = borderColor;
+            SortPanelOuter.BackColor = borderColor;
+            SortPrefPanelOuter.BackColor = borderColor;
+            MainPanelOuter.BackColor = borderColor;
+            CommentPanelOuter.BackColor = borderColor;
+            MapPanelOuter.BackColor= borderColor;
+        }
+        //Settings save/load
+
         //Control panel buttons
         private void BtnClose_Click(object sender, EventArgs e)
         {
+            WindowLocSaveLoad("Save");
             this.Close();
         }
         private void BtnCollapse_Click(object sender, EventArgs e)
@@ -46,6 +74,11 @@ namespace aisha3
                 Form Settings = new Settings();
                 Settings.Show();
             }
+        }
+
+        private void BtnStatusLAN_Click(object sender, EventArgs e)
+        {
+
         }
         //Control panel buttons
 

@@ -16,5 +16,54 @@ namespace aisha3
         {
             InitializeComponent();
         }
+
+        private void SaveFormBorderColor(string RGB, byte Value)
+        {
+            System.Drawing.Color borderColor = Properties.Settings.Default.FormBorderColor;
+            switch (RGB)
+            {
+                case "R":
+                    byte RchangedColorR = Value;
+                    byte RchangedColorG = borderColor.G;
+                    byte RchangedColorB = borderColor.B;
+                    System.Drawing.Color RchangedColor = Color.FromArgb(RchangedColorR, RchangedColorG, RchangedColorB);
+                    Properties.Settings.Default.FormBorderColor = RchangedColor;
+                    Properties.Settings.Default.Save();
+                    break;
+                case "G":
+                    byte GchangedColorR = borderColor.R;
+                    byte GchangedColorG = Value;
+                    byte GchangedColorB = borderColor.B;
+                    System.Drawing.Color GchangedColor = Color.FromArgb(GchangedColorR, GchangedColorG, GchangedColorB);
+                    Properties.Settings.Default.FormBorderColor = GchangedColor;
+                    Properties.Settings.Default.Save();
+                    break;
+                case "B":
+                    byte BchangedColorR = borderColor.R;
+                    byte BchangedColorG = borderColor.G;
+                    byte BchangedColorB = Value;
+                    System.Drawing.Color BchangedColor = Color.FromArgb(BchangedColorR, BchangedColorG, BchangedColorB);
+                    Properties.Settings.Default.FormBorderColor = BchangedColor;
+                    Properties.Settings.Default.Save();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void FormBorderColorNumR_ValueChanged(object sender, EventArgs e)
+        {
+            SaveFormBorderColor("R", Convert.ToByte(FormBorderColorNumR.Value));
+        }
+
+        private void FormBorderColorNumG_ValueChanged(object sender, EventArgs e)
+        {
+            SaveFormBorderColor("G", Convert.ToByte(FormBorderColorNumG.Value));
+        }
+
+        private void FormBorderColorNumB_ValueChanged(object sender, EventArgs e)
+        {
+            SaveFormBorderColor("B", Convert.ToByte(FormBorderColorNumB.Value));
+        }
     }
 }

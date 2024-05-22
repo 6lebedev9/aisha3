@@ -118,13 +118,136 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\cable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cable1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\cable1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cable2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\cable2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="castwarning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\castwarning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="castwarning1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\castwarning1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\close_x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="collapse_x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\collapse_x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="database1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\database1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="database2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\database2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="duplo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\duplo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="duplo11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\duplo11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="duplo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\duplo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="duplo21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\duplo21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\grid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="http" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\http.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="http1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\http1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="irz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\irz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="irz1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\irz1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ksm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\ksm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ksm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\ksm1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="locationoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\locationoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="locationoff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\locationoff1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mkl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\mkl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mkl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\mkl1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="monitoring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\monitoring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="monitoring1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\monitoring1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="netline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\netline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="netline1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\netline1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nophoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\nophoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nophoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\nophoto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pulsealert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\pulsealert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pulsealert1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\pulsealert1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rcr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\rcr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rcr1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\rcr1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="router" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\router.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settings_x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\settings_x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sunnysnow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\sunnysnow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sunnysnow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\sunnysnow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="videocamoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\videocamoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="videocamoff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\videocamoff1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\4g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4g1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\4g1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4g2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\4g2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

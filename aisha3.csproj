@@ -46,6 +46,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon_x256.ico</ApplicationIcon>
@@ -118,6 +119,47 @@
     <None Include="icons\settings_x80.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="icons\cable.png" />
+    <None Include="icons\4g.png" />
+    <None Include="icons\router.png" />
+    <None Include="icons\4g2.png" />
+    <None Include="icons\4g1.png" />
+    <None Include="icons\videocamoff1.png" />
+    <None Include="icons\videocamoff.png" />
+    <None Include="icons\sunnysnow1.png" />
+    <None Include="icons\sunnysnow.png" />
+    <None Include="icons\rcr1.png" />
+    <None Include="icons\rcr.png" />
+    <None Include="icons\pulsealert1.png" />
+    <None Include="icons\pulsealert.png" />
+    <None Include="icons\nophoto1.png" />
+    <None Include="icons\nophoto.png" />
+    <None Include="icons\netline1.png" />
+    <None Include="icons\netline.png" />
+    <None Include="icons\monitoring1.png" />
+    <None Include="icons\monitoring.png" />
+    <None Include="icons\mkl1.png" />
+    <None Include="icons\mkl.png" />
+    <None Include="icons\locationoff1.png" />
+    <None Include="icons\locationoff.png" />
+    <None Include="icons\ksm1.png" />
+    <None Include="icons\ksm.png" />
+    <None Include="icons\irz1.png" />
+    <None Include="icons\irz.png" />
+    <None Include="icons\http1.png" />
+    <None Include="icons\http.png" />
+    <None Include="icons\grid1.png" />
+    <None Include="icons\grid.png" />
+    <None Include="icons\duplo21.png" />
+    <None Include="icons\duplo11.png" />
+    <None Include="icons\duplo2.png" />
+    <None Include="icons\duplo1.png" />
+    <None Include="icons\database2.png" />
+    <None Include="icons\database1.png" />
+    <None Include="icons\castwarning1.png" />
+    <None Include="icons\castwarning.png" />
+    <None Include="icons\cable2.png" />
+    <None Include="icons\cable1.png" />
     <Content Include="icon_x256.ico" />
   </ItemGroup>
   <ItemGroup>

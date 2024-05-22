@@ -17,8 +17,10 @@
         public string KvfModelCommon { get; set; }
         public string DeviceType { get; set; }
         public string DeviceIP { get; set; }
+        public string DeviceGWIP { get; set; }
         public string CamOwnerKvfNumber { get; set; }
         public string CamFixType { get; set;}
+        public string CamQuant { get; set; }
         public string GK { get; set;}
         public string GKCommon { get; set;}
         public string OrgOwner { get; set;}
