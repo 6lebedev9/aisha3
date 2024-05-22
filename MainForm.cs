@@ -38,7 +38,6 @@ namespace aisha3
             SortPanelOuter.BackColor = borderColor;
             SortPrefPanelOuter.BackColor = borderColor;
             MainPanelOuter.BackColor = borderColor;
-            CommentPanelOuter.BackColor = borderColor;
             MapPanelOuter.BackColor= borderColor;
         }
         //Settings save/load
