@@ -56,7 +56,9 @@ namespace aisha3
                 cmdgetversion.Parameters.AddWithValue("@comment", "last");
                 MSSQLReader reader = cmdgetversion.ExecuteReader();
                 reader.Read();
-                return reader.GetInt32(0);
+                int output = reader.GetInt32(0);
+                reader.Close();
+                return output;
             }
             catch (Exception ex)
             {
