@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -19,6 +20,20 @@ namespace aisha3
             InitializeComponent();
             WindowLocSaveLoad("Load");
             WindowBorderColorLoad();
+            CheckConnectAndVersion();
+        }
+        public void CheckConnectAndVersion()
+        {
+            int verInDB = Mssql.GetLastVersion();
+            int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
+            if (verInDB > 0)
+            {
+                DBState.BackgroundImage = global::aisha3.Properties.Resources.database1;
+            }
+            else
+            {
+                DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
+            }
         }
         public static string todayDateTime = DateTime.Now.ToString("HH:mm dd.MM.yy");
         //Settings save/load
@@ -46,6 +61,10 @@ namespace aisha3
         //Settings save/load
 
         //Control panel buttons
+        private void DBState_Click(object sender, EventArgs e)
+        {
+            CheckConnectAndVersion();
+        }
         private void BtnClose_Click(object sender, EventArgs e)
         {
             WindowLocSaveLoad("Save");
@@ -101,8 +120,20 @@ namespace aisha3
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
-            BtnClipGps.Text = "60.123123 30.321331";
-        }
+            //string mssqldb = Properties.Settings.Default.mssqldb;
+            //string mssqlcatalog = Properties.Settings.Default.mssqlcatalog;
+            //string mssqluser = Properties.Settings.Default.mssqluser;
+            //string mssqlpass = Properties.Settings.Default.mssqlpass;
+            //Console.WriteLine($"{mssqldb} - {mssqlcatalog} - {mssqluser} - {mssqlpass}");
+            //Console.WriteLine(Mssql.GetLastVersion());
+            //Console.WriteLine(Int32.Parse(System.Windows.Forms.Application.CompanyName));
+            //int verInDb = Mssql.GetLastVersion();
+            //int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
+            //if (verInDb == verCurrent)
+            //{
+            //    Console.WriteLine("NNNNICE");
+            //}
+    }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(BtnClipAddress.Text.ToString().Replace("\n", ""));

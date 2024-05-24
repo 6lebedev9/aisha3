@@ -31,10 +31,49 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainPanelOuter = new System.Windows.Forms.Panel();
             this.MainPanelInner = new System.Windows.Forms.Panel();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.CommentTBox = new System.Windows.Forms.TextBox();
+            this.Lbl16 = new System.Windows.Forms.Label();
+            this.panel68 = new System.Windows.Forms.Panel();
+            this.panel61 = new System.Windows.Forms.Panel();
+            this.panel62 = new System.Windows.Forms.Panel();
+            this.panel76 = new System.Windows.Forms.Panel();
+            this.BtnClipR10 = new System.Windows.Forms.Button();
+            this.panel63 = new System.Windows.Forms.Panel();
+            this.BtnClipR11 = new System.Windows.Forms.Button();
+            this.panel64 = new System.Windows.Forms.Panel();
+            this.panel75 = new System.Windows.Forms.Panel();
+            this.BtnClipR9 = new System.Windows.Forms.Button();
+            this.panel67 = new System.Windows.Forms.Panel();
+            this.panel57 = new System.Windows.Forms.Panel();
+            this.panel58 = new System.Windows.Forms.Panel();
+            this.panel74 = new System.Windows.Forms.Panel();
+            this.BtnClipR8 = new System.Windows.Forms.Button();
+            this.panel59 = new System.Windows.Forms.Panel();
+            this.BtnClipRCustom = new System.Windows.Forms.Button();
+            this.panel60 = new System.Windows.Forms.Panel();
+            this.panel73 = new System.Windows.Forms.Panel();
+            this.BtnClipR7 = new System.Windows.Forms.Button();
+            this.panel66 = new System.Windows.Forms.Panel();
+            this.panel51 = new System.Windows.Forms.Panel();
+            this.panel52 = new System.Windows.Forms.Panel();
+            this.panel72 = new System.Windows.Forms.Panel();
+            this.BtnClipR5 = new System.Windows.Forms.Button();
+            this.panel55 = new System.Windows.Forms.Panel();
+            this.BtnClipR6 = new System.Windows.Forms.Button();
+            this.panel56 = new System.Windows.Forms.Panel();
+            this.panel71 = new System.Windows.Forms.Panel();
+            this.BtnClipR4 = new System.Windows.Forms.Button();
+            this.panel65 = new System.Windows.Forms.Panel();
             this.panel45 = new System.Windows.Forms.Panel();
             this.panel47 = new System.Windows.Forms.Panel();
+            this.panel70 = new System.Windows.Forms.Panel();
+            this.BtnClipR2 = new System.Windows.Forms.Button();
             this.panel46 = new System.Windows.Forms.Panel();
+            this.BtnClipR3 = new System.Windows.Forms.Button();
             this.panel48 = new System.Windows.Forms.Panel();
+            this.panel69 = new System.Windows.Forms.Panel();
+            this.BtnClipR1 = new System.Windows.Forms.Button();
             this.PanelSpacer16 = new System.Windows.Forms.Panel();
             this.MainPanelInner17 = new System.Windows.Forms.Panel();
             this.panel53 = new System.Windows.Forms.Panel();
@@ -68,6 +107,8 @@
             this.MainPanelInner12 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
             this.BtnToWebDeviceIPTech = new System.Windows.Forms.Button();
+            this.panel79 = new System.Windows.Forms.Panel();
+            this.BtnClipDeviceIPTech = new System.Windows.Forms.Button();
             this.panel27 = new System.Windows.Forms.Panel();
             this.BtnClipEtherProvider = new System.Windows.Forms.Button();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -81,7 +122,11 @@
             this.PanelSpacer8 = new System.Windows.Forms.Panel();
             this.MainPanelInner10 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
+            this.BtnClipGpsN = new System.Windows.Forms.Button();
+            this.panel78 = new System.Windows.Forms.Panel();
             this.BtnClipGpsE = new System.Windows.Forms.Button();
+            this.panel77 = new System.Windows.Forms.Panel();
+            this.BtnClipGps = new System.Windows.Forms.Button();
             this.panel28 = new System.Windows.Forms.Panel();
             this.BtnToWebYaMaps = new System.Windows.Forms.Button();
             this.panel26 = new System.Windows.Forms.Panel();
@@ -177,63 +222,31 @@
             this.SortPanelOuter = new System.Windows.Forms.Panel();
             this.SortPanelInner = new System.Windows.Forms.Panel();
             this.ControlPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DBState = new System.Windows.Forms.Button();
             this.LblProgName = new System.Windows.Forms.Label();
             this.BtnSettings = new System.Windows.Forms.Button();
             this.BtnCollapse = new System.Windows.Forms.Button();
             this.BtnClose = new System.Windows.Forms.Button();
             this.ControlPanelOuter = new System.Windows.Forms.Panel();
-            this.panel51 = new System.Windows.Forms.Panel();
-            this.panel52 = new System.Windows.Forms.Panel();
-            this.panel55 = new System.Windows.Forms.Panel();
-            this.panel56 = new System.Windows.Forms.Panel();
-            this.panel57 = new System.Windows.Forms.Panel();
-            this.panel58 = new System.Windows.Forms.Panel();
-            this.panel59 = new System.Windows.Forms.Panel();
-            this.panel60 = new System.Windows.Forms.Panel();
-            this.panel61 = new System.Windows.Forms.Panel();
-            this.panel62 = new System.Windows.Forms.Panel();
-            this.panel63 = new System.Windows.Forms.Panel();
-            this.panel64 = new System.Windows.Forms.Panel();
-            this.BtnClipR1 = new System.Windows.Forms.Button();
-            this.BtnClipR2 = new System.Windows.Forms.Button();
-            this.BtnClipR3 = new System.Windows.Forms.Button();
-            this.BtnClipR4 = new System.Windows.Forms.Button();
-            this.BtnClipR5 = new System.Windows.Forms.Button();
-            this.BtnClipR6 = new System.Windows.Forms.Button();
-            this.BtnClipR7 = new System.Windows.Forms.Button();
-            this.BtnClipR9 = new System.Windows.Forms.Button();
-            this.BtnClipR8 = new System.Windows.Forms.Button();
-            this.BtnClipR10 = new System.Windows.Forms.Button();
-            this.BtnClipR11 = new System.Windows.Forms.Button();
-            this.panel65 = new System.Windows.Forms.Panel();
-            this.panel66 = new System.Windows.Forms.Panel();
-            this.panel67 = new System.Windows.Forms.Panel();
-            this.panel68 = new System.Windows.Forms.Panel();
-            this.panel69 = new System.Windows.Forms.Panel();
-            this.panel70 = new System.Windows.Forms.Panel();
-            this.panel71 = new System.Windows.Forms.Panel();
-            this.panel72 = new System.Windows.Forms.Panel();
-            this.panel73 = new System.Windows.Forms.Panel();
-            this.panel74 = new System.Windows.Forms.Panel();
-            this.panel75 = new System.Windows.Forms.Panel();
-            this.panel76 = new System.Windows.Forms.Panel();
-            this.panel44 = new System.Windows.Forms.Panel();
-            this.Lbl16 = new System.Windows.Forms.Label();
-            this.CommentTBox = new System.Windows.Forms.TextBox();
             this.BtnMap = new System.Windows.Forms.Button();
             this.BtnSort = new System.Windows.Forms.Button();
             this.BtnCams = new System.Windows.Forms.Button();
             this.DEBUG_Btn = new System.Windows.Forms.Button();
-            this.BtnClipGps = new System.Windows.Forms.Button();
-            this.BtnClipGpsN = new System.Windows.Forms.Button();
-            this.panel77 = new System.Windows.Forms.Panel();
-            this.panel78 = new System.Windows.Forms.Panel();
-            this.panel79 = new System.Windows.Forms.Panel();
-            this.BtnClipDeviceIPTech = new System.Windows.Forms.Button();
-            this.BtnClipRCustom = new System.Windows.Forms.Button();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
+            this.panel44.SuspendLayout();
+            this.panel61.SuspendLayout();
+            this.panel62.SuspendLayout();
+            this.panel63.SuspendLayout();
+            this.panel64.SuspendLayout();
+            this.panel57.SuspendLayout();
+            this.panel58.SuspendLayout();
+            this.panel59.SuspendLayout();
+            this.panel60.SuspendLayout();
+            this.panel51.SuspendLayout();
+            this.panel52.SuspendLayout();
+            this.panel55.SuspendLayout();
+            this.panel56.SuspendLayout();
             this.panel45.SuspendLayout();
             this.panel47.SuspendLayout();
             this.panel46.SuspendLayout();
@@ -289,19 +302,6 @@
             this.SortPrefPanelOuter.SuspendLayout();
             this.SortPanelOuter.SuspendLayout();
             this.ControlPanel.SuspendLayout();
-            this.panel51.SuspendLayout();
-            this.panel52.SuspendLayout();
-            this.panel55.SuspendLayout();
-            this.panel56.SuspendLayout();
-            this.panel57.SuspendLayout();
-            this.panel58.SuspendLayout();
-            this.panel59.SuspendLayout();
-            this.panel60.SuspendLayout();
-            this.panel61.SuspendLayout();
-            this.panel62.SuspendLayout();
-            this.panel63.SuspendLayout();
-            this.panel64.SuspendLayout();
-            this.panel44.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanelOuter
@@ -364,6 +364,414 @@
             this.MainPanelInner.Size = new System.Drawing.Size(378, 708);
             this.MainPanelInner.TabIndex = 1;
             // 
+            // panel44
+            // 
+            this.panel44.Controls.Add(this.CommentTBox);
+            this.panel44.Controls.Add(this.Lbl16);
+            this.panel44.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel44.Location = new System.Drawing.Point(0, 635);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(378, 70);
+            this.panel44.TabIndex = 43;
+            // 
+            // CommentTBox
+            // 
+            this.CommentTBox.BackColor = System.Drawing.Color.Black;
+            this.CommentTBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CommentTBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CommentTBox.ForeColor = System.Drawing.SystemColors.Info;
+            this.CommentTBox.Location = new System.Drawing.Point(0, 17);
+            this.CommentTBox.MaxLength = 300;
+            this.CommentTBox.Multiline = true;
+            this.CommentTBox.Name = "CommentTBox";
+            this.CommentTBox.Size = new System.Drawing.Size(378, 53);
+            this.CommentTBox.TabIndex = 4;
+            // 
+            // Lbl16
+            // 
+            this.Lbl16.AutoSize = true;
+            this.Lbl16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Lbl16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Lbl16.ForeColor = System.Drawing.SystemColors.Control;
+            this.Lbl16.Location = new System.Drawing.Point(0, 0);
+            this.Lbl16.Name = "Lbl16";
+            this.Lbl16.Padding = new System.Windows.Forms.Padding(4, 4, 0, 4);
+            this.Lbl16.Size = new System.Drawing.Size(84, 21);
+            this.Lbl16.TabIndex = 3;
+            this.Lbl16.Text = "Комментарий:";
+            // 
+            // panel68
+            // 
+            this.panel68.BackColor = System.Drawing.Color.Gray;
+            this.panel68.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel68.Location = new System.Drawing.Point(0, 634);
+            this.panel68.Name = "panel68";
+            this.panel68.Size = new System.Drawing.Size(378, 1);
+            this.panel68.TabIndex = 42;
+            // 
+            // panel61
+            // 
+            this.panel61.Controls.Add(this.panel62);
+            this.panel61.Controls.Add(this.panel63);
+            this.panel61.Controls.Add(this.panel64);
+            this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel61.Location = new System.Drawing.Point(0, 609);
+            this.panel61.Name = "panel61";
+            this.panel61.Size = new System.Drawing.Size(378, 25);
+            this.panel61.TabIndex = 39;
+            // 
+            // panel62
+            // 
+            this.panel62.Controls.Add(this.panel76);
+            this.panel62.Controls.Add(this.BtnClipR10);
+            this.panel62.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel62.Location = new System.Drawing.Point(126, 0);
+            this.panel62.Name = "panel62";
+            this.panel62.Size = new System.Drawing.Size(126, 25);
+            this.panel62.TabIndex = 2;
+            // 
+            // panel76
+            // 
+            this.panel76.BackColor = System.Drawing.Color.Gray;
+            this.panel76.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel76.Location = new System.Drawing.Point(125, 0);
+            this.panel76.Name = "panel76";
+            this.panel76.Size = new System.Drawing.Size(1, 25);
+            this.panel76.TabIndex = 40;
+            // 
+            // BtnClipR10
+            // 
+            this.BtnClipR10.AutoSize = true;
+            this.BtnClipR10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR10.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR10.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR10.Name = "BtnClipR10";
+            this.BtnClipR10.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR10.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR10.TabIndex = 15;
+            this.BtnClipR10.Text = "UPD ЭРТХ";
+            this.BtnClipR10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR10.UseVisualStyleBackColor = true;
+            this.BtnClipR10.Click += new System.EventHandler(this.BtnClipR10_Click);
+            // 
+            // panel63
+            // 
+            this.panel63.Controls.Add(this.BtnClipR11);
+            this.panel63.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel63.Location = new System.Drawing.Point(252, 0);
+            this.panel63.Name = "panel63";
+            this.panel63.Size = new System.Drawing.Size(126, 25);
+            this.panel63.TabIndex = 1;
+            // 
+            // BtnClipR11
+            // 
+            this.BtnClipR11.AutoSize = true;
+            this.BtnClipR11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR11.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR11.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR11.Name = "BtnClipR11";
+            this.BtnClipR11.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR11.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR11.TabIndex = 15;
+            this.BtnClipR11.Text = "ФИНИШ";
+            this.BtnClipR11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR11.UseVisualStyleBackColor = true;
+            this.BtnClipR11.Click += new System.EventHandler(this.BtnClipR11_Click);
+            // 
+            // panel64
+            // 
+            this.panel64.Controls.Add(this.panel75);
+            this.panel64.Controls.Add(this.BtnClipR9);
+            this.panel64.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel64.Location = new System.Drawing.Point(0, 0);
+            this.panel64.Name = "panel64";
+            this.panel64.Size = new System.Drawing.Size(126, 25);
+            this.panel64.TabIndex = 0;
+            // 
+            // panel75
+            // 
+            this.panel75.BackColor = System.Drawing.Color.Gray;
+            this.panel75.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel75.Location = new System.Drawing.Point(125, 0);
+            this.panel75.Name = "panel75";
+            this.panel75.Size = new System.Drawing.Size(1, 25);
+            this.panel75.TabIndex = 40;
+            // 
+            // BtnClipR9
+            // 
+            this.BtnClipR9.AutoSize = true;
+            this.BtnClipR9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR9.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR9.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR9.Name = "BtnClipR9";
+            this.BtnClipR9.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR9.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR9.TabIndex = 15;
+            this.BtnClipR9.Text = "НАПР ЭРТХ";
+            this.BtnClipR9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR9.UseVisualStyleBackColor = true;
+            this.BtnClipR9.Click += new System.EventHandler(this.BtnClipR9_Click);
+            // 
+            // panel67
+            // 
+            this.panel67.BackColor = System.Drawing.Color.Gray;
+            this.panel67.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel67.Location = new System.Drawing.Point(0, 608);
+            this.panel67.Name = "panel67";
+            this.panel67.Size = new System.Drawing.Size(378, 1);
+            this.panel67.TabIndex = 33;
+            // 
+            // panel57
+            // 
+            this.panel57.Controls.Add(this.panel58);
+            this.panel57.Controls.Add(this.panel59);
+            this.panel57.Controls.Add(this.panel60);
+            this.panel57.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel57.Location = new System.Drawing.Point(0, 583);
+            this.panel57.Name = "panel57";
+            this.panel57.Size = new System.Drawing.Size(378, 25);
+            this.panel57.TabIndex = 38;
+            // 
+            // panel58
+            // 
+            this.panel58.Controls.Add(this.panel74);
+            this.panel58.Controls.Add(this.BtnClipR8);
+            this.panel58.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel58.Location = new System.Drawing.Point(126, 0);
+            this.panel58.Name = "panel58";
+            this.panel58.Size = new System.Drawing.Size(126, 25);
+            this.panel58.TabIndex = 2;
+            // 
+            // panel74
+            // 
+            this.panel74.BackColor = System.Drawing.Color.Gray;
+            this.panel74.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel74.Location = new System.Drawing.Point(125, 0);
+            this.panel74.Name = "panel74";
+            this.panel74.Size = new System.Drawing.Size(1, 25);
+            this.panel74.TabIndex = 40;
+            // 
+            // BtnClipR8
+            // 
+            this.BtnClipR8.AutoSize = true;
+            this.BtnClipR8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR8.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR8.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR8.Name = "BtnClipR8";
+            this.BtnClipR8.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR8.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR8.TabIndex = 15;
+            this.BtnClipR8.Text = "UPD РТК";
+            this.BtnClipR8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR8.UseVisualStyleBackColor = true;
+            this.BtnClipR8.Click += new System.EventHandler(this.BtnClipR8_Click);
+            // 
+            // panel59
+            // 
+            this.panel59.Controls.Add(this.BtnClipRCustom);
+            this.panel59.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel59.Location = new System.Drawing.Point(252, 0);
+            this.panel59.Name = "panel59";
+            this.panel59.Size = new System.Drawing.Size(126, 25);
+            this.panel59.TabIndex = 1;
+            // 
+            // BtnClipRCustom
+            // 
+            this.BtnClipRCustom.AutoSize = true;
+            this.BtnClipRCustom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipRCustom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipRCustom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipRCustom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipRCustom.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipRCustom.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipRCustom.Name = "BtnClipRCustom";
+            this.BtnClipRCustom.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipRCustom.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipRCustom.TabIndex = 16;
+            this.BtnClipRCustom.Text = "---CUSTOM---";
+            this.BtnClipRCustom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipRCustom.UseVisualStyleBackColor = true;
+            this.BtnClipRCustom.Click += new System.EventHandler(this.BtnClipRCustom_Click);
+            // 
+            // panel60
+            // 
+            this.panel60.Controls.Add(this.panel73);
+            this.panel60.Controls.Add(this.BtnClipR7);
+            this.panel60.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel60.Location = new System.Drawing.Point(0, 0);
+            this.panel60.Name = "panel60";
+            this.panel60.Size = new System.Drawing.Size(126, 25);
+            this.panel60.TabIndex = 0;
+            // 
+            // panel73
+            // 
+            this.panel73.BackColor = System.Drawing.Color.Gray;
+            this.panel73.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel73.Location = new System.Drawing.Point(125, 0);
+            this.panel73.Name = "panel73";
+            this.panel73.Size = new System.Drawing.Size(1, 25);
+            this.panel73.TabIndex = 40;
+            // 
+            // BtnClipR7
+            // 
+            this.BtnClipR7.AutoSize = true;
+            this.BtnClipR7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR7.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR7.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR7.Name = "BtnClipR7";
+            this.BtnClipR7.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR7.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR7.TabIndex = 15;
+            this.BtnClipR7.Text = "НАПР РТК";
+            this.BtnClipR7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR7.UseVisualStyleBackColor = true;
+            this.BtnClipR7.Click += new System.EventHandler(this.BtnClipR7_Click);
+            // 
+            // panel66
+            // 
+            this.panel66.BackColor = System.Drawing.Color.Gray;
+            this.panel66.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel66.Location = new System.Drawing.Point(0, 582);
+            this.panel66.Name = "panel66";
+            this.panel66.Size = new System.Drawing.Size(378, 1);
+            this.panel66.TabIndex = 41;
+            // 
+            // panel51
+            // 
+            this.panel51.Controls.Add(this.panel52);
+            this.panel51.Controls.Add(this.panel55);
+            this.panel51.Controls.Add(this.panel56);
+            this.panel51.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel51.Location = new System.Drawing.Point(0, 557);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(378, 25);
+            this.panel51.TabIndex = 37;
+            // 
+            // panel52
+            // 
+            this.panel52.Controls.Add(this.panel72);
+            this.panel52.Controls.Add(this.BtnClipR5);
+            this.panel52.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel52.Location = new System.Drawing.Point(126, 0);
+            this.panel52.Name = "panel52";
+            this.panel52.Size = new System.Drawing.Size(126, 25);
+            this.panel52.TabIndex = 2;
+            // 
+            // panel72
+            // 
+            this.panel72.BackColor = System.Drawing.Color.Gray;
+            this.panel72.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel72.Location = new System.Drawing.Point(125, 0);
+            this.panel72.Name = "panel72";
+            this.panel72.Size = new System.Drawing.Size(1, 25);
+            this.panel72.TabIndex = 40;
+            // 
+            // BtnClipR5
+            // 
+            this.BtnClipR5.AutoSize = true;
+            this.BtnClipR5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR5.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR5.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR5.Name = "BtnClipR5";
+            this.BtnClipR5.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR5.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR5.TabIndex = 15;
+            this.BtnClipR5.Text = "МОНТАЖ";
+            this.BtnClipR5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR5.UseVisualStyleBackColor = true;
+            this.BtnClipR5.Click += new System.EventHandler(this.BtnClipR5_Click);
+            // 
+            // panel55
+            // 
+            this.panel55.Controls.Add(this.BtnClipR6);
+            this.panel55.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel55.Location = new System.Drawing.Point(252, 0);
+            this.panel55.Name = "panel55";
+            this.panel55.Size = new System.Drawing.Size(126, 25);
+            this.panel55.TabIndex = 1;
+            // 
+            // BtnClipR6
+            // 
+            this.BtnClipR6.AutoSize = true;
+            this.BtnClipR6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR6.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR6.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR6.Name = "BtnClipR6";
+            this.BtnClipR6.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR6.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR6.TabIndex = 15;
+            this.BtnClipR6.Text = "Mr.Proper";
+            this.BtnClipR6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR6.UseVisualStyleBackColor = true;
+            this.BtnClipR6.Click += new System.EventHandler(this.BtnClipR6_Click);
+            // 
+            // panel56
+            // 
+            this.panel56.Controls.Add(this.panel71);
+            this.panel56.Controls.Add(this.BtnClipR4);
+            this.panel56.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel56.Location = new System.Drawing.Point(0, 0);
+            this.panel56.Name = "panel56";
+            this.panel56.Size = new System.Drawing.Size(126, 25);
+            this.panel56.TabIndex = 0;
+            // 
+            // panel71
+            // 
+            this.panel71.BackColor = System.Drawing.Color.Gray;
+            this.panel71.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel71.Location = new System.Drawing.Point(125, 0);
+            this.panel71.Name = "panel71";
+            this.panel71.Size = new System.Drawing.Size(1, 25);
+            this.panel71.TabIndex = 40;
+            // 
+            // BtnClipR4
+            // 
+            this.BtnClipR4.AutoSize = true;
+            this.BtnClipR4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR4.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR4.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR4.Name = "BtnClipR4";
+            this.BtnClipR4.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR4.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR4.TabIndex = 15;
+            this.BtnClipR4.Text = "ПТС/ТАКТ";
+            this.BtnClipR4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR4.UseVisualStyleBackColor = true;
+            this.BtnClipR4.Click += new System.EventHandler(this.BtnClipR4_Click);
+            // 
+            // panel65
+            // 
+            this.panel65.BackColor = System.Drawing.Color.Gray;
+            this.panel65.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel65.Location = new System.Drawing.Point(0, 556);
+            this.panel65.Name = "panel65";
+            this.panel65.Size = new System.Drawing.Size(378, 1);
+            this.panel65.TabIndex = 40;
+            // 
             // panel45
             // 
             this.panel45.Controls.Add(this.panel47);
@@ -385,6 +793,33 @@
             this.panel47.Size = new System.Drawing.Size(126, 25);
             this.panel47.TabIndex = 2;
             // 
+            // panel70
+            // 
+            this.panel70.BackColor = System.Drawing.Color.Gray;
+            this.panel70.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel70.Location = new System.Drawing.Point(125, 0);
+            this.panel70.Name = "panel70";
+            this.panel70.Size = new System.Drawing.Size(1, 25);
+            this.panel70.TabIndex = 40;
+            // 
+            // BtnClipR2
+            // 
+            this.BtnClipR2.AutoSize = true;
+            this.BtnClipR2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR2.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR2.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR2.Name = "BtnClipR2";
+            this.BtnClipR2.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR2.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR2.TabIndex = 15;
+            this.BtnClipR2.Text = "РЕЗ ДИАГ Netline";
+            this.BtnClipR2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR2.UseVisualStyleBackColor = true;
+            this.BtnClipR2.Click += new System.EventHandler(this.BtnClipR2_Click);
+            // 
             // panel46
             // 
             this.panel46.Controls.Add(this.BtnClipR3);
@@ -393,6 +828,24 @@
             this.panel46.Name = "panel46";
             this.panel46.Size = new System.Drawing.Size(126, 25);
             this.panel46.TabIndex = 1;
+            // 
+            // BtnClipR3
+            // 
+            this.BtnClipR3.AutoSize = true;
+            this.BtnClipR3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR3.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR3.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR3.Name = "BtnClipR3";
+            this.BtnClipR3.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR3.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR3.TabIndex = 15;
+            this.BtnClipR3.Text = "РЕЗ ДИАГ РЦР";
+            this.BtnClipR3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR3.UseVisualStyleBackColor = true;
+            this.BtnClipR3.Click += new System.EventHandler(this.BtnClipR3_Click);
             // 
             // panel48
             // 
@@ -403,6 +856,33 @@
             this.panel48.Name = "panel48";
             this.panel48.Size = new System.Drawing.Size(126, 25);
             this.panel48.TabIndex = 0;
+            // 
+            // panel69
+            // 
+            this.panel69.BackColor = System.Drawing.Color.Gray;
+            this.panel69.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel69.Location = new System.Drawing.Point(125, 0);
+            this.panel69.Name = "panel69";
+            this.panel69.Size = new System.Drawing.Size(1, 25);
+            this.panel69.TabIndex = 40;
+            // 
+            // BtnClipR1
+            // 
+            this.BtnClipR1.AutoSize = true;
+            this.BtnClipR1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipR1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipR1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnClipR1.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipR1.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipR1.Name = "BtnClipR1";
+            this.BtnClipR1.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnClipR1.Size = new System.Drawing.Size(126, 25);
+            this.BtnClipR1.TabIndex = 15;
+            this.BtnClipR1.Text = "РЕЗ ДИАГ МКЛ";
+            this.BtnClipR1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipR1.UseVisualStyleBackColor = true;
+            this.BtnClipR1.Click += new System.EventHandler(this.BtnClipR1_Click);
             // 
             // PanelSpacer16
             // 
@@ -792,6 +1272,33 @@
             this.BtnToWebDeviceIPTech.UseVisualStyleBackColor = true;
             this.BtnToWebDeviceIPTech.Click += new System.EventHandler(this.BtnToWebDeviceIPTech_Click);
             // 
+            // panel79
+            // 
+            this.panel79.BackColor = System.Drawing.Color.Gray;
+            this.panel79.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel79.Location = new System.Drawing.Point(186, 0);
+            this.panel79.Name = "panel79";
+            this.panel79.Size = new System.Drawing.Size(1, 25);
+            this.panel79.TabIndex = 44;
+            // 
+            // BtnClipDeviceIPTech
+            // 
+            this.BtnClipDeviceIPTech.AutoSize = true;
+            this.BtnClipDeviceIPTech.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
+            this.BtnClipDeviceIPTech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipDeviceIPTech.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnClipDeviceIPTech.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipDeviceIPTech.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
+            this.BtnClipDeviceIPTech.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipDeviceIPTech.Location = new System.Drawing.Point(187, 0);
+            this.BtnClipDeviceIPTech.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnClipDeviceIPTech.Name = "BtnClipDeviceIPTech";
+            this.BtnClipDeviceIPTech.Size = new System.Drawing.Size(28, 25);
+            this.BtnClipDeviceIPTech.TabIndex = 45;
+            this.BtnClipDeviceIPTech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipDeviceIPTech.UseVisualStyleBackColor = true;
+            this.BtnClipDeviceIPTech.Click += new System.EventHandler(this.BtnClipDeviceIPTech_Click);
+            // 
             // panel27
             // 
             this.panel27.BackColor = System.Drawing.Color.Gray;
@@ -940,6 +1447,31 @@
             this.panel25.Size = new System.Drawing.Size(261, 25);
             this.panel25.TabIndex = 1;
             // 
+            // BtnClipGpsN
+            // 
+            this.BtnClipGpsN.AutoSize = true;
+            this.BtnClipGpsN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipGpsN.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnClipGpsN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipGpsN.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipGpsN.Location = new System.Drawing.Point(27, 0);
+            this.BtnClipGpsN.Name = "BtnClipGpsN";
+            this.BtnClipGpsN.Size = new System.Drawing.Size(75, 25);
+            this.BtnClipGpsN.TabIndex = 42;
+            this.BtnClipGpsN.Text = "60.025435";
+            this.BtnClipGpsN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipGpsN.UseVisualStyleBackColor = true;
+            this.BtnClipGpsN.Click += new System.EventHandler(this.BtnClipGpsN_Click);
+            // 
+            // panel78
+            // 
+            this.panel78.BackColor = System.Drawing.Color.Gray;
+            this.panel78.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel78.Location = new System.Drawing.Point(102, 0);
+            this.panel78.Name = "panel78";
+            this.panel78.Size = new System.Drawing.Size(1, 25);
+            this.panel78.TabIndex = 44;
+            // 
             // BtnClipGpsE
             // 
             this.BtnClipGpsE.AutoSize = true;
@@ -955,6 +1487,34 @@
             this.BtnClipGpsE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipGpsE.UseVisualStyleBackColor = true;
             this.BtnClipGpsE.Click += new System.EventHandler(this.BtnClipGpsE_Click);
+            // 
+            // panel77
+            // 
+            this.panel77.BackColor = System.Drawing.Color.Gray;
+            this.panel77.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel77.Location = new System.Drawing.Point(171, 0);
+            this.panel77.Name = "panel77";
+            this.panel77.Size = new System.Drawing.Size(1, 25);
+            this.panel77.TabIndex = 43;
+            // 
+            // BtnClipGps
+            // 
+            this.BtnClipGps.AutoSize = true;
+            this.BtnClipGps.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
+            this.BtnClipGps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipGps.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnClipGps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipGps.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
+            this.BtnClipGps.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipGps.Location = new System.Drawing.Point(172, 0);
+            this.BtnClipGps.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnClipGps.Name = "BtnClipGps";
+            this.BtnClipGps.Size = new System.Drawing.Size(28, 25);
+            this.BtnClipGps.TabIndex = 41;
+            this.BtnClipGps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipGps.UseVisualStyleBackColor = true;
+            this.BtnClipGps.TextChanged += new System.EventHandler(this.BtnClipGps_TextChanged);
+            this.BtnClipGps.Click += new System.EventHandler(this.BtnClipGps_Click);
             // 
             // panel28
             // 
@@ -2048,7 +2608,7 @@
             // ControlPanel
             // 
             this.ControlPanel.BackColor = System.Drawing.Color.Black;
-            this.ControlPanel.Controls.Add(this.button1);
+            this.ControlPanel.Controls.Add(this.DBState);
             this.ControlPanel.Controls.Add(this.LblProgName);
             this.ControlPanel.Controls.Add(this.BtnSettings);
             this.ControlPanel.Controls.Add(this.BtnCollapse);
@@ -2060,20 +2620,20 @@
             this.ControlPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ControlPanel_MouseDown);
             this.ControlPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlPanel_MouseMove);
             // 
-            // button1
+            // DBState
             // 
-            this.button1.AutoEllipsis = true;
-            this.button1.BackgroundImage = global::aisha3.Properties.Resources.database2;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(268, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 4;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.DBState.AutoEllipsis = true;
+            this.DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
+            this.DBState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DBState.Dock = System.Windows.Forms.DockStyle.Right;
+            this.DBState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DBState.Location = new System.Drawing.Point(268, 0);
+            this.DBState.Name = "DBState";
+            this.DBState.Size = new System.Drawing.Size(28, 28);
+            this.DBState.TabIndex = 4;
+            this.DBState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DBState.UseVisualStyleBackColor = true;
+            this.DBState.Click += new System.EventHandler(this.DBState_Click);
             // 
             // LblProgName
             // 
@@ -2140,468 +2700,6 @@
             this.ControlPanelOuter.Size = new System.Drawing.Size(382, 30);
             this.ControlPanelOuter.TabIndex = 4;
             // 
-            // panel51
-            // 
-            this.panel51.Controls.Add(this.panel52);
-            this.panel51.Controls.Add(this.panel55);
-            this.panel51.Controls.Add(this.panel56);
-            this.panel51.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel51.Location = new System.Drawing.Point(0, 557);
-            this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(378, 25);
-            this.panel51.TabIndex = 37;
-            // 
-            // panel52
-            // 
-            this.panel52.Controls.Add(this.panel72);
-            this.panel52.Controls.Add(this.BtnClipR5);
-            this.panel52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel52.Location = new System.Drawing.Point(126, 0);
-            this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(126, 25);
-            this.panel52.TabIndex = 2;
-            // 
-            // panel55
-            // 
-            this.panel55.Controls.Add(this.BtnClipR6);
-            this.panel55.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel55.Location = new System.Drawing.Point(252, 0);
-            this.panel55.Name = "panel55";
-            this.panel55.Size = new System.Drawing.Size(126, 25);
-            this.panel55.TabIndex = 1;
-            // 
-            // panel56
-            // 
-            this.panel56.Controls.Add(this.panel71);
-            this.panel56.Controls.Add(this.BtnClipR4);
-            this.panel56.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel56.Location = new System.Drawing.Point(0, 0);
-            this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(126, 25);
-            this.panel56.TabIndex = 0;
-            // 
-            // panel57
-            // 
-            this.panel57.Controls.Add(this.panel58);
-            this.panel57.Controls.Add(this.panel59);
-            this.panel57.Controls.Add(this.panel60);
-            this.panel57.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel57.Location = new System.Drawing.Point(0, 583);
-            this.panel57.Name = "panel57";
-            this.panel57.Size = new System.Drawing.Size(378, 25);
-            this.panel57.TabIndex = 38;
-            // 
-            // panel58
-            // 
-            this.panel58.Controls.Add(this.panel74);
-            this.panel58.Controls.Add(this.BtnClipR8);
-            this.panel58.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel58.Location = new System.Drawing.Point(126, 0);
-            this.panel58.Name = "panel58";
-            this.panel58.Size = new System.Drawing.Size(126, 25);
-            this.panel58.TabIndex = 2;
-            // 
-            // panel59
-            // 
-            this.panel59.Controls.Add(this.BtnClipRCustom);
-            this.panel59.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel59.Location = new System.Drawing.Point(252, 0);
-            this.panel59.Name = "panel59";
-            this.panel59.Size = new System.Drawing.Size(126, 25);
-            this.panel59.TabIndex = 1;
-            // 
-            // panel60
-            // 
-            this.panel60.Controls.Add(this.panel73);
-            this.panel60.Controls.Add(this.BtnClipR7);
-            this.panel60.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel60.Location = new System.Drawing.Point(0, 0);
-            this.panel60.Name = "panel60";
-            this.panel60.Size = new System.Drawing.Size(126, 25);
-            this.panel60.TabIndex = 0;
-            // 
-            // panel61
-            // 
-            this.panel61.Controls.Add(this.panel62);
-            this.panel61.Controls.Add(this.panel63);
-            this.panel61.Controls.Add(this.panel64);
-            this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel61.Location = new System.Drawing.Point(0, 609);
-            this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(378, 25);
-            this.panel61.TabIndex = 39;
-            // 
-            // panel62
-            // 
-            this.panel62.Controls.Add(this.panel76);
-            this.panel62.Controls.Add(this.BtnClipR10);
-            this.panel62.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel62.Location = new System.Drawing.Point(126, 0);
-            this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(126, 25);
-            this.panel62.TabIndex = 2;
-            // 
-            // panel63
-            // 
-            this.panel63.Controls.Add(this.BtnClipR11);
-            this.panel63.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel63.Location = new System.Drawing.Point(252, 0);
-            this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(126, 25);
-            this.panel63.TabIndex = 1;
-            // 
-            // panel64
-            // 
-            this.panel64.Controls.Add(this.panel75);
-            this.panel64.Controls.Add(this.BtnClipR9);
-            this.panel64.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel64.Location = new System.Drawing.Point(0, 0);
-            this.panel64.Name = "panel64";
-            this.panel64.Size = new System.Drawing.Size(126, 25);
-            this.panel64.TabIndex = 0;
-            // 
-            // BtnClipR1
-            // 
-            this.BtnClipR1.AutoSize = true;
-            this.BtnClipR1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR1.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR1.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR1.Name = "BtnClipR1";
-            this.BtnClipR1.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR1.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR1.TabIndex = 15;
-            this.BtnClipR1.Text = "РЕЗ ДИАГ МКЛ";
-            this.BtnClipR1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR1.UseVisualStyleBackColor = true;
-            this.BtnClipR1.Click += new System.EventHandler(this.BtnClipR1_Click);
-            // 
-            // BtnClipR2
-            // 
-            this.BtnClipR2.AutoSize = true;
-            this.BtnClipR2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR2.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR2.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR2.Name = "BtnClipR2";
-            this.BtnClipR2.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR2.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR2.TabIndex = 15;
-            this.BtnClipR2.Text = "РЕЗ ДИАГ Netline";
-            this.BtnClipR2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR2.UseVisualStyleBackColor = true;
-            this.BtnClipR2.Click += new System.EventHandler(this.BtnClipR2_Click);
-            // 
-            // BtnClipR3
-            // 
-            this.BtnClipR3.AutoSize = true;
-            this.BtnClipR3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR3.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR3.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR3.Name = "BtnClipR3";
-            this.BtnClipR3.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR3.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR3.TabIndex = 15;
-            this.BtnClipR3.Text = "РЕЗ ДИАГ РЦР";
-            this.BtnClipR3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR3.UseVisualStyleBackColor = true;
-            this.BtnClipR3.Click += new System.EventHandler(this.BtnClipR3_Click);
-            // 
-            // BtnClipR4
-            // 
-            this.BtnClipR4.AutoSize = true;
-            this.BtnClipR4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR4.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR4.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR4.Name = "BtnClipR4";
-            this.BtnClipR4.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR4.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR4.TabIndex = 15;
-            this.BtnClipR4.Text = "ПТС/ТАКТ";
-            this.BtnClipR4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR4.UseVisualStyleBackColor = true;
-            this.BtnClipR4.Click += new System.EventHandler(this.BtnClipR4_Click);
-            // 
-            // BtnClipR5
-            // 
-            this.BtnClipR5.AutoSize = true;
-            this.BtnClipR5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR5.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR5.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR5.Name = "BtnClipR5";
-            this.BtnClipR5.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR5.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR5.TabIndex = 15;
-            this.BtnClipR5.Text = "МОНТАЖ";
-            this.BtnClipR5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR5.UseVisualStyleBackColor = true;
-            this.BtnClipR5.Click += new System.EventHandler(this.BtnClipR5_Click);
-            // 
-            // BtnClipR6
-            // 
-            this.BtnClipR6.AutoSize = true;
-            this.BtnClipR6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR6.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR6.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR6.Name = "BtnClipR6";
-            this.BtnClipR6.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR6.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR6.TabIndex = 15;
-            this.BtnClipR6.Text = "Mr.Proper";
-            this.BtnClipR6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR6.UseVisualStyleBackColor = true;
-            this.BtnClipR6.Click += new System.EventHandler(this.BtnClipR6_Click);
-            // 
-            // BtnClipR7
-            // 
-            this.BtnClipR7.AutoSize = true;
-            this.BtnClipR7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR7.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR7.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR7.Name = "BtnClipR7";
-            this.BtnClipR7.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR7.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR7.TabIndex = 15;
-            this.BtnClipR7.Text = "НАПР РТК";
-            this.BtnClipR7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR7.UseVisualStyleBackColor = true;
-            this.BtnClipR7.Click += new System.EventHandler(this.BtnClipR7_Click);
-            // 
-            // BtnClipR9
-            // 
-            this.BtnClipR9.AutoSize = true;
-            this.BtnClipR9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR9.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR9.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR9.Name = "BtnClipR9";
-            this.BtnClipR9.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR9.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR9.TabIndex = 15;
-            this.BtnClipR9.Text = "НАПР ЭРТХ";
-            this.BtnClipR9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR9.UseVisualStyleBackColor = true;
-            this.BtnClipR9.Click += new System.EventHandler(this.BtnClipR9_Click);
-            // 
-            // BtnClipR8
-            // 
-            this.BtnClipR8.AutoSize = true;
-            this.BtnClipR8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR8.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR8.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR8.Name = "BtnClipR8";
-            this.BtnClipR8.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR8.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR8.TabIndex = 15;
-            this.BtnClipR8.Text = "UPD РТК";
-            this.BtnClipR8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR8.UseVisualStyleBackColor = true;
-            this.BtnClipR8.Click += new System.EventHandler(this.BtnClipR8_Click);
-            // 
-            // BtnClipR10
-            // 
-            this.BtnClipR10.AutoSize = true;
-            this.BtnClipR10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR10.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR10.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR10.Name = "BtnClipR10";
-            this.BtnClipR10.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR10.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR10.TabIndex = 15;
-            this.BtnClipR10.Text = "UPD ЭРТХ";
-            this.BtnClipR10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR10.UseVisualStyleBackColor = true;
-            this.BtnClipR10.Click += new System.EventHandler(this.BtnClipR10_Click);
-            // 
-            // BtnClipR11
-            // 
-            this.BtnClipR11.AutoSize = true;
-            this.BtnClipR11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipR11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipR11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipR11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipR11.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipR11.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipR11.Name = "BtnClipR11";
-            this.BtnClipR11.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipR11.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipR11.TabIndex = 15;
-            this.BtnClipR11.Text = "ФИНИШ";
-            this.BtnClipR11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipR11.UseVisualStyleBackColor = true;
-            this.BtnClipR11.Click += new System.EventHandler(this.BtnClipR11_Click);
-            // 
-            // panel65
-            // 
-            this.panel65.BackColor = System.Drawing.Color.Gray;
-            this.panel65.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel65.Location = new System.Drawing.Point(0, 556);
-            this.panel65.Name = "panel65";
-            this.panel65.Size = new System.Drawing.Size(378, 1);
-            this.panel65.TabIndex = 40;
-            // 
-            // panel66
-            // 
-            this.panel66.BackColor = System.Drawing.Color.Gray;
-            this.panel66.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel66.Location = new System.Drawing.Point(0, 582);
-            this.panel66.Name = "panel66";
-            this.panel66.Size = new System.Drawing.Size(378, 1);
-            this.panel66.TabIndex = 41;
-            // 
-            // panel67
-            // 
-            this.panel67.BackColor = System.Drawing.Color.Gray;
-            this.panel67.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel67.Location = new System.Drawing.Point(0, 608);
-            this.panel67.Name = "panel67";
-            this.panel67.Size = new System.Drawing.Size(378, 1);
-            this.panel67.TabIndex = 33;
-            // 
-            // panel68
-            // 
-            this.panel68.BackColor = System.Drawing.Color.Gray;
-            this.panel68.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel68.Location = new System.Drawing.Point(0, 634);
-            this.panel68.Name = "panel68";
-            this.panel68.Size = new System.Drawing.Size(378, 1);
-            this.panel68.TabIndex = 42;
-            // 
-            // panel69
-            // 
-            this.panel69.BackColor = System.Drawing.Color.Gray;
-            this.panel69.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel69.Location = new System.Drawing.Point(125, 0);
-            this.panel69.Name = "panel69";
-            this.panel69.Size = new System.Drawing.Size(1, 25);
-            this.panel69.TabIndex = 40;
-            // 
-            // panel70
-            // 
-            this.panel70.BackColor = System.Drawing.Color.Gray;
-            this.panel70.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel70.Location = new System.Drawing.Point(125, 0);
-            this.panel70.Name = "panel70";
-            this.panel70.Size = new System.Drawing.Size(1, 25);
-            this.panel70.TabIndex = 40;
-            // 
-            // panel71
-            // 
-            this.panel71.BackColor = System.Drawing.Color.Gray;
-            this.panel71.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel71.Location = new System.Drawing.Point(125, 0);
-            this.panel71.Name = "panel71";
-            this.panel71.Size = new System.Drawing.Size(1, 25);
-            this.panel71.TabIndex = 40;
-            // 
-            // panel72
-            // 
-            this.panel72.BackColor = System.Drawing.Color.Gray;
-            this.panel72.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel72.Location = new System.Drawing.Point(125, 0);
-            this.panel72.Name = "panel72";
-            this.panel72.Size = new System.Drawing.Size(1, 25);
-            this.panel72.TabIndex = 40;
-            // 
-            // panel73
-            // 
-            this.panel73.BackColor = System.Drawing.Color.Gray;
-            this.panel73.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel73.Location = new System.Drawing.Point(125, 0);
-            this.panel73.Name = "panel73";
-            this.panel73.Size = new System.Drawing.Size(1, 25);
-            this.panel73.TabIndex = 40;
-            // 
-            // panel74
-            // 
-            this.panel74.BackColor = System.Drawing.Color.Gray;
-            this.panel74.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel74.Location = new System.Drawing.Point(125, 0);
-            this.panel74.Name = "panel74";
-            this.panel74.Size = new System.Drawing.Size(1, 25);
-            this.panel74.TabIndex = 40;
-            // 
-            // panel75
-            // 
-            this.panel75.BackColor = System.Drawing.Color.Gray;
-            this.panel75.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel75.Location = new System.Drawing.Point(125, 0);
-            this.panel75.Name = "panel75";
-            this.panel75.Size = new System.Drawing.Size(1, 25);
-            this.panel75.TabIndex = 40;
-            // 
-            // panel76
-            // 
-            this.panel76.BackColor = System.Drawing.Color.Gray;
-            this.panel76.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel76.Location = new System.Drawing.Point(125, 0);
-            this.panel76.Name = "panel76";
-            this.panel76.Size = new System.Drawing.Size(1, 25);
-            this.panel76.TabIndex = 40;
-            // 
-            // panel44
-            // 
-            this.panel44.Controls.Add(this.CommentTBox);
-            this.panel44.Controls.Add(this.Lbl16);
-            this.panel44.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel44.Location = new System.Drawing.Point(0, 635);
-            this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(378, 70);
-            this.panel44.TabIndex = 43;
-            // 
-            // Lbl16
-            // 
-            this.Lbl16.AutoSize = true;
-            this.Lbl16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Lbl16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Lbl16.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl16.Location = new System.Drawing.Point(0, 0);
-            this.Lbl16.Name = "Lbl16";
-            this.Lbl16.Padding = new System.Windows.Forms.Padding(4, 4, 0, 4);
-            this.Lbl16.Size = new System.Drawing.Size(84, 21);
-            this.Lbl16.TabIndex = 3;
-            this.Lbl16.Text = "Комментарий:";
-            // 
-            // CommentTBox
-            // 
-            this.CommentTBox.BackColor = System.Drawing.Color.Black;
-            this.CommentTBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CommentTBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CommentTBox.ForeColor = System.Drawing.SystemColors.Info;
-            this.CommentTBox.Location = new System.Drawing.Point(0, 17);
-            this.CommentTBox.MaxLength = 300;
-            this.CommentTBox.Multiline = true;
-            this.CommentTBox.Name = "CommentTBox";
-            this.CommentTBox.Size = new System.Drawing.Size(378, 53);
-            this.CommentTBox.TabIndex = 4;
-            // 
             // BtnMap
             // 
             this.BtnMap.AutoSize = true;
@@ -2667,104 +2765,6 @@
             this.DEBUG_Btn.UseVisualStyleBackColor = false;
             this.DEBUG_Btn.Click += new System.EventHandler(this.DEBUG_Btn_Click);
             // 
-            // BtnClipGps
-            // 
-            this.BtnClipGps.AutoSize = true;
-            this.BtnClipGps.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
-            this.BtnClipGps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipGps.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClipGps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipGps.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
-            this.BtnClipGps.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipGps.Location = new System.Drawing.Point(172, 0);
-            this.BtnClipGps.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnClipGps.Name = "BtnClipGps";
-            this.BtnClipGps.Size = new System.Drawing.Size(28, 25);
-            this.BtnClipGps.TabIndex = 41;
-            this.BtnClipGps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipGps.UseVisualStyleBackColor = true;
-            this.BtnClipGps.TextChanged += new System.EventHandler(this.BtnClipGps_TextChanged);
-            this.BtnClipGps.Click += new System.EventHandler(this.BtnClipGps_Click);
-            // 
-            // BtnClipGpsN
-            // 
-            this.BtnClipGpsN.AutoSize = true;
-            this.BtnClipGpsN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipGpsN.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClipGpsN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipGpsN.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipGpsN.Location = new System.Drawing.Point(27, 0);
-            this.BtnClipGpsN.Name = "BtnClipGpsN";
-            this.BtnClipGpsN.Size = new System.Drawing.Size(75, 25);
-            this.BtnClipGpsN.TabIndex = 42;
-            this.BtnClipGpsN.Text = "60.025435";
-            this.BtnClipGpsN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipGpsN.UseVisualStyleBackColor = true;
-            this.BtnClipGpsN.Click += new System.EventHandler(this.BtnClipGpsN_Click);
-            // 
-            // panel77
-            // 
-            this.panel77.BackColor = System.Drawing.Color.Gray;
-            this.panel77.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel77.Location = new System.Drawing.Point(171, 0);
-            this.panel77.Name = "panel77";
-            this.panel77.Size = new System.Drawing.Size(1, 25);
-            this.panel77.TabIndex = 43;
-            // 
-            // panel78
-            // 
-            this.panel78.BackColor = System.Drawing.Color.Gray;
-            this.panel78.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel78.Location = new System.Drawing.Point(102, 0);
-            this.panel78.Name = "panel78";
-            this.panel78.Size = new System.Drawing.Size(1, 25);
-            this.panel78.TabIndex = 44;
-            // 
-            // panel79
-            // 
-            this.panel79.BackColor = System.Drawing.Color.Gray;
-            this.panel79.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel79.Location = new System.Drawing.Point(186, 0);
-            this.panel79.Name = "panel79";
-            this.panel79.Size = new System.Drawing.Size(1, 25);
-            this.panel79.TabIndex = 44;
-            // 
-            // BtnClipDeviceIPTech
-            // 
-            this.BtnClipDeviceIPTech.AutoSize = true;
-            this.BtnClipDeviceIPTech.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
-            this.BtnClipDeviceIPTech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipDeviceIPTech.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClipDeviceIPTech.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipDeviceIPTech.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
-            this.BtnClipDeviceIPTech.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipDeviceIPTech.Location = new System.Drawing.Point(187, 0);
-            this.BtnClipDeviceIPTech.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnClipDeviceIPTech.Name = "BtnClipDeviceIPTech";
-            this.BtnClipDeviceIPTech.Size = new System.Drawing.Size(28, 25);
-            this.BtnClipDeviceIPTech.TabIndex = 45;
-            this.BtnClipDeviceIPTech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipDeviceIPTech.UseVisualStyleBackColor = true;
-            this.BtnClipDeviceIPTech.Click += new System.EventHandler(this.BtnClipDeviceIPTech_Click);
-            // 
-            // BtnClipRCustom
-            // 
-            this.BtnClipRCustom.AutoSize = true;
-            this.BtnClipRCustom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipRCustom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipRCustom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipRCustom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnClipRCustom.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipRCustom.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipRCustom.Name = "BtnClipRCustom";
-            this.BtnClipRCustom.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnClipRCustom.Size = new System.Drawing.Size(126, 25);
-            this.BtnClipRCustom.TabIndex = 16;
-            this.BtnClipRCustom.Text = "---CUSTOM---";
-            this.BtnClipRCustom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipRCustom.UseVisualStyleBackColor = true;
-            this.BtnClipRCustom.Click += new System.EventHandler(this.BtnClipRCustom_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2790,6 +2790,29 @@
             this.TransparencyKey = System.Drawing.Color.Pink;
             this.MainPanelOuter.ResumeLayout(false);
             this.MainPanelInner.ResumeLayout(false);
+            this.panel44.ResumeLayout(false);
+            this.panel44.PerformLayout();
+            this.panel61.ResumeLayout(false);
+            this.panel62.ResumeLayout(false);
+            this.panel62.PerformLayout();
+            this.panel63.ResumeLayout(false);
+            this.panel63.PerformLayout();
+            this.panel64.ResumeLayout(false);
+            this.panel64.PerformLayout();
+            this.panel57.ResumeLayout(false);
+            this.panel58.ResumeLayout(false);
+            this.panel58.PerformLayout();
+            this.panel59.ResumeLayout(false);
+            this.panel59.PerformLayout();
+            this.panel60.ResumeLayout(false);
+            this.panel60.PerformLayout();
+            this.panel51.ResumeLayout(false);
+            this.panel52.ResumeLayout(false);
+            this.panel52.PerformLayout();
+            this.panel55.ResumeLayout(false);
+            this.panel55.PerformLayout();
+            this.panel56.ResumeLayout(false);
+            this.panel56.PerformLayout();
             this.panel45.ResumeLayout(false);
             this.panel47.ResumeLayout(false);
             this.panel47.PerformLayout();
@@ -2880,29 +2903,6 @@
             this.SortPanelOuter.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
-            this.panel51.ResumeLayout(false);
-            this.panel52.ResumeLayout(false);
-            this.panel52.PerformLayout();
-            this.panel55.ResumeLayout(false);
-            this.panel55.PerformLayout();
-            this.panel56.ResumeLayout(false);
-            this.panel56.PerformLayout();
-            this.panel57.ResumeLayout(false);
-            this.panel58.ResumeLayout(false);
-            this.panel58.PerformLayout();
-            this.panel59.ResumeLayout(false);
-            this.panel59.PerformLayout();
-            this.panel60.ResumeLayout(false);
-            this.panel60.PerformLayout();
-            this.panel61.ResumeLayout(false);
-            this.panel62.ResumeLayout(false);
-            this.panel62.PerformLayout();
-            this.panel63.ResumeLayout(false);
-            this.panel63.PerformLayout();
-            this.panel64.ResumeLayout(false);
-            this.panel64.PerformLayout();
-            this.panel44.ResumeLayout(false);
-            this.panel44.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3015,7 +3015,7 @@
         private System.Windows.Forms.Button BtnCreateIssue1;
         private System.Windows.Forms.Button BtnCreateIssue2;
         private System.Windows.Forms.Button BtnCreateIssue3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DBState;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel7;
