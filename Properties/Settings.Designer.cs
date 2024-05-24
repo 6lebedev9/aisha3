@@ -45,5 +45,79 @@ namespace aisha3.Properties {
                 this["LastWinLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://yandex.ru/maps/2/saint-petersburg/?ll=EEEEEE%2CNNNNNN&mode=usermaps&sourc" +
+            "e=constructorLink&um=constructor%3A5189c3416d5e71c2ba584afc0aa18a7c98531b986eaaa" +
+            "019fa112381f6a4c6f8&z=16")]
+        public string YaMapHttp {
+            get {
+                return ((string)(this["YaMapHttp"]));
+            }
+            set {
+                this["YaMapHttp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(" - выполнено то-то и то-то;")]
+        public string CustomRiba {
+            get {
+                return ((string)(this["CustomRiba"]));
+            }
+            set {
+                this["CustomRiba"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string mssqldb {
+            get {
+                return ((string)(this["mssqldb"]));
+            }
+            set {
+                this["mssqldb"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string mssqluser {
+            get {
+                return ((string)(this["mssqluser"]));
+            }
+            set {
+                this["mssqluser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string mssqlpass {
+            get {
+                return ((string)(this["mssqlpass"]));
+            }
+            set {
+                this["mssqlpass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string mssqlcatalog {
+            get {
+                return ((string)(this["mssqlcatalog"]));
+            }
+            set {
+                this["mssqlcatalog"] = value;
+            }
+        }
     }
 }

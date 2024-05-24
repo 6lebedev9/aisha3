@@ -8,5 +8,23 @@
     <Setting Name="LastWinLocation" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
+    <Setting Name="YaMapHttp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://yandex.ru/maps/2/saint-petersburg/?ll=EEEEEE%2CNNNNNN&amp;mode=usermaps&amp;source=constructorLink&amp;um=constructor%3A5189c3416d5e71c2ba584afc0aa18a7c98531b986eaaa019fa112381f6a4c6f8&amp;z=16</Value>
+    </Setting>
+    <Setting Name="CustomRiba" Type="System.String" Scope="User">
+      <Value Profile="(Default)"> - выполнено то-то и то-то;</Value>
+    </Setting>
+    <Setting Name="mssqldb" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="mssqluser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="mssqlpass" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="mssqlcatalog" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

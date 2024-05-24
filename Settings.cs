@@ -65,5 +65,41 @@ namespace aisha3
         {
             SaveFormBorderColor("B", Convert.ToByte(FormBorderColorNumB.Value));
         }
+
+        private void TBoxYaMaps_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.YaMapHttp = TBoxYaMaps.Text.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void TBoxCustomRiba_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CustomRiba = TBoxCustomRiba.Text.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void TBoxSqlDb_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.mssqldb = TBoxSqlDb.Text.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void TBoxSqlCatalog_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.mssqlcatalog = TBoxSqlCatalog.Text.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void TBoxSqlUser_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.mssqluser = TBoxSqlUser.Text.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void TBoxSqlPass_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.mssqlpass = TBoxSqlPass.Text.ToString();
+            Properties.Settings.Default.Save();
+        }
     }
 }

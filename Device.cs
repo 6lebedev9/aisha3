@@ -34,11 +34,11 @@
         public string KsmHttp { get; set; }
         public string NCode { get;set;}
         public string Speed { get; set;}
-        public string IrzHttp { get; set;}
-        public string Duplo1Http { get;set;}
-        public string Duplo2Http { get; set;}
+        public string IrzIp { get; set;}
+        public string Duplo1Ip { get;set;}
+        public string Duplo2Ip { get; set;}
         public string DeviceIPTech { get; set;}
-        public string ShinobiHttp { get;set;}
+        public string ShinobiIp { get;set;}
         public string Rtsp { get; set; }
         public string Xlsname { get; set; }
     }
