@@ -10,12 +10,13 @@ using SqlDAdapter = Microsoft.Data.SqlClient.SqlDataAdapter;
 using MSSQLCmd = Microsoft.Data.SqlClient.SqlCommand;
 using System.Data;
 using MSSQLReader = Microsoft.Data.SqlClient.SqlDataReader;
+using System.Data.Common;
 
 namespace aisha3
 {
     public class Mssql
     {
-        public static DataTable dtversions = new DataTable();
+        public static bool Connected = false;
         public static string mssqldb = Properties.Settings.Default.mssqldb;
         public static string mssqlcatalog = Properties.Settings.Default.mssqlcatalog;
         public static string mssqluser = Properties.Settings.Default.mssqluser;
@@ -58,13 +59,38 @@ namespace aisha3
                 reader.Read();
                 int output = reader.GetInt32(0);
                 reader.Close();
+                Connected = true;
                 return output;
             }
             catch (Exception ex)
             {
+                Connected = false;
                 Console.WriteLine(ex.Message);
                 return 0;
             }
         }
+
+        //public static Dictionary<int, Device> DevicesbyCode(string code)
+        //{
+        //    try
+        //    {
+        //        Dictionary<int, Device> Devices = new Dictionary<int, Device>();
+        //        Device device = new Device();
+        //        OpenConnection();
+        //        string selectString = "SELECT * FROM dbo.aishadt WHERE Code LIKE @var1;";
+        //        MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
+        //        cmdgetversion.Parameters.AddWithValue("@var1", code);
+        //        MSSQLReader reader = cmdgetversion.ExecuteReader();
+        //        reader.Read();
+        //        reader
+        //        reader.Close();
+        //        return
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        return null;
+        //    }
+        //}
     }
 }
