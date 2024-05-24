@@ -70,27 +70,33 @@ namespace aisha3
             }
         }
 
-        //public static Dictionary<int, Device> DevicesbyCode(string code)
-        //{
-        //    try
-        //    {
-        //        Dictionary<int, Device> Devices = new Dictionary<int, Device>();
-        //        Device device = new Device();
-        //        OpenConnection();
-        //        string selectString = "SELECT * FROM dbo.aishadt WHERE Code LIKE @var1;";
-        //        MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
-        //        cmdgetversion.Parameters.AddWithValue("@var1", code);
-        //        MSSQLReader reader = cmdgetversion.ExecuteReader();
-        //        reader.Read();
-        //        reader
-        //        reader.Close();
-        //        return
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //        return null;
-        //    }
-        //}
+        public static Dictionary<int, Device> DevicesbyCode(string code)
+        {
+            try
+            {
+                Dictionary<int, Device> Devices = new Dictionary<int, Device>();
+                Device device = new Device();
+                OpenConnection();
+                string selectString = "SELECT * FROM dbo.aishadt WHERE Code LIKE @var1;";
+                MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
+                cmdgetversion.Parameters.AddWithValue("@var1", code);
+                MSSQLReader reader = cmdgetversion.ExecuteReader();
+                using (reader)
+                {
+                    int i = 1;
+                    while (reader.Read())
+                    {
+                        device.Code = reader.GetValue(1).ToString();
+                        Devices.Add(i, device);
+                    }
+                }
+                return Devices;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
     }
 }
