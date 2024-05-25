@@ -40,6 +40,6 @@
         public string DeviceIPTech { get; set;}
         public string ShinobiIp { get;set;}
         public string Rtsp { get; set; }
-        public string Xlsname { get; set; }
+        public string XlsName { get; set; }
     }
 }

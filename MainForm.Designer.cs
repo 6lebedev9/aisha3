@@ -155,7 +155,7 @@
             this.BtnRevertAddress = new System.Windows.Forms.Button();
             this.BtnClipAddress = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.Lbl4 = new System.Windows.Forms.Label();
+            this.LblOfAddress = new System.Windows.Forms.Label();
             this.PanelSpacer3 = new System.Windows.Forms.Panel();
             this.MainPanelInner5 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -1795,6 +1795,7 @@
             // 
             // BtnRevertAddress
             // 
+            this.BtnRevertAddress.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnRevertAddress.BackgroundImage = global::aisha3.Properties.Resources.sync;
             this.BtnRevertAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnRevertAddress.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1802,11 +1803,14 @@
             this.BtnRevertAddress.ForeColor = System.Drawing.SystemColors.Control;
             this.BtnRevertAddress.Location = new System.Drawing.Point(0, 0);
             this.BtnRevertAddress.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnRevertAddress.MaximumSize = new System.Drawing.Size(27, 27);
+            this.BtnRevertAddress.MinimumSize = new System.Drawing.Size(27, 27);
             this.BtnRevertAddress.Name = "BtnRevertAddress";
             this.BtnRevertAddress.Size = new System.Drawing.Size(27, 27);
             this.BtnRevertAddress.TabIndex = 41;
             this.BtnRevertAddress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnRevertAddress.UseVisualStyleBackColor = true;
+            this.BtnRevertAddress.Click += new System.EventHandler(this.BtnRevertAddress_Click);
             // 
             // BtnClipAddress
             // 
@@ -1827,26 +1831,26 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.Lbl4);
+            this.panel10.Controls.Add(this.LblOfAddress);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(111, 55);
             this.panel10.TabIndex = 0;
             // 
-            // Lbl4
+            // LblOfAddress
             // 
-            this.Lbl4.AutoSize = true;
-            this.Lbl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Lbl4.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl4.Location = new System.Drawing.Point(0, 0);
-            this.Lbl4.Margin = new System.Windows.Forms.Padding(3);
-            this.Lbl4.Name = "Lbl4";
-            this.Lbl4.Padding = new System.Windows.Forms.Padding(19, 19, 0, 19);
-            this.Lbl4.Size = new System.Drawing.Size(111, 55);
-            this.Lbl4.TabIndex = 2;
-            this.Lbl4.Text = "Адрес РГИС:";
+            this.LblOfAddress.AutoSize = true;
+            this.LblOfAddress.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LblOfAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.LblOfAddress.ForeColor = System.Drawing.SystemColors.Control;
+            this.LblOfAddress.Location = new System.Drawing.Point(0, 0);
+            this.LblOfAddress.Margin = new System.Windows.Forms.Padding(3);
+            this.LblOfAddress.Name = "LblOfAddress";
+            this.LblOfAddress.Padding = new System.Windows.Forms.Padding(19, 19, 0, 19);
+            this.LblOfAddress.Size = new System.Drawing.Size(111, 55);
+            this.LblOfAddress.TabIndex = 2;
+            this.LblOfAddress.Text = "Адрес РГИС:";
             // 
             // PanelSpacer3
             // 
@@ -2095,7 +2099,7 @@
             this.BtnClipGK.Name = "BtnClipGK";
             this.BtnClipGK.Size = new System.Drawing.Size(84, 36);
             this.BtnClipGK.TabIndex = 38;
-            this.BtnClipGK.Text = "148/23";
+            this.BtnClipGK.Text = "e";
             this.BtnClipGK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipGK.UseVisualStyleBackColor = true;
             this.BtnClipGK.Click += new System.EventHandler(this.BtnClipGK_Click);
@@ -2544,15 +2548,16 @@
             this.TBox.BackColor = System.Drawing.SystemColors.Menu;
             this.TBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TBox.Font = new System.Drawing.Font("GOST type B", 14F, System.Drawing.FontStyle.Bold);
+            this.TBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.TBox.Location = new System.Drawing.Point(0, 0);
             this.TBox.Margin = new System.Windows.Forms.Padding(1);
             this.TBox.MaxLength = 32;
             this.TBox.Name = "TBox";
-            this.TBox.Size = new System.Drawing.Size(290, 28);
+            this.TBox.Size = new System.Drawing.Size(290, 29);
             this.TBox.TabIndex = 0;
             this.TBox.Text = "КВФ";
             this.TBox.WordWrap = false;
+            this.TBox.TextChanged += new System.EventHandler(this.TBox_TextChanged);
             // 
             // MapPanelOuter
             // 
@@ -2639,11 +2644,11 @@
             // 
             this.LblProgName.AutoSize = true;
             this.LblProgName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblProgName.Font = new System.Drawing.Font("ГОСТ тип А", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LblProgName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LblProgName.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.LblProgName.Location = new System.Drawing.Point(0, 0);
             this.LblProgName.Name = "LblProgName";
-            this.LblProgName.Size = new System.Drawing.Size(57, 23);
+            this.LblProgName.Size = new System.Drawing.Size(62, 24);
             this.LblProgName.TabIndex = 3;
             this.LblProgName.Text = "Aisha";
             // 
@@ -2987,7 +2992,7 @@
         private System.Windows.Forms.Panel MainPanelInner6;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label Lbl4;
+        private System.Windows.Forms.Label LblOfAddress;
         private System.Windows.Forms.Panel PanelSpacer3;
         private System.Windows.Forms.Panel MainPanelInner5;
         private System.Windows.Forms.Panel panel5;

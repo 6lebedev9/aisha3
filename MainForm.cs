@@ -22,6 +22,8 @@ namespace aisha3
             WindowBorderColorLoad();
             CheckConnectAndVersion();
         }
+        public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
+        public static Device DeviceChosen;
         public void CheckConnectAndVersion()
         {
             int verInDB = Mssql.GetLastVersion();
@@ -35,6 +37,45 @@ namespace aisha3
                 DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
             }
         }
+        public void CreateBtnSearchHelper(int i)
+        {
+            if (DeviceChosen != null && i <= 5)
+            {
+                Button BtnSearchHelper = new Button();
+                this.Controls.Add(BtnSearchHelper);
+                BtnSearchHelper.BackColor = Color.Black;
+                BtnSearchHelper.ForeColor = Color.WhiteSmoke;
+                BtnSearchHelper.Text = DeviceChosen.KvfNumber + " - " + DeviceChosen.KvfModelCommon;
+                BtnSearchHelper.Location = new Point(540, i * 32 + 33);
+                BtnSearchHelper.Size = new Size(150, 30);
+                BtnSearchHelper.BringToFront();
+            }
+        }
+        public void SetMainPanel()
+        {
+            if (Devices.ContainsKey(1))
+            {
+                DeviceChosen = Devices[1];
+                BtnClipGK.Text = DeviceChosen.GKCommon;
+                BtnClipDeviceType.Text = DeviceChosen.DeviceType;
+                BtnClipKvfModel.Text = DeviceChosen.KvfModel;
+                BtnClipKvfNumber.Text = DeviceChosen.KvfNumber;
+                if(LblOfAddress.Text.ToString() == "Адрес РГИС:") { BtnClipAddress.Text = DeviceChosen.AddressRGIS; }
+                else { BtnClipAddress.Text = DeviceChosen.AddressDoc; }
+                BtnClipPoput.Text = DeviceChosen.Poput;
+                BtnClipVstrech.Text = DeviceChosen.Vstrech;
+                BtnClipNCode.Text = DeviceChosen.NCode;
+                BtnClipGps.Text = DeviceChosen.Gps;
+                BtnClipDeviceIP.Text = DeviceChosen.DeviceIP;
+                BtnToWebDeviceIPTech.Text = DeviceChosen.DeviceIPTech;
+                BtnClipIrzIp.Text = DeviceChosen.IrzIp;
+                BtnToWebShinobiIp.Text = DeviceChosen.ShinobiIp;
+                BtnClipCamQuant.Text = DeviceChosen.CamQuant;
+                BtnClipPodrOrg1Common.Text = DeviceChosen.PodrOrg1Common;
+                BtnClipPodrOrg2Common.Text = DeviceChosen.PodrOrg2Common;
+            }
+        }
+
         public static string todayDateTime = DateTime.Now.ToString("HH:mm dd.MM.yy");
         //Settings save/load
         private void WindowLocSaveLoad(string LoadOrSave)
@@ -96,10 +137,6 @@ namespace aisha3
                 Settings.Show();
             }
         }
-        private void BtnStatusLAN_Click(object sender, EventArgs e)
-        {
-
-        }
         //Control panel buttons
         //Main panel btns
         private void BtnClipGK_Click(object sender, EventArgs e)
@@ -120,20 +157,8 @@ namespace aisha3
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
-            //string mssqldb = Properties.Settings.Default.mssqldb;
-            //string mssqlcatalog = Properties.Settings.Default.mssqlcatalog;
-            //string mssqluser = Properties.Settings.Default.mssqluser;
-            //string mssqlpass = Properties.Settings.Default.mssqlpass;
-            //Console.WriteLine($"{mssqldb} - {mssqlcatalog} - {mssqluser} - {mssqlpass}");
-            //Console.WriteLine(Mssql.GetLastVersion());
-            //Console.WriteLine(Int32.Parse(System.Windows.Forms.Application.CompanyName));
-            //int verInDb = Mssql.GetLastVersion();
-            //int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
-            //if (verInDb == verCurrent)
-            //{
-            //    Console.WriteLine("NNNNICE");
-            //}
-    }
+
+        }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(BtnClipAddress.Text.ToString().Replace("\n", ""));
@@ -392,6 +417,60 @@ namespace aisha3
                 System.Diagnostics.Process.Start("http://" + BtnClipIrzIp.Text.ToString());
             }
             catch (Exception) { }
+        }
+        public static int PrevTBoxLength = 0;
+        private void TBox_TextChanged(object sender, EventArgs e)
+        {
+            foreach(Button BtnSearchHelper in this.Controls)
+            {
+                this.Controls.Remove(BtnSearchHelper);
+            }
+            if(TBox.Text.Length > PrevTBoxLength)
+            {
+                PrevTBoxLength = TBox.Text.Length;
+                Devices.Clear();
+            }
+            else
+            {
+                PrevTBoxLength = TBox.Text.Length;
+                Devices.Clear();
+            }
+            
+            if(TBox.Text.Length >= 3)
+            {
+                Devices = Mssql.DevicesbyString(TBox.Text.ToString());
+                if (Devices.Count == 1)
+                {
+                    SetMainPanel();
+                }
+            else if (Devices.Count >= 2)
+                {
+                    for (int i = 1; i<=5; i++)
+                    {
+                        CreateBtnSearchHelper(i);
+                    }
+                }
+            }
+        }
+
+        private void BtnRevertAddress_Click(object sender, EventArgs e)
+        {
+            if(LblOfAddress.Text == "Адрес РГИС:")
+            {
+                LblOfAddress.Text = "Адрес по ГК:";
+                if (Devices.Count > 0)
+                {
+                    BtnClipAddress.Text = DeviceChosen.AddressDoc;
+                }
+            }
+            else
+            {
+                LblOfAddress.Text = "Адрес РГИС:";
+                if (Devices.Count > 0)
+                {
+                    BtnClipAddress.Text = DeviceChosen.AddressRGIS;
+                }
+            }
         }
         //Main panel btns
     }
