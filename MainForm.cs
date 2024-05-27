@@ -56,13 +56,21 @@ namespace aisha3
                 BtnSearchHelper.Location = new Point(540, i * 32 + 66);
                 BtnSearchHelper.Size = new Size(250, 30);
                 BtnSearchHelper.BringToFront();
-                BtnSearchHelper.Tag = "dynamic";
+                BtnSearchHelper.Tag = i;
+                BtnSearchHelper.Click += new System.EventHandler(SetChosenDevice_Click);
+                void SetChosenDevice_Click(object sender, EventArgs e)
+                {
+                    DeviceChosen = Devices[i];
+                    ClearBtnSearchHelper();
+                    SetMainPanel(i);
+                }
+                
             }
         }
         public void ClearBtnSearchHelper()
         {
             var toDelete = Controls.OfType<Button>()
-              .Where(c => (c.Tag ?? "").ToString() == "dynamic")
+              .Where(c => (c.Tag ?? "").ToString() != "")
               .ToList();
             foreach (var ctrl in toDelete)
             {
@@ -71,11 +79,11 @@ namespace aisha3
             }
             toDelete.Clear();
         }
-        public void SetMainPanel()
+        public void SetMainPanel(int i)
         {
-            if (Devices.ContainsKey(0))
+            if (Devices.ContainsKey(i))
             {
-                DeviceChosen = Devices[0];
+                DeviceChosen = Devices[i];
                 BtnClipGK.Text = DeviceChosen.GKCommon;
                 BtnClipDeviceType.Text = DeviceChosen.DeviceType;
                 BtnClipKvfModel.Text = DeviceChosen.KvfModel;
@@ -88,6 +96,7 @@ namespace aisha3
                 BtnClipGps.Text = DeviceChosen.Gps;
                 BtnClipDeviceIP.Text = DeviceChosen.DeviceIP;
                 BtnToWebDeviceIPTech.Text = DeviceChosen.DeviceIPTech;
+                BtnClipEtherProvider.Text = DeviceChosen.EtherProvider;
                 BtnClipIrzIp.Text = DeviceChosen.IrzIp;
                 BtnToWebShinobiIp.Text = DeviceChosen.ShinobiIp;
                 BtnClipCamQuant.Text = DeviceChosen.CamQuant;
@@ -161,19 +170,19 @@ namespace aisha3
         //Main panel btns
         private void BtnClipGK_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(BtnClipGK.Text);
+            if(DeviceChosen != null) { Clipboard.SetText(DeviceChosen.GK); }
         }
         private void BtnClipDeviceType_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(BtnClipDeviceType.Text);
+            if (DeviceChosen != null) { Clipboard.SetText(DeviceChosen.DeviceType); }
         }
         private void BtnClipKvfModel_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(BtnClipKvfModel.Text);
+            if (DeviceChosen != null) { Clipboard.SetText(DeviceChosen.KvfModel); }
         }
         private void BtnClipKvfNumber_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(BtnClipKvfNumber.Text);
+            if (DeviceChosen != null) { Clipboard.SetText(DeviceChosen.KvfNumber); }
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
@@ -203,19 +212,34 @@ namespace aisha3
         }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(BtnClipAddress.Text.ToString().Replace("\n", ""));
+            if (LblOfAddress.Text == "Адрес РГИС:")
+            {
+                if (DeviceChosen != null) { Clipboard.SetText(DeviceChosen.AddressRGIS); }
+            }
+            else
+            {
+                if (DeviceChosen != null) { Clipboard.SetText(DeviceChosen.AddressDoc); }
+            }
         }
         private void BtnClipAddress_TextChanged(object sender, EventArgs e)
         {
-            BtnClipAddress.Text = Regex.Replace(BtnClipAddress.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            if(BtnClipAddress.Text != "")
+            {
+                BtnClipAddress.Text = Regex.Replace(BtnClipAddress.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            }
+            else { BtnClipAddress.Text = "_"; }
         }
         private void BtnClipPoput_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(BtnClipPoput.Text.ToString().Replace("\n", ""));
+            if(BtnClipPoput.Text != "") { Clipboard.SetText(BtnClipPoput.Text.ToString().Replace("\n", "")); }
         }
         private void BtnClipPoput_TextChanged(object sender, EventArgs e)
         {
-            BtnClipPoput.Text = Regex.Replace(BtnClipPoput.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            if(BtnClipPoput.Text != "")
+            {
+                BtnClipPoput.Text = Regex.Replace(BtnClipPoput.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            }
+            else { BtnClipPoput.Text = "_"; }
         }
         private void BtnClipVstrech_Click(object sender, EventArgs e)
         {
@@ -223,7 +247,11 @@ namespace aisha3
         }
         private void BtnClipVstrech_TextChanged(object sender, EventArgs e)
         {
-            BtnClipVstrech.Text = Regex.Replace(BtnClipVstrech.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            if (BtnClipVstrech.Text != "")
+            {
+                BtnClipVstrech.Text = Regex.Replace(BtnClipVstrech.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            }
+            else { BtnClipVstrech.Text = "_"; }
         }
 
         private void BtnClipNCode_Click(object sender, EventArgs e)
@@ -233,7 +261,14 @@ namespace aisha3
 
         private void BtnClipNCode_TextChanged(object sender, EventArgs e)
         {
-            BtnClipNCode.Text = Regex.Replace(BtnClipNCode.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            if(BtnClipNCode.Text != "")
+            {
+                BtnClipNCode.Text = Regex.Replace(BtnClipNCode.Text.ToString(), "(?<=\\G.{39})(?=.)", "\n");
+            }
+            else
+            {
+                BtnClipNCode.Text = "_";
+            }
         }
 
         private void BtnClipGpsN_Click(object sender, EventArgs e)
@@ -325,7 +360,13 @@ namespace aisha3
 
         private void BtnClipRtsp_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(BtnClipRtsp.Text.ToString());
+            if(DeviceChosen != null)
+            {
+                if(DeviceChosen.Rtsp != null)
+                {
+                    Clipboard.SetText(DeviceChosen.Rtsp);
+                }
+            }
         }
 
         private void BtnClipCamQuant_Click(object sender, EventArgs e)
@@ -483,7 +524,7 @@ namespace aisha3
             if (TBox.Text.Length >= 3)
             {
                 Devices = Mssql.DevicesbyString(TBox.Text.ToString());
-                SetMainPanel();
+                SetMainPanel(0);
                 if(Devices.Count > 1)
                 {
                     switch(Devices.Count)
@@ -545,6 +586,37 @@ namespace aisha3
                     BtnClipAddress.Text = DeviceChosen.AddressRGIS;
                 }
             }
+        }
+
+        private void BtnToWebDeviceIPTech_TextChanged(object sender, EventArgs e)
+        {
+            if(BtnToWebDeviceIPTech.Text == "")
+            {
+                BtnToWebDeviceIPTech.Text = "_";
+            }
+        }
+
+        private void BtnClipIrzIp_TextChanged(object sender, EventArgs e)
+        {
+            if (BtnClipIrzIp.Text == "")
+            {
+                BtnClipIrzIp.Text = "_";
+            }
+        }
+
+        private void BtnToHttpKsm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DeviceChosen != null)
+                {
+                    if(DeviceChosen.KsmHttp != "")
+                    {
+                        System.Diagnostics.Process.Start(DeviceChosen.KsmHttp);
+                    }
+                }
+            }
+            catch (Exception) { }
         }
 
         //Main panel btns

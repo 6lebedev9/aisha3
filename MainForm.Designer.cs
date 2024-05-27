@@ -925,7 +925,7 @@
             this.BtnClipPodrOrg1Common.Name = "BtnClipPodrOrg1Common";
             this.BtnClipPodrOrg1Common.Size = new System.Drawing.Size(120, 25);
             this.BtnClipPodrOrg1Common.TabIndex = 14;
-            this.BtnClipPodrOrg1Common.Text = "МКЛ";
+            this.BtnClipPodrOrg1Common.Text = "_";
             this.BtnClipPodrOrg1Common.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipPodrOrg1Common.UseVisualStyleBackColor = true;
             this.BtnClipPodrOrg1Common.Click += new System.EventHandler(this.BtnClipPodrOrg1Common_Click);
@@ -942,7 +942,7 @@
             this.BtnClipPodrOrg2Common.Name = "BtnClipPodrOrg2Common";
             this.BtnClipPodrOrg2Common.Size = new System.Drawing.Size(113, 25);
             this.BtnClipPodrOrg2Common.TabIndex = 14;
-            this.BtnClipPodrOrg2Common.Text = "ТАКТ";
+            this.BtnClipPodrOrg2Common.Text = "_";
             this.BtnClipPodrOrg2Common.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipPodrOrg2Common.UseVisualStyleBackColor = true;
             this.BtnClipPodrOrg2Common.Click += new System.EventHandler(this.BtnClipPodrOrg2Common_Click);
@@ -1008,7 +1008,7 @@
             this.BtnClipCamQuant.Name = "BtnClipCamQuant";
             this.BtnClipCamQuant.Size = new System.Drawing.Size(233, 25);
             this.BtnClipCamQuant.TabIndex = 14;
-            this.BtnClipCamQuant.Text = "10_Фикс.-4 Обзор.-4 Доп.-2";
+            this.BtnClipCamQuant.Text = "_";
             this.BtnClipCamQuant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipCamQuant.UseVisualStyleBackColor = true;
             this.BtnClipCamQuant.Click += new System.EventHandler(this.BtnClipCamQuant_Click);
@@ -1078,7 +1078,7 @@
             this.BtnToWebShinobiIp.Name = "BtnToWebShinobiIp";
             this.BtnToWebShinobiIp.Size = new System.Drawing.Size(158, 25);
             this.BtnToWebShinobiIp.TabIndex = 14;
-            this.BtnToWebShinobiIp.Text = "10.180.240.23:8080";
+            this.BtnToWebShinobiIp.Text = "_";
             this.BtnToWebShinobiIp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnToWebShinobiIp.UseVisualStyleBackColor = true;
             this.BtnToWebShinobiIp.Click += new System.EventHandler(this.BtnToWebShinobiIp_Click);
@@ -1179,9 +1179,10 @@
             this.BtnClipIrzIp.Name = "BtnClipIrzIp";
             this.BtnClipIrzIp.Size = new System.Drawing.Size(234, 25);
             this.BtnClipIrzIp.TabIndex = 13;
-            this.BtnClipIrzIp.Text = "10.180.246.210:81";
+            this.BtnClipIrzIp.Text = "_";
             this.BtnClipIrzIp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipIrzIp.UseVisualStyleBackColor = true;
+            this.BtnClipIrzIp.TextChanged += new System.EventHandler(this.BtnClipIrzIp_TextChanged);
             this.BtnClipIrzIp.Click += new System.EventHandler(this.BtnClipIrzIp_Click);
             // 
             // panel38
@@ -1249,9 +1250,10 @@
             this.BtnToWebDeviceIPTech.Name = "BtnToWebDeviceIPTech";
             this.BtnToWebDeviceIPTech.Size = new System.Drawing.Size(159, 25);
             this.BtnToWebDeviceIPTech.TabIndex = 14;
-            this.BtnToWebDeviceIPTech.Text = "10.180.243.32";
+            this.BtnToWebDeviceIPTech.Text = "_";
             this.BtnToWebDeviceIPTech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnToWebDeviceIPTech.UseVisualStyleBackColor = true;
+            this.BtnToWebDeviceIPTech.TextChanged += new System.EventHandler(this.BtnToWebDeviceIPTech_TextChanged);
             this.BtnToWebDeviceIPTech.Click += new System.EventHandler(this.BtnToWebDeviceIPTech_Click);
             // 
             // panel79
@@ -1283,7 +1285,7 @@
             this.BtnClipEtherProvider.Name = "BtnClipEtherProvider";
             this.BtnClipEtherProvider.Size = new System.Drawing.Size(45, 25);
             this.BtnClipEtherProvider.TabIndex = 13;
-            this.BtnClipEtherProvider.Text = "ЭРТХ";
+            this.BtnClipEtherProvider.Text = "_";
             this.BtnClipEtherProvider.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipEtherProvider.UseVisualStyleBackColor = true;
             this.BtnClipEtherProvider.Click += new System.EventHandler(this.BtnClipEtherProvider_Click);
@@ -1350,7 +1352,7 @@
             this.BtnClipDeviceIP.Name = "BtnClipDeviceIP";
             this.BtnClipDeviceIP.Size = new System.Drawing.Size(234, 25);
             this.BtnClipDeviceIP.TabIndex = 13;
-            this.BtnClipDeviceIP.Text = "10.180.246.210";
+            this.BtnClipDeviceIP.Text = "_";
             this.BtnClipDeviceIP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipDeviceIP.UseVisualStyleBackColor = true;
             this.BtnClipDeviceIP.Click += new System.EventHandler(this.BtnClipDeviceIP_Click);
@@ -1422,7 +1424,7 @@
             this.BtnClipGpsN.Name = "BtnClipGpsN";
             this.BtnClipGpsN.Size = new System.Drawing.Size(75, 25);
             this.BtnClipGpsN.TabIndex = 42;
-            this.BtnClipGpsN.Text = "60.025435";
+            this.BtnClipGpsN.Text = "_";
             this.BtnClipGpsN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipGpsN.UseVisualStyleBackColor = true;
             this.BtnClipGpsN.Click += new System.EventHandler(this.BtnClipGpsN_Click);
@@ -1447,7 +1449,7 @@
             this.BtnClipGpsE.Name = "BtnClipGpsE";
             this.BtnClipGpsE.Size = new System.Drawing.Size(68, 25);
             this.BtnClipGpsE.TabIndex = 12;
-            this.BtnClipGpsE.Text = "30.462427";
+            this.BtnClipGpsE.Text = "_";
             this.BtnClipGpsE.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipGpsE.UseVisualStyleBackColor = true;
             this.BtnClipGpsE.Click += new System.EventHandler(this.BtnClipGpsE_Click);
@@ -1547,7 +1549,7 @@
             this.BtnClipNCode.Name = "BtnClipNCode";
             this.BtnClipNCode.Size = new System.Drawing.Size(234, 35);
             this.BtnClipNCode.TabIndex = 14;
-            this.BtnClipNCode.Text = "Ремень, ПМТ, Скорость";
+            this.BtnClipNCode.Text = "_";
             this.BtnClipNCode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipNCode.UseVisualStyleBackColor = true;
             this.BtnClipNCode.TextChanged += new System.EventHandler(this.BtnClipNCode_TextChanged);
@@ -1614,7 +1616,7 @@
             this.BtnClipVstrech.Name = "BtnClipVstrech";
             this.BtnClipVstrech.Size = new System.Drawing.Size(234, 36);
             this.BtnClipVstrech.TabIndex = 13;
-            this.BtnClipVstrech.Text = "от пр. Обуховской Обороны\r\nк ул. Дмитрия Устинова";
+            this.BtnClipVstrech.Text = "_";
             this.BtnClipVstrech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipVstrech.UseVisualStyleBackColor = true;
             this.BtnClipVstrech.TextChanged += new System.EventHandler(this.BtnClipVstrech_TextChanged);
@@ -1681,7 +1683,7 @@
             this.BtnClipPoput.Name = "BtnClipPoput";
             this.BtnClipPoput.Size = new System.Drawing.Size(234, 36);
             this.BtnClipPoput.TabIndex = 12;
-            this.BtnClipPoput.Text = "от пр. Обуховской Обороны\r\nк ул. Дмитрия Устинова";
+            this.BtnClipPoput.Text = "_";
             this.BtnClipPoput.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipPoput.UseVisualStyleBackColor = true;
             this.BtnClipPoput.TextChanged += new System.EventHandler(this.BtnClipPoput_TextChanged);
@@ -1749,7 +1751,7 @@
             this.BtnClipAddress.Name = "BtnClipAddress";
             this.BtnClipAddress.Size = new System.Drawing.Size(234, 55);
             this.BtnClipAddress.TabIndex = 11;
-            this.BtnClipAddress.Text = "г.СПб, Дальневосточный пр., д.41-А";
+            this.BtnClipAddress.Text = "_";
             this.BtnClipAddress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipAddress.UseVisualStyleBackColor = true;
             this.BtnClipAddress.TextChanged += new System.EventHandler(this.BtnClipAddress_TextChanged);
@@ -1818,7 +1820,7 @@
             this.BtnClipKvfNumber.Name = "BtnClipKvfNumber";
             this.BtnClipKvfNumber.Size = new System.Drawing.Size(234, 25);
             this.BtnClipKvfNumber.TabIndex = 11;
-            this.BtnClipKvfNumber.Text = "2104056";
+            this.BtnClipKvfNumber.Text = "_";
             this.BtnClipKvfNumber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipKvfNumber.UseVisualStyleBackColor = true;
             this.BtnClipKvfNumber.Click += new System.EventHandler(this.BtnClipKvfNumber_Click);
@@ -1884,7 +1886,7 @@
             this.BtnClipKvfModel.Name = "BtnClipKvfModel";
             this.BtnClipKvfModel.Size = new System.Drawing.Size(234, 25);
             this.BtnClipKvfModel.TabIndex = 10;
-            this.BtnClipKvfModel.Text = "Авто-Ураган ВМС2-М";
+            this.BtnClipKvfModel.Text = "_";
             this.BtnClipKvfModel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipKvfModel.UseVisualStyleBackColor = true;
             this.BtnClipKvfModel.Click += new System.EventHandler(this.BtnClipKvfModel_Click);
@@ -1950,7 +1952,7 @@
             this.BtnClipDeviceType.Name = "BtnClipDeviceType";
             this.BtnClipDeviceType.Size = new System.Drawing.Size(234, 25);
             this.BtnClipDeviceType.TabIndex = 10;
-            this.BtnClipDeviceType.Text = "перекресток";
+            this.BtnClipDeviceType.Text = "_";
             this.BtnClipDeviceType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipDeviceType.UseVisualStyleBackColor = true;
             this.BtnClipDeviceType.Click += new System.EventHandler(this.BtnClipDeviceType_Click);
@@ -2025,7 +2027,7 @@
             this.BtnClipGK.Name = "BtnClipGK";
             this.BtnClipGK.Size = new System.Drawing.Size(84, 36);
             this.BtnClipGK.TabIndex = 38;
-            this.BtnClipGK.Text = "e";
+            this.BtnClipGK.Text = "_";
             this.BtnClipGK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnClipGK.UseVisualStyleBackColor = true;
             this.BtnClipGK.Click += new System.EventHandler(this.BtnClipGK_Click);
@@ -2650,6 +2652,7 @@
             this.BtnToHttpKsm.TabIndex = 7;
             this.BtnToHttpKsm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnToHttpKsm.UseVisualStyleBackColor = true;
+            this.BtnToHttpKsm.Click += new System.EventHandler(this.BtnToHttpKsm_Click);
             // 
             // BtnToHttpKvf
             // 
