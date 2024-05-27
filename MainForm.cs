@@ -30,7 +30,14 @@ namespace aisha3
             int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
             if (verInDB > 0)
             {
-                DBState.BackgroundImage = global::aisha3.Properties.Resources.database1;
+                if (verCurrent < verInDB)
+                {
+                    DBState.BackgroundImage = global::aisha3.Properties.Resources.database3;
+                }
+                else
+                {
+                    DBState.BackgroundImage = global::aisha3.Properties.Resources.database1;
+                }
             }
             else
             {
@@ -39,23 +46,36 @@ namespace aisha3
         }
         public void CreateBtnSearchHelper(int i)
         {
-            if (DeviceChosen != null && i <= 5)
+            if (Devices.ContainsKey(i))
             {
                 Button BtnSearchHelper = new Button();
                 this.Controls.Add(BtnSearchHelper);
                 BtnSearchHelper.BackColor = Color.Black;
                 BtnSearchHelper.ForeColor = Color.WhiteSmoke;
-                BtnSearchHelper.Text = DeviceChosen.KvfNumber + " - " + DeviceChosen.KvfModelCommon;
-                BtnSearchHelper.Location = new Point(540, i * 32 + 33);
-                BtnSearchHelper.Size = new Size(150, 30);
+                BtnSearchHelper.Text = Devices[i].KvfNumber + " - " + Devices[i].KvfModelCommon;
+                BtnSearchHelper.Location = new Point(540, i * 32 + 66);
+                BtnSearchHelper.Size = new Size(250, 30);
                 BtnSearchHelper.BringToFront();
+                BtnSearchHelper.Tag = "dynamic";
             }
+        }
+        public void ClearBtnSearchHelper()
+        {
+            var toDelete = Controls.OfType<Button>()
+              .Where(c => (c.Tag ?? "").ToString() == "dynamic")
+              .ToList();
+            foreach (var ctrl in toDelete)
+            {
+                Controls.Remove(ctrl);
+                ctrl.Dispose();
+            }
+            toDelete.Clear();
         }
         public void SetMainPanel()
         {
-            if (Devices.ContainsKey(1))
+            if (Devices.ContainsKey(0))
             {
-                DeviceChosen = Devices[1];
+                DeviceChosen = Devices[0];
                 BtnClipGK.Text = DeviceChosen.GKCommon;
                 BtnClipDeviceType.Text = DeviceChosen.DeviceType;
                 BtnClipKvfModel.Text = DeviceChosen.KvfModel;
@@ -157,6 +177,28 @@ namespace aisha3
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
+            //try
+            //{
+            //    Console.WriteLine(Devices[1].KvfNumber);
+            //    Console.WriteLine(Devices[2].KvfNumber);
+            //    Console.WriteLine(Devices[3].KvfNumber);
+            //    Console.WriteLine(Devices[4].KvfNumber);
+            //    Console.WriteLine(Devices[5].KvfNumber);
+            //    Console.WriteLine("COUNT" + Devices.Count.ToString());
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine($"Error: {ex.Message}");
+            //}
+            var toDelete = Controls.OfType<Button>()
+              .Where(c => (c.Tag ?? "").ToString() == "dynamic")
+              .ToList();
+            foreach (var ctrl in toDelete)
+            {
+                Controls.Remove(ctrl);
+                ctrl.Dispose();
+            }
+            toDelete.Clear();
 
         }
         private void BtnClipAddress_Click(object sender, EventArgs e)
@@ -398,7 +440,23 @@ namespace aisha3
                 }
                 catch(Exception) { }
             }
-            
+        }
+
+        private void BtnStatusGW_Click(object sender, EventArgs e)
+        {
+            if (DeviceChosen != null)
+            {
+                try
+                {
+                    System.Diagnostics.ProcessStartInfo proc = new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = @"C:\windows\system32\cmd.exe",
+                        Arguments = "/k ping " + DeviceChosen.DeviceGWIP.ToString() + " -n 6 "
+                    };
+                    System.Diagnostics.Process.Start(proc);
+                }
+                catch (Exception) { }
+            }
         }
 
         private void BtnToHttpKvf_Click(object sender, EventArgs e)
@@ -421,36 +479,52 @@ namespace aisha3
         public static int PrevTBoxLength = 0;
         private void TBox_TextChanged(object sender, EventArgs e)
         {
-            foreach(Button BtnSearchHelper in this.Controls)
-            {
-                this.Controls.Remove(BtnSearchHelper);
-            }
-            if(TBox.Text.Length > PrevTBoxLength)
-            {
-                PrevTBoxLength = TBox.Text.Length;
-                Devices.Clear();
-            }
-            else
-            {
-                PrevTBoxLength = TBox.Text.Length;
-                Devices.Clear();
-            }
-            
-            if(TBox.Text.Length >= 3)
+            Devices?.Clear();
+            if (TBox.Text.Length >= 3)
             {
                 Devices = Mssql.DevicesbyString(TBox.Text.ToString());
-                if (Devices.Count == 1)
+                SetMainPanel();
+                if(Devices.Count > 1)
                 {
-                    SetMainPanel();
-                }
-            else if (Devices.Count >= 2)
-                {
-                    for (int i = 1; i<=5; i++)
+                    switch(Devices.Count)
                     {
-                        CreateBtnSearchHelper(i);
+                        case 1:
+                            ClearBtnSearchHelper();
+                            break;
+                        case 2:
+                            ClearBtnSearchHelper();
+                            CreateBtnSearchHelper(0);
+                            CreateBtnSearchHelper(1);
+                            break;
+                        case 3:
+                            ClearBtnSearchHelper();
+                            CreateBtnSearchHelper(0);
+                            CreateBtnSearchHelper(1);
+                            CreateBtnSearchHelper(2);
+                            break;
+                        case 4:
+                            ClearBtnSearchHelper();
+                            CreateBtnSearchHelper(0);
+                            CreateBtnSearchHelper(1);
+                            CreateBtnSearchHelper(2);
+                            CreateBtnSearchHelper(3);
+                            break;
+                        default:
+                            ClearBtnSearchHelper();
+                            CreateBtnSearchHelper(0);
+                            CreateBtnSearchHelper(1);
+                            CreateBtnSearchHelper(2);
+                            CreateBtnSearchHelper(3);
+                            CreateBtnSearchHelper(4);
+                            break;
                     }
                 }
+                else
+                {
+                    ClearBtnSearchHelper();
+                }
             }
+            else { ClearBtnSearchHelper(); }
         }
 
         private void BtnRevertAddress_Click(object sender, EventArgs e)
@@ -472,6 +546,7 @@ namespace aisha3
                 }
             }
         }
+
         //Main panel btns
     }
 }

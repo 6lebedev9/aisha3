@@ -101,5 +101,11 @@ namespace aisha3
             Properties.Settings.Default.mssqlpass = TBoxSqlPass.Text.ToString();
             Properties.Settings.Default.Save();
         }
+
+        private void CheckBoxIS_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.mssqlintegrated = CheckBoxIS.Checked;
+            Properties.Settings.Default.Save();
+        }
     }
 }

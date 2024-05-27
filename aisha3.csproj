@@ -293,6 +293,7 @@
     <None Include="icons\cable1.png" />
     <None Include="icons\contentcopy.png" />
     <None Include="icons\sync.png" />
+    <None Include="icons\database3.png" />
     <Content Include="icon_x256.ico" />
   </ItemGroup>
   <ItemGroup>

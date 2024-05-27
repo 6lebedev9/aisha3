@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TBoxSqlPass = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TBoxSqlUser = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TBoxSqlCatalog = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TBoxSqlDb = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TBoxCustomRiba = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TBoxYaMaps = new System.Windows.Forms.TextBox();
@@ -37,14 +45,8 @@
             this.FormBorderColorNumG = new System.Windows.Forms.NumericUpDown();
             this.FormBorderColorNumR = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TBoxSqlDb = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TBoxSqlCatalog = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TBoxSqlUser = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TBoxSqlPass = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CheckBoxIS = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormBorderColorNumB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormBorderColorNumG)).BeginInit();
@@ -53,6 +55,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.CheckBoxIS);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.TBoxSqlPass);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.TBoxSqlUser);
@@ -73,6 +77,74 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(909, 495);
             this.panel1.TabIndex = 0;
+            // 
+            // TBoxSqlPass
+            // 
+            this.TBoxSqlPass.Location = new System.Drawing.Point(783, 117);
+            this.TBoxSqlPass.Name = "TBoxSqlPass";
+            this.TBoxSqlPass.Size = new System.Drawing.Size(119, 22);
+            this.TBoxSqlPass.TabIndex = 15;
+            this.TBoxSqlPass.TextChanged += new System.EventHandler(this.TBoxSqlPass_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(716, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 15);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "SQL pass";
+            // 
+            // TBoxSqlUser
+            // 
+            this.TBoxSqlUser.Location = new System.Drawing.Point(590, 115);
+            this.TBoxSqlUser.Name = "TBoxSqlUser";
+            this.TBoxSqlUser.Size = new System.Drawing.Size(121, 22);
+            this.TBoxSqlUser.TabIndex = 13;
+            this.TBoxSqlUser.TextChanged += new System.EventHandler(this.TBoxSqlUser_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(520, 119);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "SQL user";
+            // 
+            // TBoxSqlCatalog
+            // 
+            this.TBoxSqlCatalog.Location = new System.Drawing.Point(299, 115);
+            this.TBoxSqlCatalog.Name = "TBoxSqlCatalog";
+            this.TBoxSqlCatalog.Size = new System.Drawing.Size(145, 22);
+            this.TBoxSqlCatalog.TabIndex = 11;
+            this.TBoxSqlCatalog.TextChanged += new System.EventHandler(this.TBoxSqlCatalog_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(212, 118);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "SQL catalog";
+            // 
+            // TBoxSqlDb
+            // 
+            this.TBoxSqlDb.Location = new System.Drawing.Point(60, 114);
+            this.TBoxSqlDb.Name = "TBoxSqlDb";
+            this.TBoxSqlDb.Size = new System.Drawing.Size(145, 22);
+            this.TBoxSqlDb.TabIndex = 9;
+            this.TBoxSqlDb.TextChanged += new System.EventHandler(this.TBoxSqlDb_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "SQL db";
             // 
             // TBoxCustomRiba
             // 
@@ -156,73 +228,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "FormBorderColor = R         G         B";
             // 
-            // label4
+            // label8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "SQL db";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(448, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "IntSec";
             // 
-            // TBoxSqlDb
+            // CheckBoxIS
             // 
-            this.TBoxSqlDb.Location = new System.Drawing.Point(60, 114);
-            this.TBoxSqlDb.Name = "TBoxSqlDb";
-            this.TBoxSqlDb.Size = new System.Drawing.Size(145, 22);
-            this.TBoxSqlDb.TabIndex = 9;
-            this.TBoxSqlDb.TextChanged += new System.EventHandler(this.TBoxSqlDb_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(212, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "SQL catalog";
-            // 
-            // TBoxSqlCatalog
-            // 
-            this.TBoxSqlCatalog.Location = new System.Drawing.Point(299, 115);
-            this.TBoxSqlCatalog.Name = "TBoxSqlCatalog";
-            this.TBoxSqlCatalog.Size = new System.Drawing.Size(145, 22);
-            this.TBoxSqlCatalog.TabIndex = 11;
-            this.TBoxSqlCatalog.TextChanged += new System.EventHandler(this.TBoxSqlCatalog_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(447, 119);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 15);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "SQL user";
-            // 
-            // TBoxSqlUser
-            // 
-            this.TBoxSqlUser.Location = new System.Drawing.Point(515, 115);
-            this.TBoxSqlUser.Name = "TBoxSqlUser";
-            this.TBoxSqlUser.Size = new System.Drawing.Size(145, 22);
-            this.TBoxSqlUser.TabIndex = 13;
-            this.TBoxSqlUser.TextChanged += new System.EventHandler(this.TBoxSqlUser_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(663, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 15);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "SQL pass";
-            // 
-            // TBoxSqlPass
-            // 
-            this.TBoxSqlPass.Location = new System.Drawing.Point(730, 117);
-            this.TBoxSqlPass.Name = "TBoxSqlPass";
-            this.TBoxSqlPass.Size = new System.Drawing.Size(176, 22);
-            this.TBoxSqlPass.TabIndex = 15;
-            this.TBoxSqlPass.TextChanged += new System.EventHandler(this.TBoxSqlPass_TextChanged);
+            this.CheckBoxIS.AutoSize = true;
+            this.CheckBoxIS.Location = new System.Drawing.Point(495, 120);
+            this.CheckBoxIS.Name = "CheckBoxIS";
+            this.CheckBoxIS.Size = new System.Drawing.Size(15, 14);
+            this.CheckBoxIS.TabIndex = 17;
+            this.CheckBoxIS.UseVisualStyleBackColor = true;
+            this.CheckBoxIS.CheckedChanged += new System.EventHandler(this.CheckBoxIS_CheckedChanged);
             // 
             // Settings
             // 
@@ -263,5 +286,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TBoxSqlCatalog;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox CheckBoxIS;
+        private System.Windows.Forms.Label label8;
     }
 }

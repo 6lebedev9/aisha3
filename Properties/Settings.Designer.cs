@@ -119,5 +119,17 @@ namespace aisha3.Properties {
                 this["mssqlcatalog"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool mssqlintegrated {
+            get {
+                return ((bool)(this["mssqlintegrated"]));
+            }
+            set {
+                this["mssqlintegrated"] = value;
+            }
+        }
     }
 }

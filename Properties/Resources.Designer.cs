@@ -193,6 +193,16 @@ namespace aisha3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap database3 {
+            get {
+                object obj = ResourceManager.GetObject("database3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap duplo1 {
             get {
                 object obj = ResourceManager.GetObject("duplo1", resourceCulture);

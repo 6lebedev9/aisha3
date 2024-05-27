@@ -92,7 +92,6 @@
             this.panel41 = new System.Windows.Forms.Panel();
             this.BtnToWebShinobiIp = new System.Windows.Forms.Button();
             this.panel43 = new System.Windows.Forms.Panel();
-            this.BtnClipShinobiIp = new System.Windows.Forms.Button();
             this.panel31 = new System.Windows.Forms.Panel();
             this.BtnClipRtsp = new System.Windows.Forms.Button();
             this.panel42 = new System.Windows.Forms.Panel();
@@ -108,7 +107,6 @@
             this.panel33 = new System.Windows.Forms.Panel();
             this.BtnToWebDeviceIPTech = new System.Windows.Forms.Button();
             this.panel79 = new System.Windows.Forms.Panel();
-            this.BtnClipDeviceIPTech = new System.Windows.Forms.Button();
             this.panel27 = new System.Windows.Forms.Panel();
             this.BtnClipEtherProvider = new System.Windows.Forms.Button();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -126,7 +124,6 @@
             this.panel78 = new System.Windows.Forms.Panel();
             this.BtnClipGpsE = new System.Windows.Forms.Button();
             this.panel77 = new System.Windows.Forms.Panel();
-            this.BtnClipGps = new System.Windows.Forms.Button();
             this.panel28 = new System.Windows.Forms.Panel();
             this.BtnToWebYaMaps = new System.Windows.Forms.Button();
             this.panel26 = new System.Windows.Forms.Panel();
@@ -152,7 +149,6 @@
             this.PanelSpacer4 = new System.Windows.Forms.Panel();
             this.MainPanelInner6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.BtnRevertAddress = new System.Windows.Forms.Button();
             this.BtnClipAddress = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.LblOfAddress = new System.Windows.Forms.Label();
@@ -179,41 +175,24 @@
             this.MainPanelInner2Right = new System.Windows.Forms.Panel();
             this.BtnClipGK = new System.Windows.Forms.Button();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.BtnCreateIssue1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnCreateIssue2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.BtnCreateIssue3 = new System.Windows.Forms.Button();
             this.panel40 = new System.Windows.Forms.Panel();
-            this.button20 = new System.Windows.Forms.Button();
             this.MainPanelInner2Left = new System.Windows.Forms.Panel();
             this.Lbl1 = new System.Windows.Forms.Label();
             this.PanelSpacer0 = new System.Windows.Forms.Panel();
             this.MainPanelInner2 = new System.Windows.Forms.Panel();
-            this.BtnIssue5 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.BtnIssue4 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.BtnIssue3 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.BtnIssue2 = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.BtnIssue1 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.BtnToHttpDuplo2 = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.BtnToHttpDuplo1 = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.BtnToHttpIRZ = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.BtnToHttpKsm = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.BtnToHttpKvf = new System.Windows.Forms.Button();
             this.PanelSpacer = new System.Windows.Forms.Panel();
             this.MainPanelInner1 = new System.Windows.Forms.Panel();
-            this.BtnStatusGW = new System.Windows.Forms.Button();
-            this.BtnStatusIPTech = new System.Windows.Forms.Button();
-            this.BtnStatusIP = new System.Windows.Forms.Button();
             this.TBox = new System.Windows.Forms.TextBox();
             this.MapPanelOuter = new System.Windows.Forms.Panel();
             this.MapPanelInner = new System.Windows.Forms.Panel();
@@ -222,16 +201,37 @@
             this.SortPanelOuter = new System.Windows.Forms.Panel();
             this.SortPanelInner = new System.Windows.Forms.Panel();
             this.ControlPanel = new System.Windows.Forms.Panel();
-            this.DBState = new System.Windows.Forms.Button();
             this.LblProgName = new System.Windows.Forms.Label();
-            this.BtnSettings = new System.Windows.Forms.Button();
-            this.BtnCollapse = new System.Windows.Forms.Button();
-            this.BtnClose = new System.Windows.Forms.Button();
             this.ControlPanelOuter = new System.Windows.Forms.Panel();
             this.BtnMap = new System.Windows.Forms.Button();
             this.BtnSort = new System.Windows.Forms.Button();
             this.BtnCams = new System.Windows.Forms.Button();
             this.DEBUG_Btn = new System.Windows.Forms.Button();
+            this.BtnClipShinobiIp = new System.Windows.Forms.Button();
+            this.BtnClipDeviceIPTech = new System.Windows.Forms.Button();
+            this.BtnClipGps = new System.Windows.Forms.Button();
+            this.BtnRevertAddress = new System.Windows.Forms.Button();
+            this.BtnCreateIssue1 = new System.Windows.Forms.Button();
+            this.BtnCreateIssue2 = new System.Windows.Forms.Button();
+            this.BtnCreateIssue3 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.BtnIssue5 = new System.Windows.Forms.Button();
+            this.BtnIssue4 = new System.Windows.Forms.Button();
+            this.BtnIssue3 = new System.Windows.Forms.Button();
+            this.BtnIssue2 = new System.Windows.Forms.Button();
+            this.BtnIssue1 = new System.Windows.Forms.Button();
+            this.BtnToHttpDuplo2 = new System.Windows.Forms.Button();
+            this.BtnToHttpDuplo1 = new System.Windows.Forms.Button();
+            this.BtnToHttpIRZ = new System.Windows.Forms.Button();
+            this.BtnToHttpKsm = new System.Windows.Forms.Button();
+            this.BtnToHttpKvf = new System.Windows.Forms.Button();
+            this.BtnStatusGW = new System.Windows.Forms.Button();
+            this.BtnStatusIPTech = new System.Windows.Forms.Button();
+            this.BtnStatusIP = new System.Windows.Forms.Button();
+            this.DBState = new System.Windows.Forms.Button();
+            this.BtnSettings = new System.Windows.Forms.Button();
+            this.BtnCollapse = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -1092,24 +1092,6 @@
             this.panel43.Size = new System.Drawing.Size(1, 25);
             this.panel43.TabIndex = 41;
             // 
-            // BtnClipShinobiIp
-            // 
-            this.BtnClipShinobiIp.AutoSize = true;
-            this.BtnClipShinobiIp.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
-            this.BtnClipShinobiIp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipShinobiIp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClipShinobiIp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipShinobiIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
-            this.BtnClipShinobiIp.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipShinobiIp.Location = new System.Drawing.Point(186, 0);
-            this.BtnClipShinobiIp.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnClipShinobiIp.Name = "BtnClipShinobiIp";
-            this.BtnClipShinobiIp.Size = new System.Drawing.Size(28, 25);
-            this.BtnClipShinobiIp.TabIndex = 40;
-            this.BtnClipShinobiIp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipShinobiIp.UseVisualStyleBackColor = true;
-            this.BtnClipShinobiIp.Click += new System.EventHandler(this.BtnClipShinobiIp_Click);
-            // 
             // panel31
             // 
             this.panel31.BackColor = System.Drawing.Color.Gray;
@@ -1280,24 +1262,6 @@
             this.panel79.Name = "panel79";
             this.panel79.Size = new System.Drawing.Size(1, 25);
             this.panel79.TabIndex = 44;
-            // 
-            // BtnClipDeviceIPTech
-            // 
-            this.BtnClipDeviceIPTech.AutoSize = true;
-            this.BtnClipDeviceIPTech.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
-            this.BtnClipDeviceIPTech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipDeviceIPTech.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClipDeviceIPTech.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipDeviceIPTech.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
-            this.BtnClipDeviceIPTech.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipDeviceIPTech.Location = new System.Drawing.Point(187, 0);
-            this.BtnClipDeviceIPTech.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnClipDeviceIPTech.Name = "BtnClipDeviceIPTech";
-            this.BtnClipDeviceIPTech.Size = new System.Drawing.Size(28, 25);
-            this.BtnClipDeviceIPTech.TabIndex = 45;
-            this.BtnClipDeviceIPTech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipDeviceIPTech.UseVisualStyleBackColor = true;
-            this.BtnClipDeviceIPTech.Click += new System.EventHandler(this.BtnClipDeviceIPTech_Click);
             // 
             // panel27
             // 
@@ -1496,25 +1460,6 @@
             this.panel77.Name = "panel77";
             this.panel77.Size = new System.Drawing.Size(1, 25);
             this.panel77.TabIndex = 43;
-            // 
-            // BtnClipGps
-            // 
-            this.BtnClipGps.AutoSize = true;
-            this.BtnClipGps.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
-            this.BtnClipGps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipGps.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClipGps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipGps.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
-            this.BtnClipGps.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipGps.Location = new System.Drawing.Point(172, 0);
-            this.BtnClipGps.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnClipGps.Name = "BtnClipGps";
-            this.BtnClipGps.Size = new System.Drawing.Size(28, 25);
-            this.BtnClipGps.TabIndex = 41;
-            this.BtnClipGps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipGps.UseVisualStyleBackColor = true;
-            this.BtnClipGps.TextChanged += new System.EventHandler(this.BtnClipGps_TextChanged);
-            this.BtnClipGps.Click += new System.EventHandler(this.BtnClipGps_Click);
             // 
             // panel28
             // 
@@ -1792,25 +1737,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(261, 55);
             this.panel9.TabIndex = 1;
-            // 
-            // BtnRevertAddress
-            // 
-            this.BtnRevertAddress.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BtnRevertAddress.BackgroundImage = global::aisha3.Properties.Resources.sync;
-            this.BtnRevertAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnRevertAddress.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnRevertAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnRevertAddress.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnRevertAddress.Location = new System.Drawing.Point(0, 0);
-            this.BtnRevertAddress.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnRevertAddress.MaximumSize = new System.Drawing.Size(27, 27);
-            this.BtnRevertAddress.MinimumSize = new System.Drawing.Size(27, 27);
-            this.BtnRevertAddress.Name = "BtnRevertAddress";
-            this.BtnRevertAddress.Size = new System.Drawing.Size(27, 27);
-            this.BtnRevertAddress.TabIndex = 41;
-            this.BtnRevertAddress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnRevertAddress.UseVisualStyleBackColor = true;
-            this.BtnRevertAddress.Click += new System.EventHandler(this.BtnRevertAddress_Click);
             // 
             // BtnClipAddress
             // 
@@ -2113,20 +2039,6 @@
             this.panel24.Size = new System.Drawing.Size(1, 36);
             this.panel24.TabIndex = 37;
             // 
-            // BtnCreateIssue1
-            // 
-            this.BtnCreateIssue1.AutoEllipsis = true;
-            this.BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.mkl;
-            this.BtnCreateIssue1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCreateIssue1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnCreateIssue1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnCreateIssue1.Location = new System.Drawing.Point(112, 0);
-            this.BtnCreateIssue1.Name = "BtnCreateIssue1";
-            this.BtnCreateIssue1.Size = new System.Drawing.Size(36, 36);
-            this.BtnCreateIssue1.TabIndex = 9;
-            this.BtnCreateIssue1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnCreateIssue1.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
@@ -2135,20 +2047,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2, 36);
             this.panel1.TabIndex = 35;
-            // 
-            // BtnCreateIssue2
-            // 
-            this.BtnCreateIssue2.AutoEllipsis = true;
-            this.BtnCreateIssue2.BackgroundImage = global::aisha3.Properties.Resources.rcr;
-            this.BtnCreateIssue2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCreateIssue2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnCreateIssue2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnCreateIssue2.Location = new System.Drawing.Point(150, 0);
-            this.BtnCreateIssue2.Name = "BtnCreateIssue2";
-            this.BtnCreateIssue2.Size = new System.Drawing.Size(36, 36);
-            this.BtnCreateIssue2.TabIndex = 8;
-            this.BtnCreateIssue2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnCreateIssue2.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
@@ -2159,21 +2057,6 @@
             this.panel4.Size = new System.Drawing.Size(2, 36);
             this.panel4.TabIndex = 36;
             // 
-            // BtnCreateIssue3
-            // 
-            this.BtnCreateIssue3.AutoEllipsis = true;
-            this.BtnCreateIssue3.BackgroundImage = global::aisha3.Properties.Resources.monitoring;
-            this.BtnCreateIssue3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCreateIssue3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnCreateIssue3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnCreateIssue3.Location = new System.Drawing.Point(188, 0);
-            this.BtnCreateIssue3.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnCreateIssue3.Name = "BtnCreateIssue3";
-            this.BtnCreateIssue3.Size = new System.Drawing.Size(36, 36);
-            this.BtnCreateIssue3.TabIndex = 7;
-            this.BtnCreateIssue3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnCreateIssue3.UseVisualStyleBackColor = true;
-            // 
             // panel40
             // 
             this.panel40.BackColor = System.Drawing.Color.Gray;
@@ -2182,20 +2065,6 @@
             this.panel40.Name = "panel40";
             this.panel40.Size = new System.Drawing.Size(1, 36);
             this.panel40.TabIndex = 40;
-            // 
-            // button20
-            // 
-            this.button20.AutoEllipsis = true;
-            this.button20.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
-            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button20.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button20.Location = new System.Drawing.Point(225, 0);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(36, 36);
-            this.button20.TabIndex = 39;
-            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button20.UseVisualStyleBackColor = true;
             // 
             // MainPanelInner2Left
             // 
@@ -2255,20 +2124,6 @@
             this.MainPanelInner2.Size = new System.Drawing.Size(378, 37);
             this.MainPanelInner2.TabIndex = 2;
             // 
-            // BtnIssue5
-            // 
-            this.BtnIssue5.AutoEllipsis = true;
-            this.BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
-            this.BtnIssue5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnIssue5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnIssue5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnIssue5.Location = new System.Drawing.Point(342, 0);
-            this.BtnIssue5.Name = "BtnIssue5";
-            this.BtnIssue5.Size = new System.Drawing.Size(37, 37);
-            this.BtnIssue5.TabIndex = 15;
-            this.BtnIssue5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnIssue5.UseVisualStyleBackColor = true;
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Gray;
@@ -2277,20 +2132,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1, 37);
             this.panel7.TabIndex = 36;
-            // 
-            // BtnIssue4
-            // 
-            this.BtnIssue4.AutoEllipsis = true;
-            this.BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
-            this.BtnIssue4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnIssue4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnIssue4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnIssue4.Location = new System.Drawing.Point(304, 0);
-            this.BtnIssue4.Name = "BtnIssue4";
-            this.BtnIssue4.Size = new System.Drawing.Size(37, 37);
-            this.BtnIssue4.TabIndex = 14;
-            this.BtnIssue4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnIssue4.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -2301,20 +2142,6 @@
             this.panel8.Size = new System.Drawing.Size(1, 37);
             this.panel8.TabIndex = 37;
             // 
-            // BtnIssue3
-            // 
-            this.BtnIssue3.AutoEllipsis = true;
-            this.BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
-            this.BtnIssue3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnIssue3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnIssue3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnIssue3.Location = new System.Drawing.Point(266, 0);
-            this.BtnIssue3.Name = "BtnIssue3";
-            this.BtnIssue3.Size = new System.Drawing.Size(37, 37);
-            this.BtnIssue3.TabIndex = 13;
-            this.BtnIssue3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnIssue3.UseVisualStyleBackColor = true;
-            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.Gray;
@@ -2323,20 +2150,6 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1, 37);
             this.panel12.TabIndex = 38;
-            // 
-            // BtnIssue2
-            // 
-            this.BtnIssue2.AutoEllipsis = true;
-            this.BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
-            this.BtnIssue2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnIssue2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnIssue2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnIssue2.Location = new System.Drawing.Point(228, 0);
-            this.BtnIssue2.Name = "BtnIssue2";
-            this.BtnIssue2.Size = new System.Drawing.Size(37, 37);
-            this.BtnIssue2.TabIndex = 12;
-            this.BtnIssue2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnIssue2.UseVisualStyleBackColor = true;
             // 
             // panel19
             // 
@@ -2347,20 +2160,6 @@
             this.panel19.Size = new System.Drawing.Size(1, 37);
             this.panel19.TabIndex = 41;
             // 
-            // BtnIssue1
-            // 
-            this.BtnIssue1.AutoEllipsis = true;
-            this.BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
-            this.BtnIssue1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnIssue1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnIssue1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnIssue1.Location = new System.Drawing.Point(190, 0);
-            this.BtnIssue1.Name = "BtnIssue1";
-            this.BtnIssue1.Size = new System.Drawing.Size(37, 37);
-            this.BtnIssue1.TabIndex = 11;
-            this.BtnIssue1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnIssue1.UseVisualStyleBackColor = true;
-            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.Gray;
@@ -2369,20 +2168,6 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1, 37);
             this.panel11.TabIndex = 33;
-            // 
-            // BtnToHttpDuplo2
-            // 
-            this.BtnToHttpDuplo2.AutoEllipsis = true;
-            this.BtnToHttpDuplo2.BackgroundImage = global::aisha3.Properties.Resources.duplo2;
-            this.BtnToHttpDuplo2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnToHttpDuplo2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnToHttpDuplo2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnToHttpDuplo2.Location = new System.Drawing.Point(152, 0);
-            this.BtnToHttpDuplo2.Name = "BtnToHttpDuplo2";
-            this.BtnToHttpDuplo2.Size = new System.Drawing.Size(37, 37);
-            this.BtnToHttpDuplo2.TabIndex = 10;
-            this.BtnToHttpDuplo2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnToHttpDuplo2.UseVisualStyleBackColor = true;
             // 
             // panel15
             // 
@@ -2393,20 +2178,6 @@
             this.panel15.Size = new System.Drawing.Size(1, 37);
             this.panel15.TabIndex = 39;
             // 
-            // BtnToHttpDuplo1
-            // 
-            this.BtnToHttpDuplo1.AutoEllipsis = true;
-            this.BtnToHttpDuplo1.BackgroundImage = global::aisha3.Properties.Resources.duplo1;
-            this.BtnToHttpDuplo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnToHttpDuplo1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnToHttpDuplo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnToHttpDuplo1.Location = new System.Drawing.Point(114, 0);
-            this.BtnToHttpDuplo1.Name = "BtnToHttpDuplo1";
-            this.BtnToHttpDuplo1.Size = new System.Drawing.Size(37, 37);
-            this.BtnToHttpDuplo1.TabIndex = 9;
-            this.BtnToHttpDuplo1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnToHttpDuplo1.UseVisualStyleBackColor = true;
-            // 
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.Gray;
@@ -2415,21 +2186,6 @@
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(1, 37);
             this.panel20.TabIndex = 42;
-            // 
-            // BtnToHttpIRZ
-            // 
-            this.BtnToHttpIRZ.AutoEllipsis = true;
-            this.BtnToHttpIRZ.BackgroundImage = global::aisha3.Properties.Resources.irz;
-            this.BtnToHttpIRZ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnToHttpIRZ.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnToHttpIRZ.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnToHttpIRZ.Location = new System.Drawing.Point(76, 0);
-            this.BtnToHttpIRZ.Name = "BtnToHttpIRZ";
-            this.BtnToHttpIRZ.Size = new System.Drawing.Size(37, 37);
-            this.BtnToHttpIRZ.TabIndex = 8;
-            this.BtnToHttpIRZ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnToHttpIRZ.UseVisualStyleBackColor = true;
-            this.BtnToHttpIRZ.Click += new System.EventHandler(this.BtnToHttpIRZ_Click);
             // 
             // panel23
             // 
@@ -2440,20 +2196,6 @@
             this.panel23.Size = new System.Drawing.Size(1, 37);
             this.panel23.TabIndex = 43;
             // 
-            // BtnToHttpKsm
-            // 
-            this.BtnToHttpKsm.AutoEllipsis = true;
-            this.BtnToHttpKsm.BackgroundImage = global::aisha3.Properties.Resources.ksm;
-            this.BtnToHttpKsm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnToHttpKsm.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnToHttpKsm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnToHttpKsm.Location = new System.Drawing.Point(38, 0);
-            this.BtnToHttpKsm.Name = "BtnToHttpKsm";
-            this.BtnToHttpKsm.Size = new System.Drawing.Size(37, 37);
-            this.BtnToHttpKsm.TabIndex = 7;
-            this.BtnToHttpKsm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnToHttpKsm.UseVisualStyleBackColor = true;
-            // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Gray;
@@ -2462,21 +2204,6 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1, 37);
             this.panel16.TabIndex = 40;
-            // 
-            // BtnToHttpKvf
-            // 
-            this.BtnToHttpKvf.AutoEllipsis = true;
-            this.BtnToHttpKvf.BackgroundImage = global::aisha3.Properties.Resources.http;
-            this.BtnToHttpKvf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnToHttpKvf.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnToHttpKvf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnToHttpKvf.Location = new System.Drawing.Point(0, 0);
-            this.BtnToHttpKvf.Name = "BtnToHttpKvf";
-            this.BtnToHttpKvf.Size = new System.Drawing.Size(37, 37);
-            this.BtnToHttpKvf.TabIndex = 6;
-            this.BtnToHttpKvf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnToHttpKvf.UseVisualStyleBackColor = true;
-            this.BtnToHttpKvf.Click += new System.EventHandler(this.BtnToHttpKvf_Click);
             // 
             // PanelSpacer
             // 
@@ -2498,50 +2225,6 @@
             this.MainPanelInner1.Name = "MainPanelInner1";
             this.MainPanelInner1.Size = new System.Drawing.Size(378, 29);
             this.MainPanelInner1.TabIndex = 0;
-            // 
-            // BtnStatusGW
-            // 
-            this.BtnStatusGW.AutoEllipsis = true;
-            this.BtnStatusGW.BackgroundImage = global::aisha3.Properties.Resources.router;
-            this.BtnStatusGW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnStatusGW.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnStatusGW.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnStatusGW.Location = new System.Drawing.Point(294, 0);
-            this.BtnStatusGW.Name = "BtnStatusGW";
-            this.BtnStatusGW.Size = new System.Drawing.Size(28, 29);
-            this.BtnStatusGW.TabIndex = 5;
-            this.BtnStatusGW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnStatusGW.UseVisualStyleBackColor = true;
-            // 
-            // BtnStatusIPTech
-            // 
-            this.BtnStatusIPTech.AutoEllipsis = true;
-            this.BtnStatusIPTech.BackgroundImage = global::aisha3.Properties.Resources._4g;
-            this.BtnStatusIPTech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnStatusIPTech.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnStatusIPTech.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnStatusIPTech.Location = new System.Drawing.Point(322, 0);
-            this.BtnStatusIPTech.Name = "BtnStatusIPTech";
-            this.BtnStatusIPTech.Size = new System.Drawing.Size(28, 29);
-            this.BtnStatusIPTech.TabIndex = 4;
-            this.BtnStatusIPTech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnStatusIPTech.UseVisualStyleBackColor = true;
-            this.BtnStatusIPTech.Click += new System.EventHandler(this.BtnStatusIPTech_Click);
-            // 
-            // BtnStatusIP
-            // 
-            this.BtnStatusIP.AutoEllipsis = true;
-            this.BtnStatusIP.BackgroundImage = global::aisha3.Properties.Resources.cable;
-            this.BtnStatusIP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnStatusIP.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnStatusIP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnStatusIP.Location = new System.Drawing.Point(350, 0);
-            this.BtnStatusIP.Name = "BtnStatusIP";
-            this.BtnStatusIP.Size = new System.Drawing.Size(28, 29);
-            this.BtnStatusIP.TabIndex = 3;
-            this.BtnStatusIP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnStatusIP.UseVisualStyleBackColor = true;
-            this.BtnStatusIP.Click += new System.EventHandler(this.BtnStatusIP_Click);
             // 
             // TBox
             // 
@@ -2625,21 +2308,6 @@
             this.ControlPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ControlPanel_MouseDown);
             this.ControlPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ControlPanel_MouseMove);
             // 
-            // DBState
-            // 
-            this.DBState.AutoEllipsis = true;
-            this.DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
-            this.DBState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DBState.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DBState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.DBState.Location = new System.Drawing.Point(268, 0);
-            this.DBState.Name = "DBState";
-            this.DBState.Size = new System.Drawing.Size(28, 28);
-            this.DBState.TabIndex = 4;
-            this.DBState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.DBState.UseVisualStyleBackColor = true;
-            this.DBState.Click += new System.EventHandler(this.DBState_Click);
-            // 
             // LblProgName
             // 
             this.LblProgName.AutoSize = true;
@@ -2651,51 +2319,6 @@
             this.LblProgName.Size = new System.Drawing.Size(62, 24);
             this.LblProgName.TabIndex = 3;
             this.LblProgName.Text = "Aisha";
-            // 
-            // BtnSettings
-            // 
-            this.BtnSettings.AutoEllipsis = true;
-            this.BtnSettings.BackgroundImage = global::aisha3.Properties.Resources.settings_x80;
-            this.BtnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnSettings.Location = new System.Drawing.Point(296, 0);
-            this.BtnSettings.Name = "BtnSettings";
-            this.BtnSettings.Size = new System.Drawing.Size(28, 28);
-            this.BtnSettings.TabIndex = 2;
-            this.BtnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnSettings.UseVisualStyleBackColor = true;
-            this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
-            // 
-            // BtnCollapse
-            // 
-            this.BtnCollapse.AutoEllipsis = true;
-            this.BtnCollapse.BackgroundImage = global::aisha3.Properties.Resources.collapse_x80;
-            this.BtnCollapse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCollapse.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnCollapse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnCollapse.Location = new System.Drawing.Point(324, 0);
-            this.BtnCollapse.Name = "BtnCollapse";
-            this.BtnCollapse.Size = new System.Drawing.Size(28, 28);
-            this.BtnCollapse.TabIndex = 1;
-            this.BtnCollapse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnCollapse.UseVisualStyleBackColor = true;
-            this.BtnCollapse.Click += new System.EventHandler(this.BtnCollapse_Click);
-            // 
-            // BtnClose
-            // 
-            this.BtnClose.AutoEllipsis = true;
-            this.BtnClose.BackgroundImage = global::aisha3.Properties.Resources.close_x80;
-            this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClose.Location = new System.Drawing.Point(352, 0);
-            this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(28, 28);
-            this.BtnClose.TabIndex = 0;
-            this.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClose.UseVisualStyleBackColor = true;
-            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // ControlPanelOuter
             // 
@@ -2769,6 +2392,384 @@
             this.DEBUG_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.DEBUG_Btn.UseVisualStyleBackColor = false;
             this.DEBUG_Btn.Click += new System.EventHandler(this.DEBUG_Btn_Click);
+            // 
+            // BtnClipShinobiIp
+            // 
+            this.BtnClipShinobiIp.AutoSize = true;
+            this.BtnClipShinobiIp.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
+            this.BtnClipShinobiIp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipShinobiIp.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnClipShinobiIp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipShinobiIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
+            this.BtnClipShinobiIp.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipShinobiIp.Location = new System.Drawing.Point(186, 0);
+            this.BtnClipShinobiIp.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnClipShinobiIp.Name = "BtnClipShinobiIp";
+            this.BtnClipShinobiIp.Size = new System.Drawing.Size(28, 25);
+            this.BtnClipShinobiIp.TabIndex = 40;
+            this.BtnClipShinobiIp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipShinobiIp.UseVisualStyleBackColor = true;
+            this.BtnClipShinobiIp.Click += new System.EventHandler(this.BtnClipShinobiIp_Click);
+            // 
+            // BtnClipDeviceIPTech
+            // 
+            this.BtnClipDeviceIPTech.AutoSize = true;
+            this.BtnClipDeviceIPTech.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
+            this.BtnClipDeviceIPTech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipDeviceIPTech.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnClipDeviceIPTech.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipDeviceIPTech.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
+            this.BtnClipDeviceIPTech.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipDeviceIPTech.Location = new System.Drawing.Point(187, 0);
+            this.BtnClipDeviceIPTech.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnClipDeviceIPTech.Name = "BtnClipDeviceIPTech";
+            this.BtnClipDeviceIPTech.Size = new System.Drawing.Size(28, 25);
+            this.BtnClipDeviceIPTech.TabIndex = 45;
+            this.BtnClipDeviceIPTech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipDeviceIPTech.UseVisualStyleBackColor = true;
+            this.BtnClipDeviceIPTech.Click += new System.EventHandler(this.BtnClipDeviceIPTech_Click);
+            // 
+            // BtnClipGps
+            // 
+            this.BtnClipGps.AutoSize = true;
+            this.BtnClipGps.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
+            this.BtnClipGps.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipGps.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnClipGps.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipGps.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
+            this.BtnClipGps.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipGps.Location = new System.Drawing.Point(172, 0);
+            this.BtnClipGps.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnClipGps.Name = "BtnClipGps";
+            this.BtnClipGps.Size = new System.Drawing.Size(28, 25);
+            this.BtnClipGps.TabIndex = 41;
+            this.BtnClipGps.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipGps.UseVisualStyleBackColor = true;
+            this.BtnClipGps.TextChanged += new System.EventHandler(this.BtnClipGps_TextChanged);
+            this.BtnClipGps.Click += new System.EventHandler(this.BtnClipGps_Click);
+            // 
+            // BtnRevertAddress
+            // 
+            this.BtnRevertAddress.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnRevertAddress.BackgroundImage = global::aisha3.Properties.Resources.sync;
+            this.BtnRevertAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnRevertAddress.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRevertAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnRevertAddress.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnRevertAddress.Location = new System.Drawing.Point(0, 0);
+            this.BtnRevertAddress.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnRevertAddress.MaximumSize = new System.Drawing.Size(27, 27);
+            this.BtnRevertAddress.MinimumSize = new System.Drawing.Size(27, 27);
+            this.BtnRevertAddress.Name = "BtnRevertAddress";
+            this.BtnRevertAddress.Size = new System.Drawing.Size(27, 27);
+            this.BtnRevertAddress.TabIndex = 41;
+            this.BtnRevertAddress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnRevertAddress.UseVisualStyleBackColor = true;
+            this.BtnRevertAddress.Click += new System.EventHandler(this.BtnRevertAddress_Click);
+            // 
+            // BtnCreateIssue1
+            // 
+            this.BtnCreateIssue1.AutoEllipsis = true;
+            this.BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.mkl;
+            this.BtnCreateIssue1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCreateIssue1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnCreateIssue1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCreateIssue1.Location = new System.Drawing.Point(112, 0);
+            this.BtnCreateIssue1.Name = "BtnCreateIssue1";
+            this.BtnCreateIssue1.Size = new System.Drawing.Size(36, 36);
+            this.BtnCreateIssue1.TabIndex = 9;
+            this.BtnCreateIssue1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnCreateIssue1.UseVisualStyleBackColor = true;
+            // 
+            // BtnCreateIssue2
+            // 
+            this.BtnCreateIssue2.AutoEllipsis = true;
+            this.BtnCreateIssue2.BackgroundImage = global::aisha3.Properties.Resources.rcr;
+            this.BtnCreateIssue2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCreateIssue2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnCreateIssue2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCreateIssue2.Location = new System.Drawing.Point(150, 0);
+            this.BtnCreateIssue2.Name = "BtnCreateIssue2";
+            this.BtnCreateIssue2.Size = new System.Drawing.Size(36, 36);
+            this.BtnCreateIssue2.TabIndex = 8;
+            this.BtnCreateIssue2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnCreateIssue2.UseVisualStyleBackColor = true;
+            // 
+            // BtnCreateIssue3
+            // 
+            this.BtnCreateIssue3.AutoEllipsis = true;
+            this.BtnCreateIssue3.BackgroundImage = global::aisha3.Properties.Resources.monitoring;
+            this.BtnCreateIssue3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCreateIssue3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnCreateIssue3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCreateIssue3.Location = new System.Drawing.Point(188, 0);
+            this.BtnCreateIssue3.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnCreateIssue3.Name = "BtnCreateIssue3";
+            this.BtnCreateIssue3.Size = new System.Drawing.Size(36, 36);
+            this.BtnCreateIssue3.TabIndex = 7;
+            this.BtnCreateIssue3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnCreateIssue3.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            this.button20.AutoEllipsis = true;
+            this.button20.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button20.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button20.Location = new System.Drawing.Point(225, 0);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(36, 36);
+            this.button20.TabIndex = 39;
+            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // BtnIssue5
+            // 
+            this.BtnIssue5.AutoEllipsis = true;
+            this.BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
+            this.BtnIssue5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnIssue5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIssue5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnIssue5.Location = new System.Drawing.Point(342, 0);
+            this.BtnIssue5.Name = "BtnIssue5";
+            this.BtnIssue5.Size = new System.Drawing.Size(37, 37);
+            this.BtnIssue5.TabIndex = 15;
+            this.BtnIssue5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnIssue5.UseVisualStyleBackColor = true;
+            // 
+            // BtnIssue4
+            // 
+            this.BtnIssue4.AutoEllipsis = true;
+            this.BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
+            this.BtnIssue4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnIssue4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIssue4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnIssue4.Location = new System.Drawing.Point(304, 0);
+            this.BtnIssue4.Name = "BtnIssue4";
+            this.BtnIssue4.Size = new System.Drawing.Size(37, 37);
+            this.BtnIssue4.TabIndex = 14;
+            this.BtnIssue4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnIssue4.UseVisualStyleBackColor = true;
+            // 
+            // BtnIssue3
+            // 
+            this.BtnIssue3.AutoEllipsis = true;
+            this.BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
+            this.BtnIssue3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnIssue3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIssue3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnIssue3.Location = new System.Drawing.Point(266, 0);
+            this.BtnIssue3.Name = "BtnIssue3";
+            this.BtnIssue3.Size = new System.Drawing.Size(37, 37);
+            this.BtnIssue3.TabIndex = 13;
+            this.BtnIssue3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnIssue3.UseVisualStyleBackColor = true;
+            // 
+            // BtnIssue2
+            // 
+            this.BtnIssue2.AutoEllipsis = true;
+            this.BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
+            this.BtnIssue2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnIssue2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIssue2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnIssue2.Location = new System.Drawing.Point(228, 0);
+            this.BtnIssue2.Name = "BtnIssue2";
+            this.BtnIssue2.Size = new System.Drawing.Size(37, 37);
+            this.BtnIssue2.TabIndex = 12;
+            this.BtnIssue2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnIssue2.UseVisualStyleBackColor = true;
+            // 
+            // BtnIssue1
+            // 
+            this.BtnIssue1.AutoEllipsis = true;
+            this.BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
+            this.BtnIssue1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnIssue1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnIssue1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnIssue1.Location = new System.Drawing.Point(190, 0);
+            this.BtnIssue1.Name = "BtnIssue1";
+            this.BtnIssue1.Size = new System.Drawing.Size(37, 37);
+            this.BtnIssue1.TabIndex = 11;
+            this.BtnIssue1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnIssue1.UseVisualStyleBackColor = true;
+            // 
+            // BtnToHttpDuplo2
+            // 
+            this.BtnToHttpDuplo2.AutoEllipsis = true;
+            this.BtnToHttpDuplo2.BackgroundImage = global::aisha3.Properties.Resources.duplo2;
+            this.BtnToHttpDuplo2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnToHttpDuplo2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnToHttpDuplo2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnToHttpDuplo2.Location = new System.Drawing.Point(152, 0);
+            this.BtnToHttpDuplo2.Name = "BtnToHttpDuplo2";
+            this.BtnToHttpDuplo2.Size = new System.Drawing.Size(37, 37);
+            this.BtnToHttpDuplo2.TabIndex = 10;
+            this.BtnToHttpDuplo2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnToHttpDuplo2.UseVisualStyleBackColor = true;
+            // 
+            // BtnToHttpDuplo1
+            // 
+            this.BtnToHttpDuplo1.AutoEllipsis = true;
+            this.BtnToHttpDuplo1.BackgroundImage = global::aisha3.Properties.Resources.duplo1;
+            this.BtnToHttpDuplo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnToHttpDuplo1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnToHttpDuplo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnToHttpDuplo1.Location = new System.Drawing.Point(114, 0);
+            this.BtnToHttpDuplo1.Name = "BtnToHttpDuplo1";
+            this.BtnToHttpDuplo1.Size = new System.Drawing.Size(37, 37);
+            this.BtnToHttpDuplo1.TabIndex = 9;
+            this.BtnToHttpDuplo1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnToHttpDuplo1.UseVisualStyleBackColor = true;
+            // 
+            // BtnToHttpIRZ
+            // 
+            this.BtnToHttpIRZ.AutoEllipsis = true;
+            this.BtnToHttpIRZ.BackgroundImage = global::aisha3.Properties.Resources.irz;
+            this.BtnToHttpIRZ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnToHttpIRZ.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnToHttpIRZ.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnToHttpIRZ.Location = new System.Drawing.Point(76, 0);
+            this.BtnToHttpIRZ.Name = "BtnToHttpIRZ";
+            this.BtnToHttpIRZ.Size = new System.Drawing.Size(37, 37);
+            this.BtnToHttpIRZ.TabIndex = 8;
+            this.BtnToHttpIRZ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnToHttpIRZ.UseVisualStyleBackColor = true;
+            this.BtnToHttpIRZ.Click += new System.EventHandler(this.BtnToHttpIRZ_Click);
+            // 
+            // BtnToHttpKsm
+            // 
+            this.BtnToHttpKsm.AutoEllipsis = true;
+            this.BtnToHttpKsm.BackgroundImage = global::aisha3.Properties.Resources.ksm;
+            this.BtnToHttpKsm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnToHttpKsm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnToHttpKsm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnToHttpKsm.Location = new System.Drawing.Point(38, 0);
+            this.BtnToHttpKsm.Name = "BtnToHttpKsm";
+            this.BtnToHttpKsm.Size = new System.Drawing.Size(37, 37);
+            this.BtnToHttpKsm.TabIndex = 7;
+            this.BtnToHttpKsm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnToHttpKsm.UseVisualStyleBackColor = true;
+            // 
+            // BtnToHttpKvf
+            // 
+            this.BtnToHttpKvf.AutoEllipsis = true;
+            this.BtnToHttpKvf.BackgroundImage = global::aisha3.Properties.Resources.http;
+            this.BtnToHttpKvf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnToHttpKvf.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnToHttpKvf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnToHttpKvf.Location = new System.Drawing.Point(0, 0);
+            this.BtnToHttpKvf.Name = "BtnToHttpKvf";
+            this.BtnToHttpKvf.Size = new System.Drawing.Size(37, 37);
+            this.BtnToHttpKvf.TabIndex = 6;
+            this.BtnToHttpKvf.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnToHttpKvf.UseVisualStyleBackColor = true;
+            this.BtnToHttpKvf.Click += new System.EventHandler(this.BtnToHttpKvf_Click);
+            // 
+            // BtnStatusGW
+            // 
+            this.BtnStatusGW.AutoEllipsis = true;
+            this.BtnStatusGW.BackgroundImage = global::aisha3.Properties.Resources.router;
+            this.BtnStatusGW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnStatusGW.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnStatusGW.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnStatusGW.Location = new System.Drawing.Point(294, 0);
+            this.BtnStatusGW.Name = "BtnStatusGW";
+            this.BtnStatusGW.Size = new System.Drawing.Size(28, 29);
+            this.BtnStatusGW.TabIndex = 5;
+            this.BtnStatusGW.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnStatusGW.UseVisualStyleBackColor = true;
+            this.BtnStatusGW.Click += new System.EventHandler(this.BtnStatusGW_Click);
+            // 
+            // BtnStatusIPTech
+            // 
+            this.BtnStatusIPTech.AutoEllipsis = true;
+            this.BtnStatusIPTech.BackgroundImage = global::aisha3.Properties.Resources._4g;
+            this.BtnStatusIPTech.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnStatusIPTech.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnStatusIPTech.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnStatusIPTech.Location = new System.Drawing.Point(322, 0);
+            this.BtnStatusIPTech.Name = "BtnStatusIPTech";
+            this.BtnStatusIPTech.Size = new System.Drawing.Size(28, 29);
+            this.BtnStatusIPTech.TabIndex = 4;
+            this.BtnStatusIPTech.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnStatusIPTech.UseVisualStyleBackColor = true;
+            this.BtnStatusIPTech.Click += new System.EventHandler(this.BtnStatusIPTech_Click);
+            // 
+            // BtnStatusIP
+            // 
+            this.BtnStatusIP.AutoEllipsis = true;
+            this.BtnStatusIP.BackgroundImage = global::aisha3.Properties.Resources.cable;
+            this.BtnStatusIP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnStatusIP.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnStatusIP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnStatusIP.Location = new System.Drawing.Point(350, 0);
+            this.BtnStatusIP.Name = "BtnStatusIP";
+            this.BtnStatusIP.Size = new System.Drawing.Size(28, 29);
+            this.BtnStatusIP.TabIndex = 3;
+            this.BtnStatusIP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnStatusIP.UseVisualStyleBackColor = true;
+            this.BtnStatusIP.Click += new System.EventHandler(this.BtnStatusIP_Click);
+            // 
+            // DBState
+            // 
+            this.DBState.AutoEllipsis = true;
+            this.DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
+            this.DBState.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DBState.Dock = System.Windows.Forms.DockStyle.Right;
+            this.DBState.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DBState.Location = new System.Drawing.Point(268, 0);
+            this.DBState.Name = "DBState";
+            this.DBState.Size = new System.Drawing.Size(28, 28);
+            this.DBState.TabIndex = 4;
+            this.DBState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.DBState.UseVisualStyleBackColor = true;
+            this.DBState.Click += new System.EventHandler(this.DBState_Click);
+            // 
+            // BtnSettings
+            // 
+            this.BtnSettings.AutoEllipsis = true;
+            this.BtnSettings.BackgroundImage = global::aisha3.Properties.Resources.settings_x80;
+            this.BtnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSettings.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnSettings.Location = new System.Drawing.Point(296, 0);
+            this.BtnSettings.Name = "BtnSettings";
+            this.BtnSettings.Size = new System.Drawing.Size(28, 28);
+            this.BtnSettings.TabIndex = 2;
+            this.BtnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnSettings.UseVisualStyleBackColor = true;
+            this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
+            // 
+            // BtnCollapse
+            // 
+            this.BtnCollapse.AutoEllipsis = true;
+            this.BtnCollapse.BackgroundImage = global::aisha3.Properties.Resources.collapse_x80;
+            this.BtnCollapse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCollapse.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnCollapse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCollapse.Location = new System.Drawing.Point(324, 0);
+            this.BtnCollapse.Name = "BtnCollapse";
+            this.BtnCollapse.Size = new System.Drawing.Size(28, 28);
+            this.BtnCollapse.TabIndex = 1;
+            this.BtnCollapse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnCollapse.UseVisualStyleBackColor = true;
+            this.BtnCollapse.Click += new System.EventHandler(this.BtnCollapse_Click);
+            // 
+            // BtnClose
+            // 
+            this.BtnClose.AutoEllipsis = true;
+            this.BtnClose.BackgroundImage = global::aisha3.Properties.Resources.close_x80;
+            this.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClose.Location = new System.Drawing.Point(352, 0);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(28, 28);
+            this.BtnClose.TabIndex = 0;
+            this.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClose.UseVisualStyleBackColor = true;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // MainForm
             // 
