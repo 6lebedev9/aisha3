@@ -102,10 +102,26 @@ namespace aisha3
                 BtnClipCamQuant.Text = DeviceChosen.CamQuant;
                 BtnClipPodrOrg1Common.Text = DeviceChosen.PodrOrg1Common;
                 BtnClipPodrOrg2Common.Text = DeviceChosen.PodrOrg2Common;
+                if(DeviceChosen.PodrOrg1Common == "МКЛ")
+                {
+                    BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.mkl;
+                }
+                else
+                {
+                    BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.netline;
+                }
+                LblInfoConst.Text = DeviceChosen.InfoConst;
+                BtnClipSpeed.Text = DeviceChosen.Speed + "\nкм/ч";
             }
         }
 
-        public static string todayDateTime = DateTime.Now.ToString("HH:mm dd.MM.yy");
+        //public static string todayDateTime = DateTime.Now.ToString("HH:mm dd.MM.yy");
+
+        public static string TodayDateTime()
+        {
+            return DateTime.Now.ToString("HH:mm dd.MM.yy");
+        }
+
         //Settings save/load
         private void WindowLocSaveLoad(string LoadOrSave)
         {
@@ -386,73 +402,73 @@ namespace aisha3
 
         private void BtnClipR1_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime 
+            Clipboard.SetText(TodayDateTime() 
             + " - результат диагностики подрядной организации (МКЛ) - отсутствует ЭП в ШУ;/отсутствует КС;");
         }
 
         private void BtnClipR2_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
             + " - результат диагностики подрядной организации (Нетлайн) - отсутствует ЭП в ШУ;/отсутствует КС;");
         }
 
         private void BtnClipR3_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - результат диагностики АВР бригады РЦР - отсутствует ЭП в ШУ;/отсутствует КС;");
         }
 
         private void BtnClipR4_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - направлена заявка подрядной организации (ПТС/ТАКТ) на восстановление ЭП/КС;");
         }
 
         private void BtnClipR5_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - отсутствие фиксаций, сбита ориентация прибора, исправлена, комплекс работает в штатном режиме.");
         }
 
         private void BtnClipR6_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - отсутствие фиксаций, подрядная организация (Нетлайн/МКЛ)/АВР бригада РЦР выполнила очистку оптики КВФ.");
         }
 
         private void BtnClipR7_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - направлена заявка в ТП РТК на отсутствие ЭП;/на отсутствие канала связи;/на нестабильность канала связи;");
         }
 
         private void BtnClipR8_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - обновление статуса заявки от ТП РТК - принято в работу;");
         }
 
         private void BtnClipR9_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - направлена заявка в ТП ЭРТХ на отсутствие канала связи;/на нестабильность канала связи;");
         }
 
         private void BtnClipR10_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - обновление статуса заявки от ТП ЭРТХ - принято в работу за № ____ ;");
         }
 
         private void BtnClipR11_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + " - отсутствие фиксаций и видеопотока, работоспособность комплекса восстановлена.");
         }
 
         private void BtnClipRCustom_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(todayDateTime
+            Clipboard.SetText(TodayDateTime()
            + Properties.Settings.Default.CustomRiba.ToString());
         }
 
@@ -613,6 +629,51 @@ namespace aisha3
                     if(DeviceChosen.KsmHttp != "")
                     {
                         System.Diagnostics.Process.Start(DeviceChosen.KsmHttp);
+                    }
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void BtnToHttpDuplo1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DeviceChosen != null)
+                {
+                    if (DeviceChosen.KsmHttp != "")
+                    {
+                        System.Diagnostics.Process.Start("http://" + DeviceChosen.Duplo1Ip);
+                    }
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void BtnToHttpDuplo2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DeviceChosen != null)
+                {
+                    if (DeviceChosen.KsmHttp != "")
+                    {
+                        System.Diagnostics.Process.Start("http://" + DeviceChosen.Duplo2Ip);
+                    }
+                }
+            }
+            catch (Exception) { }
+        }
+
+        private void BtnClipSpeed_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DeviceChosen != null)
+                {
+                    if (DeviceChosen.Speed != "")
+                    {
+                        Clipboard.SetText(DeviceChosen.Speed.ToString());
                     }
                 }
             }
