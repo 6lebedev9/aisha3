@@ -141,5 +141,24 @@ namespace aisha3
                 return null;
             }
         }
+
+        public static void SetInfoDyn(string kvfNumber, string info)
+        {
+            try
+            {
+                OpenConnection();
+                string selectString = "UPDATE dbo.aishadt SET InfoDyn=@info WHERE KvfNumber LIKE @kvf;";
+                MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
+                cmdgetversion.Parameters.AddWithValue("@kvf", kvfNumber);
+                cmdgetversion.Parameters.AddWithValue("@info", info);
+                MSSQLReader reader = cmdgetversion.ExecuteReader();
+                reader.Read();
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

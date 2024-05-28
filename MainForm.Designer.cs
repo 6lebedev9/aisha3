@@ -388,6 +388,7 @@
             this.CommentTBox.Name = "CommentTBox";
             this.CommentTBox.Size = new System.Drawing.Size(378, 53);
             this.CommentTBox.TabIndex = 4;
+            this.CommentTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CommentTBox_KeyDown);
             // 
             // LblInfoConst
             // 

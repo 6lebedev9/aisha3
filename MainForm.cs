@@ -33,6 +33,8 @@ namespace aisha3
                 int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
                 if (verInDB > 0)
                 {
+                    TBox.Enabled = true;
+                    CommentTBox.Enabled = true;
                     if (verCurrent < verInDB)
                     {
                         DBState.BackgroundImage = global::aisha3.Properties.Resources.database3;
@@ -47,6 +49,7 @@ namespace aisha3
                     TBox.Text = "НЕТ СОЕДИНЕНИЯ С БАЗОЙ";
                     DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
                     TBox.Enabled = false;
+                    CommentTBox.Enabled = false;
                 }
             }
             catch(Exception ex)
@@ -124,6 +127,7 @@ namespace aisha3
                     }
                     LblInfoConst.Text = DeviceChosen.InfoConst;
                     BtnClipSpeed.Text = DeviceChosen.Speed + "\nкм/ч";
+                    CommentTBox.Text = DeviceChosen.InfoDyn;
                 }
             }
         }
@@ -767,6 +771,20 @@ namespace aisha3
         private void BtnCreateIssue3_Click(object sender, EventArgs e)
         {
             KvmHook.IssueToWeb(ChosenIssueTheme, 3);
+        }
+
+        private void CommentTBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (DeviceChosen != null)
+                {
+                    if (CommentTBox.Text.ToString() != "")
+                    {
+                        Mssql.SetInfoDyn(DeviceChosen.KvfNumber, CommentTBox.Text.ToString());
+                    }
+                }
+            }
         }
 
         //Main panel btns
