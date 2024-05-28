@@ -12,6 +12,7 @@ using System.Data;
 using MSSQLReader = Microsoft.Data.SqlClient.SqlDataReader;
 using System.Data.Common;
 using MSSQLConnection = Microsoft.Data.SqlClient.SqlConnection;
+using System.Security.Cryptography;
 
 namespace aisha3
 {
@@ -229,6 +230,46 @@ namespace aisha3
             catch (Exception ex)
             {
                 Console.WriteLine("ERROR2 - cams search: " + ex.Message);
+                return null;
+            }
+        }
+
+        public static Dictionary<int, string> Uniqs(string variant)
+        {
+            try
+            {
+                Dictionary<int, string> Uniqs = new Dictionary<int, string>();
+                OpenConnection();
+                string selectString = $"SELECT DISTINCT {variant} FROM dbo.aishadt WHERE {variant} NOT LIKE ''";
+                MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
+                SqlDAdapter adapter = new SqlDAdapter(selectString, conn);
+                DataSet ds = new DataSet();
+                ds?.Clear();
+                adapter.Fill(ds);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    int i = 0;
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        if(variant == "Speed")
+                        {
+                            string var = ds.Tables[0].Rows[i].Field<Int32>($"{variant}").ToString();
+                            Uniqs.Add(i, var);
+                            i++;
+                        }
+                        else
+                        {
+                            string var = ds.Tables[0].Rows[i].Field<string>($"{variant}").ToString();
+                            Uniqs.Add(i, var);
+                            i++;
+                        }
+                    }
+                }
+                return Uniqs;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR3 - uniqs search: " + ex.Message);
                 return null;
             }
         }

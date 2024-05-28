@@ -25,6 +25,17 @@ namespace aisha3
         }
         public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
         public static Dictionary<int, Device> Cams = new Dictionary<int, Device>();
+        public static Dictionary<int, string> GKCommonUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> KvfModelUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> DeviceTypeUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> CamFixTypeUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> EtherProviderUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> PodrOrg1CommonUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> PodrOrg2CommonUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> NCodeUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> SpeedUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> DistUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, string> OrgOwnerUniqs = new Dictionary<int, string>();
         public static Device DeviceChosen;
         public static int ChosenIssueTheme = 0;
         public static bool MapOpen = false;
@@ -36,6 +47,17 @@ namespace aisha3
             try
             {
                 int verInDB = Mssql.GetLastVersion();
+                GKCommonUniqs = Mssql.Uniqs("GKCommon");
+                KvfModelUniqs = Mssql.Uniqs("KvfModel");
+                DeviceTypeUniqs = Mssql.Uniqs("DeviceType");
+                CamFixTypeUniqs = Mssql.Uniqs("CamFixType");
+                EtherProviderUniqs = Mssql.Uniqs("EtherProvider");
+                PodrOrg1CommonUniqs = Mssql.Uniqs("PodrOrg1Common");
+                PodrOrg2CommonUniqs = Mssql.Uniqs("PodrOrg2Common");
+                NCodeUniqs = Mssql.Uniqs("NCode");
+                SpeedUniqs = Mssql.Uniqs("Speed");
+                DistUniqs = Mssql.Uniqs("Dist");
+                OrgOwnerUniqs = Mssql.Uniqs("OrgOwner");
                 int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
                 if (verInDB > 0)
                 {
