@@ -24,24 +24,34 @@ namespace aisha3
         }
         public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
         public static Device DeviceChosen;
+        public static int ChosenIssueTheme = 0;
         public void CheckConnectAndVersion()
         {
-            int verInDB = Mssql.GetLastVersion();
-            int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
-            if (verInDB > 0)
+            try
             {
-                if (verCurrent < verInDB)
+                int verInDB = Mssql.GetLastVersion();
+                int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
+                if (verInDB > 0)
                 {
-                    DBState.BackgroundImage = global::aisha3.Properties.Resources.database3;
+                    if (verCurrent < verInDB)
+                    {
+                        DBState.BackgroundImage = global::aisha3.Properties.Resources.database3;
+                    }
+                    else
+                    {
+                        DBState.BackgroundImage = global::aisha3.Properties.Resources.database1;
+                    }
                 }
                 else
                 {
-                    DBState.BackgroundImage = global::aisha3.Properties.Resources.database1;
+                    TBox.Text = "НЕТ СОЕДИНЕНИЯ С БАЗОЙ";
+                    DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
+                    TBox.Enabled = false;
                 }
             }
-            else
+            catch(Exception ex)
             {
-                DBState.BackgroundImage = global::aisha3.Properties.Resources.database2;
+                Console.WriteLine(ex.Message.ToString());
             }
         }
         public void CreateBtnSearchHelper(int i)
@@ -81,37 +91,40 @@ namespace aisha3
         }
         public void SetMainPanel(int i)
         {
-            if (Devices.ContainsKey(i))
+            if(Devices != null)
             {
-                DeviceChosen = Devices[i];
-                BtnClipGK.Text = DeviceChosen.GKCommon;
-                BtnClipDeviceType.Text = DeviceChosen.DeviceType;
-                BtnClipKvfModel.Text = DeviceChosen.KvfModel;
-                BtnClipKvfNumber.Text = DeviceChosen.KvfNumber;
-                if(LblOfAddress.Text.ToString() == "Адрес РГИС:") { BtnClipAddress.Text = DeviceChosen.AddressRGIS; }
-                else { BtnClipAddress.Text = DeviceChosen.AddressDoc; }
-                BtnClipPoput.Text = DeviceChosen.Poput;
-                BtnClipVstrech.Text = DeviceChosen.Vstrech;
-                BtnClipNCode.Text = DeviceChosen.NCode;
-                BtnClipGps.Text = DeviceChosen.Gps;
-                BtnClipDeviceIP.Text = DeviceChosen.DeviceIP;
-                BtnToWebDeviceIPTech.Text = DeviceChosen.DeviceIPTech;
-                BtnClipEtherProvider.Text = DeviceChosen.EtherProvider;
-                BtnClipIrzIp.Text = DeviceChosen.IrzIp;
-                BtnToWebShinobiIp.Text = DeviceChosen.ShinobiIp;
-                BtnClipCamQuant.Text = DeviceChosen.CamQuant;
-                BtnClipPodrOrg1Common.Text = DeviceChosen.PodrOrg1Common;
-                BtnClipPodrOrg2Common.Text = DeviceChosen.PodrOrg2Common;
-                if(DeviceChosen.PodrOrg1Common == "МКЛ")
+                if (Devices.ContainsKey(i))
                 {
-                    BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.mkl;
+                    DeviceChosen = Devices[i];
+                    BtnClipGK.Text = DeviceChosen.GKCommon;
+                    BtnClipDeviceType.Text = DeviceChosen.DeviceType;
+                    BtnClipKvfModel.Text = DeviceChosen.KvfModel;
+                    BtnClipKvfNumber.Text = DeviceChosen.KvfNumber;
+                    if (LblOfAddress.Text.ToString() == "Адрес РГИС:") { BtnClipAddress.Text = DeviceChosen.AddressRGIS; }
+                    else { BtnClipAddress.Text = DeviceChosen.AddressDoc; }
+                    BtnClipPoput.Text = DeviceChosen.Poput;
+                    BtnClipVstrech.Text = DeviceChosen.Vstrech;
+                    BtnClipNCode.Text = DeviceChosen.NCode;
+                    BtnClipGps.Text = DeviceChosen.Gps;
+                    BtnClipDeviceIP.Text = DeviceChosen.DeviceIP;
+                    BtnToWebDeviceIPTech.Text = DeviceChosen.DeviceIPTech;
+                    BtnClipEtherProvider.Text = DeviceChosen.EtherProvider;
+                    BtnClipIrzIp.Text = DeviceChosen.IrzIp;
+                    BtnToWebShinobiIp.Text = DeviceChosen.ShinobiIp;
+                    BtnClipCamQuant.Text = DeviceChosen.CamQuant;
+                    BtnClipPodrOrg1Common.Text = DeviceChosen.PodrOrg1Common;
+                    BtnClipPodrOrg2Common.Text = DeviceChosen.PodrOrg2Common;
+                    if (DeviceChosen.PodrOrg1Common == "МКЛ")
+                    {
+                        BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.mkl;
+                    }
+                    else
+                    {
+                        BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.netline;
+                    }
+                    LblInfoConst.Text = DeviceChosen.InfoConst;
+                    BtnClipSpeed.Text = DeviceChosen.Speed + "\nкм/ч";
                 }
-                else
-                {
-                    BtnCreateIssue1.BackgroundImage = global::aisha3.Properties.Resources.netline;
-                }
-                LblInfoConst.Text = DeviceChosen.InfoConst;
-                BtnClipSpeed.Text = DeviceChosen.Speed + "\nкм/ч";
             }
         }
 
@@ -541,44 +554,47 @@ namespace aisha3
             {
                 Devices = Mssql.DevicesbyString(TBox.Text.ToString());
                 SetMainPanel(0);
-                if(Devices.Count > 1)
+                if(Devices != null)
                 {
-                    switch(Devices.Count)
+                    if (Devices.Count > 1)
                     {
-                        case 1:
-                            ClearBtnSearchHelper();
-                            break;
-                        case 2:
-                            ClearBtnSearchHelper();
-                            CreateBtnSearchHelper(0);
-                            CreateBtnSearchHelper(1);
-                            break;
-                        case 3:
-                            ClearBtnSearchHelper();
-                            CreateBtnSearchHelper(0);
-                            CreateBtnSearchHelper(1);
-                            CreateBtnSearchHelper(2);
-                            break;
-                        case 4:
-                            ClearBtnSearchHelper();
-                            CreateBtnSearchHelper(0);
-                            CreateBtnSearchHelper(1);
-                            CreateBtnSearchHelper(2);
-                            CreateBtnSearchHelper(3);
-                            break;
-                        default:
-                            ClearBtnSearchHelper();
-                            CreateBtnSearchHelper(0);
-                            CreateBtnSearchHelper(1);
-                            CreateBtnSearchHelper(2);
-                            CreateBtnSearchHelper(3);
-                            CreateBtnSearchHelper(4);
-                            break;
+                        switch (Devices.Count)
+                        {
+                            case 1:
+                                ClearBtnSearchHelper();
+                                break;
+                            case 2:
+                                ClearBtnSearchHelper();
+                                CreateBtnSearchHelper(0);
+                                CreateBtnSearchHelper(1);
+                                break;
+                            case 3:
+                                ClearBtnSearchHelper();
+                                CreateBtnSearchHelper(0);
+                                CreateBtnSearchHelper(1);
+                                CreateBtnSearchHelper(2);
+                                break;
+                            case 4:
+                                ClearBtnSearchHelper();
+                                CreateBtnSearchHelper(0);
+                                CreateBtnSearchHelper(1);
+                                CreateBtnSearchHelper(2);
+                                CreateBtnSearchHelper(3);
+                                break;
+                            default:
+                                ClearBtnSearchHelper();
+                                CreateBtnSearchHelper(0);
+                                CreateBtnSearchHelper(1);
+                                CreateBtnSearchHelper(2);
+                                CreateBtnSearchHelper(3);
+                                CreateBtnSearchHelper(4);
+                                break;
+                        }
                     }
-                }
-                else
-                {
-                    ClearBtnSearchHelper();
+                    else
+                    {
+                        ClearBtnSearchHelper();
+                    }
                 }
             }
             else { ClearBtnSearchHelper(); }
@@ -664,7 +680,6 @@ namespace aisha3
             }
             catch (Exception) { }
         }
-
         private void BtnClipSpeed_Click(object sender, EventArgs e)
         {
             try
@@ -678,6 +693,80 @@ namespace aisha3
                 }
             }
             catch (Exception) { }
+        }
+        private void BtnIssue1_Click(object sender, EventArgs e)
+        {
+            BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto1;
+            BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
+            BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
+            BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
+            BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
+            BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            ChosenIssueTheme = 1;
+        }
+        private void BtnIssue2_Click(object sender, EventArgs e)
+        {
+            BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
+            BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff1;
+            BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
+            BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
+            BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
+            BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            ChosenIssueTheme = 2;
+        }
+        private void BtnIssue3_Click(object sender, EventArgs e)
+        {
+            BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
+            BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
+            BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning1;
+            BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
+            BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
+            BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            ChosenIssueTheme = 3;
+        }
+        private void BtnIssue4_Click(object sender, EventArgs e)
+        {
+            BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
+            BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
+            BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
+            BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow1;
+            BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
+            BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            ChosenIssueTheme = 4;
+        }
+        private void BtnIssue5_Click(object sender, EventArgs e)
+        {
+            BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
+            BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
+            BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
+            BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
+            BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff1;
+            BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            ChosenIssueTheme = 5;
+        }
+        private void BtnIssue6_Click(object sender, EventArgs e)
+        {
+            BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
+            BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
+            BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
+            BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
+            BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
+            BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert1;
+            ChosenIssueTheme = 6;
+        }
+        private void BtnCreateIssue1_Click(object sender, EventArgs e)
+        {
+            KvmHook.IssueToWeb(ChosenIssueTheme, 1);
+        }
+
+        private void BtnCreateIssue2_Click(object sender, EventArgs e)
+        {
+            KvmHook.IssueToWeb(ChosenIssueTheme, 2);
+        }
+
+        private void BtnCreateIssue3_Click(object sender, EventArgs e)
+        {
+            KvmHook.IssueToWeb(ChosenIssueTheme, 3);
         }
 
         //Main panel btns

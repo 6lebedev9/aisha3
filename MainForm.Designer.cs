@@ -187,7 +187,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.BtnCreateIssue3 = new System.Windows.Forms.Button();
             this.panel40 = new System.Windows.Forms.Panel();
-            this.button20 = new System.Windows.Forms.Button();
+            this.BtnIssue6 = new System.Windows.Forms.Button();
             this.MainPanelInner2Left = new System.Windows.Forms.Panel();
             this.Lbl1 = new System.Windows.Forms.Label();
             this.PanelSpacer0 = new System.Windows.Forms.Panel();
@@ -2110,7 +2110,7 @@
             this.MainPanelInner2Right.Controls.Add(this.panel4);
             this.MainPanelInner2Right.Controls.Add(this.BtnCreateIssue3);
             this.MainPanelInner2Right.Controls.Add(this.panel40);
-            this.MainPanelInner2Right.Controls.Add(this.button20);
+            this.MainPanelInner2Right.Controls.Add(this.BtnIssue6);
             this.MainPanelInner2Right.Dock = System.Windows.Forms.DockStyle.Right;
             this.MainPanelInner2Right.Location = new System.Drawing.Point(117, 0);
             this.MainPanelInner2Right.Name = "MainPanelInner2Right";
@@ -2156,6 +2156,7 @@
             this.BtnCreateIssue1.TabIndex = 9;
             this.BtnCreateIssue1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCreateIssue1.UseVisualStyleBackColor = true;
+            this.BtnCreateIssue1.Click += new System.EventHandler(this.BtnCreateIssue1_Click);
             // 
             // panel1
             // 
@@ -2179,6 +2180,7 @@
             this.BtnCreateIssue2.TabIndex = 8;
             this.BtnCreateIssue2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCreateIssue2.UseVisualStyleBackColor = true;
+            this.BtnCreateIssue2.Click += new System.EventHandler(this.BtnCreateIssue2_Click);
             // 
             // panel4
             // 
@@ -2203,6 +2205,7 @@
             this.BtnCreateIssue3.TabIndex = 7;
             this.BtnCreateIssue3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCreateIssue3.UseVisualStyleBackColor = true;
+            this.BtnCreateIssue3.Click += new System.EventHandler(this.BtnCreateIssue3_Click);
             // 
             // panel40
             // 
@@ -2213,19 +2216,20 @@
             this.panel40.Size = new System.Drawing.Size(1, 36);
             this.panel40.TabIndex = 40;
             // 
-            // button20
+            // BtnIssue6
             // 
-            this.button20.AutoEllipsis = true;
-            this.button20.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
-            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button20.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button20.Location = new System.Drawing.Point(225, 0);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(36, 36);
-            this.button20.TabIndex = 39;
-            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button20.UseVisualStyleBackColor = true;
+            this.BtnIssue6.AutoEllipsis = true;
+            this.BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            this.BtnIssue6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnIssue6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnIssue6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnIssue6.Location = new System.Drawing.Point(225, 0);
+            this.BtnIssue6.Name = "BtnIssue6";
+            this.BtnIssue6.Size = new System.Drawing.Size(36, 36);
+            this.BtnIssue6.TabIndex = 39;
+            this.BtnIssue6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnIssue6.UseVisualStyleBackColor = true;
+            this.BtnIssue6.Click += new System.EventHandler(this.BtnIssue6_Click);
             // 
             // MainPanelInner2Left
             // 
@@ -2298,6 +2302,7 @@
             this.BtnIssue5.TabIndex = 15;
             this.BtnIssue5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnIssue5.UseVisualStyleBackColor = true;
+            this.BtnIssue5.Click += new System.EventHandler(this.BtnIssue5_Click);
             // 
             // panel7
             // 
@@ -2321,6 +2326,7 @@
             this.BtnIssue4.TabIndex = 14;
             this.BtnIssue4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnIssue4.UseVisualStyleBackColor = true;
+            this.BtnIssue4.Click += new System.EventHandler(this.BtnIssue4_Click);
             // 
             // panel8
             // 
@@ -2344,6 +2350,7 @@
             this.BtnIssue3.TabIndex = 13;
             this.BtnIssue3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnIssue3.UseVisualStyleBackColor = true;
+            this.BtnIssue3.Click += new System.EventHandler(this.BtnIssue3_Click);
             // 
             // panel12
             // 
@@ -2367,6 +2374,7 @@
             this.BtnIssue2.TabIndex = 12;
             this.BtnIssue2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnIssue2.UseVisualStyleBackColor = true;
+            this.BtnIssue2.Click += new System.EventHandler(this.BtnIssue2_Click);
             // 
             // panel19
             // 
@@ -2390,6 +2398,7 @@
             this.BtnIssue1.TabIndex = 11;
             this.BtnIssue1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnIssue1.UseVisualStyleBackColor = true;
+            this.BtnIssue1.Click += new System.EventHandler(this.BtnIssue1_Click);
             // 
             // panel11
             // 
@@ -3095,7 +3104,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Panel panel40;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button BtnIssue6;
         private System.Windows.Forms.Button BtnClipShinobiIp;
         private System.Windows.Forms.Panel panel43;
         private System.Windows.Forms.Button BtnRevertAddress;
