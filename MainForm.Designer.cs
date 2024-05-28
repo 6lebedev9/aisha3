@@ -234,6 +234,12 @@
             this.BtnSort = new System.Windows.Forms.Button();
             this.BtnCams = new System.Windows.Forms.Button();
             this.DEBUG_Btn = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.SortPanelCol1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SortPanelCol2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SortPanelCol3 = new System.Windows.Forms.FlowLayoutPanel();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -302,7 +308,9 @@
             this.MainPanelInner1.SuspendLayout();
             this.MapPanelOuter.SuspendLayout();
             this.SortPrefPanelOuter.SuspendLayout();
+            this.SortPrefPanelInner.SuspendLayout();
             this.SortPanelOuter.SuspendLayout();
+            this.SortPanelInner.SuspendLayout();
             this.ControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -310,7 +318,7 @@
             // 
             this.MainPanelOuter.BackColor = System.Drawing.Color.White;
             this.MainPanelOuter.Controls.Add(this.MainPanelInner);
-            this.MainPanelOuter.Location = new System.Drawing.Point(541, 34);
+            this.MainPanelOuter.Location = new System.Drawing.Point(641, 34);
             this.MainPanelOuter.Name = "MainPanelOuter";
             this.MainPanelOuter.Size = new System.Drawing.Size(380, 710);
             this.MainPanelOuter.TabIndex = 0;
@@ -2607,10 +2615,11 @@
             // 
             this.MapPanelOuter.BackColor = System.Drawing.Color.White;
             this.MapPanelOuter.Controls.Add(this.MapPanelInner);
-            this.MapPanelOuter.Location = new System.Drawing.Point(943, 34);
+            this.MapPanelOuter.Location = new System.Drawing.Point(1043, 0);
             this.MapPanelOuter.Name = "MapPanelOuter";
             this.MapPanelOuter.Size = new System.Drawing.Size(410, 710);
             this.MapPanelOuter.TabIndex = 1;
+            this.MapPanelOuter.Visible = false;
             // 
             // MapPanelInner
             // 
@@ -2624,34 +2633,42 @@
             // 
             this.SortPrefPanelOuter.BackColor = System.Drawing.Color.White;
             this.SortPrefPanelOuter.Controls.Add(this.SortPrefPanelInner);
-            this.SortPrefPanelOuter.Location = new System.Drawing.Point(387, 34);
+            this.SortPrefPanelOuter.Location = new System.Drawing.Point(487, 0);
             this.SortPrefPanelOuter.Name = "SortPrefPanelOuter";
-            this.SortPrefPanelOuter.Size = new System.Drawing.Size(130, 710);
+            this.SortPrefPanelOuter.Size = new System.Drawing.Size(130, 744);
             this.SortPrefPanelOuter.TabIndex = 2;
+            this.SortPrefPanelOuter.Visible = false;
             // 
             // SortPrefPanelInner
             // 
             this.SortPrefPanelInner.BackColor = System.Drawing.Color.Black;
+            this.SortPrefPanelInner.Controls.Add(this.button15);
+            this.SortPrefPanelInner.Controls.Add(this.button14);
+            this.SortPrefPanelInner.Controls.Add(this.button13);
             this.SortPrefPanelInner.Location = new System.Drawing.Point(1, 1);
             this.SortPrefPanelInner.Name = "SortPrefPanelInner";
-            this.SortPrefPanelInner.Size = new System.Drawing.Size(128, 708);
+            this.SortPrefPanelInner.Size = new System.Drawing.Size(128, 742);
             this.SortPrefPanelInner.TabIndex = 3;
             // 
             // SortPanelOuter
             // 
             this.SortPanelOuter.BackColor = System.Drawing.Color.White;
             this.SortPanelOuter.Controls.Add(this.SortPanelInner);
-            this.SortPanelOuter.Location = new System.Drawing.Point(4, 34);
+            this.SortPanelOuter.Location = new System.Drawing.Point(85, 0);
             this.SortPanelOuter.Name = "SortPanelOuter";
-            this.SortPanelOuter.Size = new System.Drawing.Size(360, 710);
+            this.SortPanelOuter.Size = new System.Drawing.Size(396, 744);
             this.SortPanelOuter.TabIndex = 3;
+            this.SortPanelOuter.Visible = false;
             // 
             // SortPanelInner
             // 
             this.SortPanelInner.BackColor = System.Drawing.Color.Black;
+            this.SortPanelInner.Controls.Add(this.SortPanelCol3);
+            this.SortPanelInner.Controls.Add(this.SortPanelCol2);
+            this.SortPanelInner.Controls.Add(this.SortPanelCol1);
             this.SortPanelInner.Location = new System.Drawing.Point(1, 1);
             this.SortPanelInner.Name = "SortPanelInner";
-            this.SortPanelInner.Size = new System.Drawing.Size(358, 708);
+            this.SortPanelInner.Size = new System.Drawing.Size(394, 742);
             this.SortPanelInner.TabIndex = 4;
             // 
             // ControlPanel
@@ -2662,7 +2679,7 @@
             this.ControlPanel.Controls.Add(this.BtnSettings);
             this.ControlPanel.Controls.Add(this.BtnCollapse);
             this.ControlPanel.Controls.Add(this.BtnClose);
-            this.ControlPanel.Location = new System.Drawing.Point(541, 1);
+            this.ControlPanel.Location = new System.Drawing.Point(641, 1);
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(380, 28);
             this.ControlPanel.TabIndex = 3;
@@ -2744,7 +2761,7 @@
             // ControlPanelOuter
             // 
             this.ControlPanelOuter.BackColor = System.Drawing.Color.White;
-            this.ControlPanelOuter.Location = new System.Drawing.Point(540, 0);
+            this.ControlPanelOuter.Location = new System.Drawing.Point(640, 0);
             this.ControlPanelOuter.Name = "ControlPanelOuter";
             this.ControlPanelOuter.Size = new System.Drawing.Size(382, 30);
             this.ControlPanelOuter.TabIndex = 4;
@@ -2757,13 +2774,14 @@
             this.BtnMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnMap.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnMap.Location = new System.Drawing.Point(912, 270);
+            this.BtnMap.Location = new System.Drawing.Point(1012, 270);
             this.BtnMap.Name = "BtnMap";
             this.BtnMap.Size = new System.Drawing.Size(25, 112);
             this.BtnMap.TabIndex = 15;
             this.BtnMap.Text = "К\r\nА\r\nР\r\nТ\r\nА";
             this.BtnMap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnMap.UseVisualStyleBackColor = false;
+            this.BtnMap.Click += new System.EventHandler(this.BtnMap_Click);
             // 
             // BtnSort
             // 
@@ -2773,13 +2791,14 @@
             this.BtnSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnSort.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnSort.Location = new System.Drawing.Point(522, 270);
+            this.BtnSort.Location = new System.Drawing.Point(622, 270);
             this.BtnSort.Name = "BtnSort";
             this.BtnSort.Size = new System.Drawing.Size(29, 112);
             this.BtnSort.TabIndex = 16;
             this.BtnSort.Text = "Ф\r\nИ\r\nЛ\r\nЬ\r\nТ\r\nР";
             this.BtnSort.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnSort.UseVisualStyleBackColor = false;
+            this.BtnSort.Click += new System.EventHandler(this.BtnSort_Click);
             // 
             // BtnCams
             // 
@@ -2789,13 +2808,14 @@
             this.BtnCams.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnCams.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnCams.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnCams.Location = new System.Drawing.Point(521, 428);
+            this.BtnCams.Location = new System.Drawing.Point(621, 428);
             this.BtnCams.Name = "BtnCams";
             this.BtnCams.Size = new System.Drawing.Size(29, 112);
             this.BtnCams.TabIndex = 17;
             this.BtnCams.Text = "К\r\nА\r\nМ\r\nЕ\r\nР\r\nЫ";
             this.BtnCams.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnCams.UseVisualStyleBackColor = false;
+            this.BtnCams.Click += new System.EventHandler(this.BtnCams_Click);
             // 
             // DEBUG_Btn
             // 
@@ -2805,7 +2825,7 @@
             this.DEBUG_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DEBUG_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DEBUG_Btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.DEBUG_Btn.Location = new System.Drawing.Point(912, 144);
+            this.DEBUG_Btn.Location = new System.Drawing.Point(1012, 144);
             this.DEBUG_Btn.Name = "DEBUG_Btn";
             this.DEBUG_Btn.Size = new System.Drawing.Size(26, 112);
             this.DEBUG_Btn.TabIndex = 18;
@@ -2814,12 +2834,87 @@
             this.DEBUG_Btn.UseVisualStyleBackColor = false;
             this.DEBUG_Btn.Click += new System.EventHandler(this.DEBUG_Btn_Click);
             // 
+            // button13
+            // 
+            this.button13.AutoEllipsis = true;
+            this.button13.BackColor = System.Drawing.Color.Black;
+            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(0, 0);
+            this.button13.Margin = new System.Windows.Forms.Padding(0);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(128, 23);
+            this.button13.TabIndex = 1;
+            this.button13.Text = "-";
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.AutoEllipsis = true;
+            this.button14.BackColor = System.Drawing.Color.Black;
+            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(0, 23);
+            this.button14.Margin = new System.Windows.Forms.Padding(0);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(128, 23);
+            this.button14.TabIndex = 2;
+            this.button14.Text = "-";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // button15
+            // 
+            this.button15.AutoEllipsis = true;
+            this.button15.BackColor = System.Drawing.Color.Black;
+            this.button15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
+            this.button15.ForeColor = System.Drawing.Color.White;
+            this.button15.Location = new System.Drawing.Point(0, 46);
+            this.button15.Margin = new System.Windows.Forms.Padding(0);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(128, 23);
+            this.button15.TabIndex = 3;
+            this.button15.Text = "-";
+            this.button15.UseVisualStyleBackColor = false;
+            // 
+            // SortPanelCol1
+            // 
+            this.SortPanelCol1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SortPanelCol1.Location = new System.Drawing.Point(0, 0);
+            this.SortPanelCol1.Margin = new System.Windows.Forms.Padding(0);
+            this.SortPanelCol1.Name = "SortPanelCol1";
+            this.SortPanelCol1.Size = new System.Drawing.Size(130, 742);
+            this.SortPanelCol1.TabIndex = 2;
+            // 
+            // SortPanelCol2
+            // 
+            this.SortPanelCol2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SortPanelCol2.Location = new System.Drawing.Point(130, 0);
+            this.SortPanelCol2.Margin = new System.Windows.Forms.Padding(0);
+            this.SortPanelCol2.Name = "SortPanelCol2";
+            this.SortPanelCol2.Size = new System.Drawing.Size(130, 742);
+            this.SortPanelCol2.TabIndex = 3;
+            // 
+            // SortPanelCol3
+            // 
+            this.SortPanelCol3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SortPanelCol3.Location = new System.Drawing.Point(260, 0);
+            this.SortPanelCol3.Margin = new System.Windows.Forms.Padding(0);
+            this.SortPanelCol3.Name = "SortPanelCol3";
+            this.SortPanelCol3.Size = new System.Drawing.Size(130, 742);
+            this.SortPanelCol3.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(1376, 773);
+            this.ClientSize = new System.Drawing.Size(1686, 773);
             this.ControlBox = false;
             this.Controls.Add(this.SortPanelOuter);
             this.Controls.Add(this.SortPrefPanelOuter);
@@ -2949,7 +3044,9 @@
             this.MainPanelInner1.PerformLayout();
             this.MapPanelOuter.ResumeLayout(false);
             this.SortPrefPanelOuter.ResumeLayout(false);
+            this.SortPrefPanelInner.ResumeLayout(false);
             this.SortPanelOuter.ResumeLayout(false);
+            this.SortPanelInner.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -3164,6 +3261,12 @@
         private System.Windows.Forms.Button BtnClipRCustom;
         private System.Windows.Forms.Panel panel80;
         private System.Windows.Forms.Button BtnClipSpeed;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.FlowLayoutPanel SortPanelCol1;
+        private System.Windows.Forms.FlowLayoutPanel SortPanelCol3;
+        private System.Windows.Forms.FlowLayoutPanel SortPanelCol2;
     }
 }
 

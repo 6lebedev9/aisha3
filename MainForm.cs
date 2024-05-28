@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -23,8 +24,13 @@ namespace aisha3
             CheckConnectAndVersion();
         }
         public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
+        public static Dictionary<int, Device> Cams = new Dictionary<int, Device>();
         public static Device DeviceChosen;
         public static int ChosenIssueTheme = 0;
+        public static bool MapOpen = false;
+        public static bool CamsOpen = false;
+        public static bool SortOpen = false;
+
         public void CheckConnectAndVersion()
         {
             try
@@ -92,6 +98,129 @@ namespace aisha3
             }
             toDelete.Clear();
         }
+
+        public void ClearAllCamBtns()
+        {
+            var toRemove1 = SortPanelCol1.Controls.OfType<Panel>().ToList();
+            var toRemove2 = SortPanelCol2.Controls.OfType<Panel>().ToList();
+            var toRemove3 = SortPanelCol3.Controls.OfType<Panel>().ToList();
+            foreach(var ctrl in toRemove1)
+            {
+                Controls.Remove(ctrl);
+                ctrl.Dispose();
+            }
+            toRemove1.Clear();
+            foreach (var ctrl in toRemove2)
+            {
+                Controls.Remove(ctrl);
+                ctrl.Dispose();
+            }
+            toRemove2.Clear();
+            foreach (var ctrl in toRemove3)
+            {
+                Controls.Remove(ctrl);
+                ctrl.Dispose();
+            }
+            toRemove3.Clear();
+        }
+
+        public void CreateCamBtn(Panel parent, int i)
+        {
+            Panel camMiniPanel = new FlowLayoutPanel();
+            parent.Controls.Add(camMiniPanel);
+            camMiniPanel.BackColor = Color.White;
+            camMiniPanel.BorderStyle = BorderStyle.None;
+            camMiniPanel.AutoSize = false;
+            camMiniPanel.Size = new Size(130, 45);
+            camMiniPanel.Tag = i;
+            camMiniPanel.Margin = new Padding(0);
+
+            Button camNumberBtn = new Button();
+            camMiniPanel.Controls.Add(camNumberBtn);
+            camNumberBtn.Size = new Size(130, 23);
+            camNumberBtn.AutoSize = false;
+            camNumberBtn.Text = Cams[i].KvfNumber.ToString();
+            camNumberBtn.Font = new Font("Tw Cen MT Condensed", (float)11);
+            camNumberBtn.FlatStyle = FlatStyle.Popup;
+            camNumberBtn.Margin = new Padding(0);
+            camNumberBtn.Tag = i;
+            camNumberBtn.BackColor = Color.Black;
+            camNumberBtn.ForeColor = Color.White;
+            camNumberBtn.Dock = DockStyle.Top;
+            camNumberBtn.Click += new System.EventHandler(BtnClipCamNumber_Click);
+            void BtnClipCamNumber_Click(object sender, EventArgs e)
+            {
+                Clipboard.SetText(Cams[i].KvfNumber);
+            }
+
+            Button camToKsmBtn = new Button();
+            camMiniPanel.Controls.Add(camToKsmBtn);
+            camToKsmBtn.Size = new Size(65, 22);
+            camToKsmBtn.Location = new Point(0, 23);
+            camToKsmBtn.AutoSize = true;
+            camToKsmBtn.Text = "КСМ";
+            camToKsmBtn.Font = new Font("Tw Cen MT Condensed", (float)10);
+            camToKsmBtn.FlatStyle = FlatStyle.Popup;
+            camToKsmBtn.Margin = new Padding(0);
+            camToKsmBtn.Tag = i;
+            camToKsmBtn.BackColor = Color.Black;
+            camToKsmBtn.ForeColor = Color.White;
+            camToKsmBtn.Dock = DockStyle.Left;
+            camToKsmBtn.Click += new System.EventHandler(CamToKsmBtn_Click);
+            void CamToKsmBtn_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(Cams[i].KsmHttp.ToString());
+                }
+                catch (Exception) { }
+            }
+
+            Button ClipRtspBtn = new Button();
+            camMiniPanel.Controls.Add(ClipRtspBtn);
+            ClipRtspBtn.Size = new Size(65, 22);
+            ClipRtspBtn.Location = new Point(65, 23);
+            ClipRtspBtn.AutoSize = true;
+            ClipRtspBtn.Text = "RTSP";
+            ClipRtspBtn.Font = new Font("Tw Cen MT Condensed", (float)10);
+            ClipRtspBtn.FlatStyle = FlatStyle.Popup;
+            ClipRtspBtn.Margin = new Padding(0);
+            ClipRtspBtn.Tag = i;
+            ClipRtspBtn.BackColor = Color.Black;
+            ClipRtspBtn.ForeColor = Color.White;
+            ClipRtspBtn.Dock = DockStyle.Right;
+            ClipRtspBtn.Click += new System.EventHandler(ClipRtspBtn_Click);
+            void ClipRtspBtn_Click(object sender, EventArgs e)
+            {
+                Clipboard.SetText(Cams[i].Rtsp);
+            }
+        }
+
+        public void CreateAllCamBtns()
+        {
+            if(Cams != null)
+            {
+                foreach(var c in Cams)
+                {
+                    Device cam = c.Value as Device;
+                    int i = c.Key;
+                    switch (cam.CamFixType)
+                    {
+                        case "фикс.к.":
+                            CreateCamBtn(SortPanelCol1, i);
+                            break;
+                        case "обзор.к.":
+                            CreateCamBtn(SortPanelCol2, i);
+                            break;
+                        case "доп.к.":
+                            CreateCamBtn(SortPanelCol3, i);
+                            break;
+                        default: break;
+                    }
+                }
+            }
+        }
+
         public void SetMainPanel(int i)
         {
             if(Devices != null)
@@ -99,6 +228,13 @@ namespace aisha3
                 if (Devices.ContainsKey(i))
                 {
                     DeviceChosen = Devices[i];
+                    if (DeviceChosen.DeviceType == "перекресток")
+                    {
+                        Cams.Clear();
+                        ClearAllCamBtns();
+                        Cams = Mssql.CamsbyKvfNumber(DeviceChosen.KvfNumber);
+                        CreateAllCamBtns();
+                    }
                     BtnClipGK.Text = DeviceChosen.GKCommon;
                     BtnClipDeviceType.Text = DeviceChosen.DeviceType;
                     BtnClipKvfModel.Text = DeviceChosen.KvfModel;
@@ -554,6 +690,7 @@ namespace aisha3
         private void TBox_TextChanged(object sender, EventArgs e)
         {
             Devices?.Clear();
+            Cams?.Clear();
             if (TBox.Text.Length >= 3)
             {
                 Devices = Mssql.DevicesbyString(TBox.Text.ToString());
@@ -783,6 +920,76 @@ namespace aisha3
                     {
                         Mssql.SetInfoDyn(DeviceChosen.KvfNumber, CommentTBox.Text.ToString());
                     }
+                }
+            }
+        }
+
+        private void BtnMap_Click(object sender, EventArgs e)
+        {
+            if (MapOpen)
+            {
+                MapOpen = false;
+                MapPanelOuter.Visible = false;
+            }
+            else
+            {
+                MapOpen = true;
+                MapPanelOuter.Visible = true;
+            }
+        }
+
+        private void BtnCams_Click(object sender, EventArgs e)
+        {
+            if (CamsOpen)
+            {
+                CamsOpen = false;
+                SortPanelOuter.Visible = false;
+            }
+            else
+            {
+                if (SortOpen)
+                {
+                    CamsOpen = true;
+                    SortPanelOuter.Visible = true;
+                    SortPanelOuter.Location = new Point(85, 0);
+                }
+                else
+                {
+                    CamsOpen = true;
+                    SortPanelOuter.Visible = true;
+                    SortPanelOuter.Location = new Point(220, 0);
+                }
+            }
+        }
+
+        private void BtnSort_Click(object sender, EventArgs e)
+        {
+            if (SortOpen)
+            {
+                if(CamsOpen)
+                {
+                    SortOpen = false;
+                    SortPrefPanelOuter.Visible = false;
+                    SortPanelOuter.Location = new Point(220, 0);
+                }
+                else
+                {
+                    SortOpen = false;
+                    SortPrefPanelOuter.Visible = false;
+                }
+            }
+            else
+            {
+                if (CamsOpen)
+                {
+                    SortPanelOuter.Location = new Point(85, 0);
+                    SortOpen = true;
+                    SortPrefPanelOuter.Visible = true;
+                }
+                else
+                {
+                    SortOpen = true;
+                    SortPrefPanelOuter.Visible = true;
                 }
             }
         }
