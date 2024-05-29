@@ -221,9 +221,6 @@
             this.MapPanelInner = new System.Windows.Forms.Panel();
             this.SortPrefPanelOuter = new System.Windows.Forms.Panel();
             this.SortPrefPanelInner = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.BtnSrtGKCommonAll = new System.Windows.Forms.Button();
             this.CamPanelOuter = new System.Windows.Forms.Panel();
             this.CamPanelInner = new System.Windows.Forms.Panel();
             this.CamPanelCol3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -244,6 +241,7 @@
             this.SortPanelInner = new System.Windows.Forms.Panel();
             this.SortPanelCol0 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.SortPrefPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -2649,61 +2647,11 @@
             // SortPrefPanelInner
             // 
             this.SortPrefPanelInner.BackColor = System.Drawing.Color.Black;
-            this.SortPrefPanelInner.Controls.Add(this.button15);
-            this.SortPrefPanelInner.Controls.Add(this.button14);
-            this.SortPrefPanelInner.Controls.Add(this.BtnSrtGKCommonAll);
+            this.SortPrefPanelInner.Controls.Add(this.SortPrefPanelFlow);
             this.SortPrefPanelInner.Location = new System.Drawing.Point(1, 1);
             this.SortPrefPanelInner.Name = "SortPrefPanelInner";
             this.SortPrefPanelInner.Size = new System.Drawing.Size(128, 742);
             this.SortPrefPanelInner.TabIndex = 3;
-            // 
-            // button15
-            // 
-            this.button15.AutoEllipsis = true;
-            this.button15.BackColor = System.Drawing.Color.Black;
-            this.button15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
-            this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(0, 46);
-            this.button15.Margin = new System.Windows.Forms.Padding(0);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(128, 23);
-            this.button15.TabIndex = 3;
-            this.button15.Text = "-";
-            this.button15.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            this.button14.AutoEllipsis = true;
-            this.button14.BackColor = System.Drawing.Color.Black;
-            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(0, 23);
-            this.button14.Margin = new System.Windows.Forms.Padding(0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(128, 23);
-            this.button14.TabIndex = 2;
-            this.button14.Text = "-";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // BtnSrtGKCommonAll
-            // 
-            this.BtnSrtGKCommonAll.AutoEllipsis = true;
-            this.BtnSrtGKCommonAll.BackColor = System.Drawing.Color.Black;
-            this.BtnSrtGKCommonAll.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnSrtGKCommonAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSrtGKCommonAll.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
-            this.BtnSrtGKCommonAll.ForeColor = System.Drawing.Color.White;
-            this.BtnSrtGKCommonAll.Location = new System.Drawing.Point(0, 0);
-            this.BtnSrtGKCommonAll.Margin = new System.Windows.Forms.Padding(0);
-            this.BtnSrtGKCommonAll.Name = "BtnSrtGKCommonAll";
-            this.BtnSrtGKCommonAll.Size = new System.Drawing.Size(128, 23);
-            this.BtnSrtGKCommonAll.TabIndex = 1;
-            this.BtnSrtGKCommonAll.Text = "ВСЕ ГК";
-            this.BtnSrtGKCommonAll.UseVisualStyleBackColor = false;
             // 
             // CamPanelOuter
             // 
@@ -2956,6 +2904,15 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "label2";
+            // 
+            // SortPrefPanelFlow
+            // 
+            this.SortPrefPanelFlow.AutoScroll = true;
+            this.SortPrefPanelFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SortPrefPanelFlow.Location = new System.Drawing.Point(0, 0);
+            this.SortPrefPanelFlow.Name = "SortPrefPanelFlow";
+            this.SortPrefPanelFlow.Size = new System.Drawing.Size(128, 742);
+            this.SortPrefPanelFlow.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -3314,9 +3271,6 @@
         private System.Windows.Forms.Button BtnClipRCustom;
         private System.Windows.Forms.Panel panel80;
         private System.Windows.Forms.Button BtnClipSpeed;
-        private System.Windows.Forms.Button BtnSrtGKCommonAll;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
         private System.Windows.Forms.FlowLayoutPanel CamPanelCol1;
         private System.Windows.Forms.FlowLayoutPanel CamPanelCol3;
         private System.Windows.Forms.FlowLayoutPanel CamPanelCol2;
@@ -3324,6 +3278,7 @@
         private System.Windows.Forms.Panel SortPanelInner;
         private System.Windows.Forms.FlowLayoutPanel SortPanelCol0;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel SortPrefPanelFlow;
     }
 }
 

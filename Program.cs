@@ -28,4 +28,10 @@ namespace aisha3
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool ShowWindow(IntPtr hWnd, int showWindowCommand);
     }
+    public class SortVar
+    {
+        public bool Chosen { get; set; }
+        public int Group { get; set; }
+        public string VarName { get; set; }
+    }
 }

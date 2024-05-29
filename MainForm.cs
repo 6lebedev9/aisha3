@@ -36,6 +36,7 @@ namespace aisha3
         public static Dictionary<int, string> SpeedUniqs = new Dictionary<int, string>();
         public static Dictionary<int, string> DistUniqs = new Dictionary<int, string>();
         public static Dictionary<int, string> OrgOwnerUniqs = new Dictionary<int, string>();
+        public static Dictionary<int, SortVar> SortVars = new Dictionary<int, SortVar>();
         public static Device DeviceChosen;
         public static int ChosenIssueTheme = 0;
         public static bool MapOpen = false;
@@ -58,6 +59,8 @@ namespace aisha3
                 SpeedUniqs = Mssql.Uniqs("Speed");
                 DistUniqs = Mssql.Uniqs("Dist");
                 OrgOwnerUniqs = Mssql.Uniqs("OrgOwner");
+                SetSortVars();
+                CreateSortPrefPanel();
                 int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
                 if (verInDB > 0)
                 {
@@ -85,7 +88,135 @@ namespace aisha3
                 Console.WriteLine(ex.Message.ToString());
             }
         }
-        public void CreateBtnSearchHelper(int i)
+        public void SetSortVars()
+        {
+            Dictionary<int, string>[] DicsUniq = new Dictionary<int, string>[11]
+            {
+                GKCommonUniqs, KvfModelUniqs, DeviceTypeUniqs, CamFixTypeUniqs, EtherProviderUniqs, PodrOrg1CommonUniqs,
+                PodrOrg2CommonUniqs, NCodeUniqs, SpeedUniqs, DistUniqs, OrgOwnerUniqs
+            };
+
+            Dictionary<int, SortVar> SortVarsDic = new Dictionary<int, SortVar>();
+            int i = 0;
+            int j = 0;
+            foreach (var dic in DicsUniq)
+            {
+                foreach (var item in dic)
+                {
+                    SortVar sortVar = new SortVar
+                    {
+                        VarName = item.Value,
+                        Chosen = true,
+                        Group = j
+                    };
+                    SortVarsDic.Add(i, sortVar);
+                    i++;
+                }
+                j++;
+            }
+            foreach (var kvp in SortVarsDic)
+            {
+                Console.WriteLine($"Key: {kvp.Key}, VarName: {kvp.Value.VarName}, Chosen: {kvp.Value.Chosen}, Group: {kvp.Value.Group}");
+            }
+            SortVars = SortVarsDic;
+        }
+
+        private void CreateSortPrefPanel()
+        {
+            var groupedVars = SortVars.Values.GroupBy(sv => sv.Group);
+
+            foreach (var group in groupedVars)
+            {
+                // Создаем панель для группы
+                Panel groupPanel = new Panel
+                {
+                    Size = new Size(150, group.Count() * 20 + 20), // размер панели зависит от количества элементов
+                    BorderStyle = BorderStyle.FixedSingle,
+                    BackColor = Color.Black,
+                    Margin = new Padding(0)
+                };
+
+                // Чекбокс и метка для группы
+                CheckBox groupCheckBox = new CheckBox
+                {
+                    Location = new Point(0, 0),
+                    Size = new Size(15, 15),
+                    Checked = true, // или false, в зависимости от необходимости
+                    BackColor = Color.Black,
+                    Margin = new Padding(0)
+                };
+                Label groupLabel = new Label
+                {
+                    Location = new Point(20, 0),
+                    Size = new Size(100, 15),
+                    Text = $"Группа {group.Key}",
+                    BackColor = Color.Black,
+                    ForeColor = Color.White,
+                    Font = new Font("Arial", 7.0f),
+                    Margin = new Padding(0)
+                };
+
+                groupPanel.Controls.Add(groupCheckBox);
+                groupPanel.Controls.Add(groupLabel);
+
+                int itemYPos = 20; // начальная позиция элементов внутри группы
+
+                foreach (var item in group)
+                {
+                    // Чекбокс и метка для каждого элемента группы
+                    CheckBox itemCheckBox = new CheckBox
+                    {
+                        Location = new Point(0, itemYPos),
+                        Size = new Size(15, 15),
+                        Checked = item.Chosen,
+                        Margin = new Padding(0)
+                    };
+                    // Добавляем обработчик события для изменения состояния чекбокса
+                    itemCheckBox.CheckedChanged += (sender, e) =>
+                    {
+                        item.Chosen = itemCheckBox.Checked;
+                    };
+
+                    Label itemLabel = new Label
+                    {
+                        Location = new Point(20, itemYPos),
+                        Size = new Size(100, 15),
+                        Text = item.VarName,
+                        BackColor = Color.Black,
+                        ForeColor = Color.White,
+                        Font = new Font("Arial", 7.0f),
+                        Margin = new Padding(0)
+                    };
+
+                    groupPanel.Controls.Add(itemCheckBox);
+                    groupPanel.Controls.Add(itemLabel);
+
+                    itemYPos += 20; // обновляем позицию для следующего элемента
+                }
+
+                groupCheckBox.CheckedChanged += (sender, e) =>
+                {
+                    foreach (var item in group)
+                    {
+                        item.Chosen = groupCheckBox.Checked;
+                    }
+
+                    // Обновляем состояние всех чекбоксов в группе
+                    foreach (Control control in groupPanel.Controls)
+                    {
+                        if (control is CheckBox checkBoxx && control != groupCheckBox)
+                        {
+                            checkBoxx.Checked = groupCheckBox.Checked;
+                        }
+                    }
+                };
+
+                SortPrefPanelFlow.Controls.Add(groupPanel);
+            }
+        }
+
+
+            public void CreateBtnSearchHelper(int i)
         {
             if (Devices.ContainsKey(i))
             {
@@ -245,10 +376,7 @@ namespace aisha3
 
         public void SetSortOptions()
         {
-            if(GKCommonUniqs != null && KvfModelUniqs != null && DeviceTypeUniqs != null &&
-                CamFixTypeUniqs != null && EtherProviderUniqs != null && PodrOrg1CommonUniqs != null &&
-                PodrOrg2CommonUniqs != null && NCodeUniqs != null && SpeedUniqs != null &&
-                DistUniqs != null && OrgOwnerUniqs != null)
+            if(SortVars != null)
             {
 
             }
@@ -299,8 +427,6 @@ namespace aisha3
                 }
             }
         }
-
-        //public static string todayDateTime = DateTime.Now.ToString("HH:mm dd.MM.yy");
 
         public static string TodayDateTime()
         {
@@ -387,29 +513,10 @@ namespace aisha3
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
-            //try
-            //{
-            //    Console.WriteLine(Devices[1].KvfNumber);
-            //    Console.WriteLine(Devices[2].KvfNumber);
-            //    Console.WriteLine(Devices[3].KvfNumber);
-            //    Console.WriteLine(Devices[4].KvfNumber);
-            //    Console.WriteLine(Devices[5].KvfNumber);
-            //    Console.WriteLine("COUNT" + Devices.Count.ToString());
-            //}
-            //catch(Exception ex)
-            //{
-            //    Console.WriteLine($"Error: {ex.Message}");
-            //}
-            var toDelete = Controls.OfType<Button>()
-              .Where(c => (c.Tag ?? "").ToString() == "dynamic")
-              .ToList();
-            foreach (var ctrl in toDelete)
+            foreach (var kvp in SortVars)
             {
-                Controls.Remove(ctrl);
-                ctrl.Dispose();
+                Console.WriteLine($"Key: {kvp.Key}, VarName: {kvp.Value.VarName}, Chosen: {kvp.Value.Chosen}, Group: {kvp.Value.Group}");
             }
-            toDelete.Clear();
-
         }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {
