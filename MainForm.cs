@@ -37,6 +37,11 @@ namespace aisha3
         public static Dictionary<int, string> DistUniqs = new Dictionary<int, string>();
         public static Dictionary<int, string> OrgOwnerUniqs = new Dictionary<int, string>();
         public static Dictionary<int, SortVar> SortVars = new Dictionary<int, SortVar>();
+        public string[] UniqVarNames = new string[11]
+            {
+                "GKCommon", "KvfModel", "DeviceType", "CamFixType", "EtherProvider", "PodrOrg1Common",
+                "PodrOrg2Common", "NCode", "Speed", "Dist", "OrgOwner"
+            };
         public static Device DeviceChosen;
         public static int ChosenIssueTheme = 0;
         public static bool MapOpen = false;
@@ -130,7 +135,7 @@ namespace aisha3
                 // Создаем панель для группы
                 Panel groupPanel = new Panel
                 {
-                    Size = new Size(150, group.Count() * 20 + 20), // размер панели зависит от количества элементов
+                    Size = new Size(110, group.Count() * 20 + 20), // размер панели зависит от количества элементов
                     BorderStyle = BorderStyle.FixedSingle,
                     BackColor = Color.Black,
                     Margin = new Padding(0)
@@ -148,11 +153,11 @@ namespace aisha3
                 Label groupLabel = new Label
                 {
                     Location = new Point(20, 0),
-                    Size = new Size(100, 15),
-                    Text = $"Группа {group.Key}",
+                    Size = new Size(95, 15),
+                    Text = $"{UniqVarNames[group.Key]}",
                     BackColor = Color.Black,
                     ForeColor = Color.White,
-                    Font = new Font("Arial", 7.0f),
+                    Font = new Font("Arial", 8.0f),
                     Margin = new Padding(0)
                 };
 
@@ -179,8 +184,8 @@ namespace aisha3
 
                     Label itemLabel = new Label
                     {
-                        Location = new Point(20, itemYPos),
-                        Size = new Size(100, 15),
+                        Location = new Point(15, itemYPos),
+                        Size = new Size(95, 15),
                         Text = item.VarName,
                         BackColor = Color.Black,
                         ForeColor = Color.White,
@@ -517,6 +522,7 @@ namespace aisha3
             {
                 Console.WriteLine($"Key: {kvp.Key}, VarName: {kvp.Value.VarName}, Chosen: {kvp.Value.Chosen}, Group: {kvp.Value.Group}");
             }
+            Console.WriteLine(UniqVarNames[1]);
         }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {

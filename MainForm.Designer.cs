@@ -239,9 +239,24 @@
             this.DEBUG_Btn = new System.Windows.Forms.Button();
             this.SortPanelOuter = new System.Windows.Forms.Panel();
             this.SortPanelInner = new System.Windows.Forms.Panel();
-            this.SortPanelCol0 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.SortPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.LblDGVCountRows = new System.Windows.Forms.Label();
             this.SortPrefPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
+            this.SortpanelInnerInfo = new System.Windows.Forms.Panel();
+            this.DGV = new System.Windows.Forms.DataGridView();
+            this.KvfNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GKCommon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KvfModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PodrOrg1Common = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PodrOrg2Common = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CamFixType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EtherProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeviceIP = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.KsmHttp = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnUseSort = new System.Windows.Forms.Button();
+            this.panel81 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -316,14 +331,16 @@
             this.ControlPanel.SuspendLayout();
             this.SortPanelOuter.SuspendLayout();
             this.SortPanelInner.SuspendLayout();
-            this.SortPanelCol0.SuspendLayout();
+            this.SortPanel.SuspendLayout();
+            this.SortpanelInnerInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanelOuter
             // 
             this.MainPanelOuter.BackColor = System.Drawing.Color.White;
             this.MainPanelOuter.Controls.Add(this.MainPanelInner);
-            this.MainPanelOuter.Location = new System.Drawing.Point(641, 34);
+            this.MainPanelOuter.Location = new System.Drawing.Point(841, 34);
             this.MainPanelOuter.Name = "MainPanelOuter";
             this.MainPanelOuter.Size = new System.Drawing.Size(380, 710);
             this.MainPanelOuter.TabIndex = 0;
@@ -2620,7 +2637,7 @@
             // 
             this.MapPanelOuter.BackColor = System.Drawing.Color.White;
             this.MapPanelOuter.Controls.Add(this.MapPanelInner);
-            this.MapPanelOuter.Location = new System.Drawing.Point(1043, 0);
+            this.MapPanelOuter.Location = new System.Drawing.Point(1243, 0);
             this.MapPanelOuter.Name = "MapPanelOuter";
             this.MapPanelOuter.Size = new System.Drawing.Size(410, 710);
             this.MapPanelOuter.TabIndex = 1;
@@ -2638,7 +2655,7 @@
             // 
             this.SortPrefPanelOuter.BackColor = System.Drawing.Color.White;
             this.SortPrefPanelOuter.Controls.Add(this.SortPrefPanelInner);
-            this.SortPrefPanelOuter.Location = new System.Drawing.Point(487, 0);
+            this.SortPrefPanelOuter.Location = new System.Drawing.Point(687, 0);
             this.SortPrefPanelOuter.Name = "SortPrefPanelOuter";
             this.SortPrefPanelOuter.Size = new System.Drawing.Size(130, 744);
             this.SortPrefPanelOuter.TabIndex = 2;
@@ -2657,7 +2674,7 @@
             // 
             this.CamPanelOuter.BackColor = System.Drawing.Color.White;
             this.CamPanelOuter.Controls.Add(this.CamPanelInner);
-            this.CamPanelOuter.Location = new System.Drawing.Point(220, 0);
+            this.CamPanelOuter.Location = new System.Drawing.Point(420, 0);
             this.CamPanelOuter.Name = "CamPanelOuter";
             this.CamPanelOuter.Size = new System.Drawing.Size(396, 744);
             this.CamPanelOuter.TabIndex = 3;
@@ -2710,7 +2727,7 @@
             this.ControlPanel.Controls.Add(this.BtnSettings);
             this.ControlPanel.Controls.Add(this.BtnCollapse);
             this.ControlPanel.Controls.Add(this.BtnClose);
-            this.ControlPanel.Location = new System.Drawing.Point(641, 1);
+            this.ControlPanel.Location = new System.Drawing.Point(841, 1);
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(380, 28);
             this.ControlPanel.TabIndex = 3;
@@ -2792,7 +2809,7 @@
             // ControlPanelOuter
             // 
             this.ControlPanelOuter.BackColor = System.Drawing.Color.White;
-            this.ControlPanelOuter.Location = new System.Drawing.Point(640, 0);
+            this.ControlPanelOuter.Location = new System.Drawing.Point(840, 0);
             this.ControlPanelOuter.Name = "ControlPanelOuter";
             this.ControlPanelOuter.Size = new System.Drawing.Size(382, 30);
             this.ControlPanelOuter.TabIndex = 4;
@@ -2805,7 +2822,7 @@
             this.BtnMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnMap.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnMap.Location = new System.Drawing.Point(1012, 270);
+            this.BtnMap.Location = new System.Drawing.Point(1212, 270);
             this.BtnMap.Name = "BtnMap";
             this.BtnMap.Size = new System.Drawing.Size(25, 112);
             this.BtnMap.TabIndex = 15;
@@ -2822,7 +2839,7 @@
             this.BtnSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnSort.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnSort.Location = new System.Drawing.Point(622, 270);
+            this.BtnSort.Location = new System.Drawing.Point(822, 270);
             this.BtnSort.Name = "BtnSort";
             this.BtnSort.Size = new System.Drawing.Size(29, 112);
             this.BtnSort.TabIndex = 16;
@@ -2839,7 +2856,7 @@
             this.BtnCams.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnCams.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BtnCams.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnCams.Location = new System.Drawing.Point(621, 428);
+            this.BtnCams.Location = new System.Drawing.Point(821, 428);
             this.BtnCams.Name = "BtnCams";
             this.BtnCams.Size = new System.Drawing.Size(29, 112);
             this.BtnCams.TabIndex = 17;
@@ -2856,7 +2873,7 @@
             this.DEBUG_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DEBUG_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DEBUG_Btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.DEBUG_Btn.Location = new System.Drawing.Point(1012, 144);
+            this.DEBUG_Btn.Location = new System.Drawing.Point(1212, 144);
             this.DEBUG_Btn.Name = "DEBUG_Btn";
             this.DEBUG_Btn.Size = new System.Drawing.Size(26, 112);
             this.DEBUG_Btn.TabIndex = 18;
@@ -2871,7 +2888,7 @@
             this.SortPanelOuter.Controls.Add(this.SortPanelInner);
             this.SortPanelOuter.Location = new System.Drawing.Point(85, 0);
             this.SortPanelOuter.Name = "SortPanelOuter";
-            this.SortPanelOuter.Size = new System.Drawing.Size(396, 744);
+            this.SortPanelOuter.Size = new System.Drawing.Size(595, 744);
             this.SortPanelOuter.TabIndex = 19;
             this.SortPanelOuter.Visible = false;
             // 
@@ -2879,40 +2896,215 @@
             // 
             this.SortPanelInner.AutoScroll = true;
             this.SortPanelInner.BackColor = System.Drawing.Color.Black;
-            this.SortPanelInner.Controls.Add(this.SortPanelCol0);
+            this.SortPanelInner.Controls.Add(this.SortpanelInnerInfo);
+            this.SortPanelInner.Controls.Add(this.SortPanel);
             this.SortPanelInner.Location = new System.Drawing.Point(1, 1);
             this.SortPanelInner.Name = "SortPanelInner";
-            this.SortPanelInner.Size = new System.Drawing.Size(394, 742);
+            this.SortPanelInner.Size = new System.Drawing.Size(593, 742);
             this.SortPanelInner.TabIndex = 4;
             // 
-            // SortPanelCol0
+            // SortPanel
             // 
-            this.SortPanelCol0.Controls.Add(this.label2);
-            this.SortPanelCol0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SortPanelCol0.Location = new System.Drawing.Point(0, 0);
-            this.SortPanelCol0.Margin = new System.Windows.Forms.Padding(0);
-            this.SortPanelCol0.Name = "SortPanelCol0";
-            this.SortPanelCol0.Size = new System.Drawing.Size(394, 742);
-            this.SortPanelCol0.TabIndex = 2;
+            this.SortPanel.AutoScroll = true;
+            this.SortPanel.Controls.Add(this.DGV);
+            this.SortPanel.Location = new System.Drawing.Point(0, 0);
+            this.SortPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.SortPanel.Name = "SortPanel";
+            this.SortPanel.Size = new System.Drawing.Size(593, 714);
+            this.SortPanel.TabIndex = 2;
             // 
-            // label2
+            // LblDGVCountRows
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.LblDGVCountRows.AutoSize = true;
+            this.LblDGVCountRows.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LblDGVCountRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.LblDGVCountRows.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LblDGVCountRows.Location = new System.Drawing.Point(125, 0);
+            this.LblDGVCountRows.Margin = new System.Windows.Forms.Padding(3);
+            this.LblDGVCountRows.Name = "LblDGVCountRows";
+            this.LblDGVCountRows.Padding = new System.Windows.Forms.Padding(5);
+            this.LblDGVCountRows.Size = new System.Drawing.Size(23, 28);
+            this.LblDGVCountRows.TabIndex = 0;
+            this.LblDGVCountRows.Text = "-";
             // 
             // SortPrefPanelFlow
             // 
             this.SortPrefPanelFlow.AutoScroll = true;
+            this.SortPrefPanelFlow.AutoScrollMargin = new System.Drawing.Size(1, 1);
             this.SortPrefPanelFlow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SortPrefPanelFlow.Location = new System.Drawing.Point(0, 0);
             this.SortPrefPanelFlow.Name = "SortPrefPanelFlow";
             this.SortPrefPanelFlow.Size = new System.Drawing.Size(128, 742);
             this.SortPrefPanelFlow.TabIndex = 0;
+            // 
+            // SortpanelInnerInfo
+            // 
+            this.SortpanelInnerInfo.Controls.Add(this.button2);
+            this.SortpanelInnerInfo.Controls.Add(this.panel81);
+            this.SortpanelInnerInfo.Controls.Add(this.BtnUseSort);
+            this.SortpanelInnerInfo.Controls.Add(this.LblDGVCountRows);
+            this.SortpanelInnerInfo.Controls.Add(this.label2);
+            this.SortpanelInnerInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SortpanelInnerInfo.Location = new System.Drawing.Point(0, 714);
+            this.SortpanelInnerInfo.Name = "SortpanelInnerInfo";
+            this.SortpanelInnerInfo.Size = new System.Drawing.Size(593, 28);
+            this.SortpanelInnerInfo.TabIndex = 1;
+            // 
+            // DGV
+            // 
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToDeleteRows = false;
+            this.DGV.AllowUserToOrderColumns = true;
+            this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.KvfNumber,
+            this.GKCommon,
+            this.KvfModel,
+            this.PodrOrg1Common,
+            this.PodrOrg2Common,
+            this.CamFixType,
+            this.EtherProvider,
+            this.DeviceIP,
+            this.KsmHttp});
+            this.DGV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DGV.Location = new System.Drawing.Point(0, 0);
+            this.DGV.Margin = new System.Windows.Forms.Padding(0);
+            this.DGV.Name = "DGV";
+            this.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGV.RowHeadersWidth = 10;
+            this.DGV.Size = new System.Drawing.Size(593, 714);
+            this.DGV.TabIndex = 0;
+            // 
+            // KvfNumber
+            // 
+            this.KvfNumber.Frozen = true;
+            this.KvfNumber.HeaderText = "№ КВФ";
+            this.KvfNumber.Name = "KvfNumber";
+            this.KvfNumber.ReadOnly = true;
+            this.KvfNumber.Width = 71;
+            // 
+            // GKCommon
+            // 
+            this.GKCommon.Frozen = true;
+            this.GKCommon.HeaderText = "ГК";
+            this.GKCommon.Name = "GKCommon";
+            this.GKCommon.ReadOnly = true;
+            this.GKCommon.Width = 45;
+            // 
+            // KvfModel
+            // 
+            this.KvfModel.Frozen = true;
+            this.KvfModel.HeaderText = "Модель";
+            this.KvfModel.Name = "KvfModel";
+            this.KvfModel.ReadOnly = true;
+            this.KvfModel.Width = 71;
+            // 
+            // PodrOrg1Common
+            // 
+            this.PodrOrg1Common.Frozen = true;
+            this.PodrOrg1Common.HeaderText = "Подр.1";
+            this.PodrOrg1Common.Name = "PodrOrg1Common";
+            this.PodrOrg1Common.ReadOnly = true;
+            this.PodrOrg1Common.Width = 67;
+            // 
+            // PodrOrg2Common
+            // 
+            this.PodrOrg2Common.Frozen = true;
+            this.PodrOrg2Common.HeaderText = "Подр.2";
+            this.PodrOrg2Common.Name = "PodrOrg2Common";
+            this.PodrOrg2Common.ReadOnly = true;
+            this.PodrOrg2Common.Width = 67;
+            // 
+            // CamFixType
+            // 
+            this.CamFixType.Frozen = true;
+            this.CamFixType.HeaderText = "Тип кам.";
+            this.CamFixType.Name = "CamFixType";
+            this.CamFixType.Width = 77;
+            // 
+            // EtherProvider
+            // 
+            this.EtherProvider.Frozen = true;
+            this.EtherProvider.HeaderText = "WAN";
+            this.EtherProvider.Name = "EtherProvider";
+            this.EtherProvider.Width = 58;
+            // 
+            // DeviceIP
+            // 
+            this.DeviceIP.Frozen = true;
+            this.DeviceIP.HeaderText = "IP";
+            this.DeviceIP.MinimumWidth = 60;
+            this.DeviceIP.Name = "DeviceIP";
+            this.DeviceIP.Width = 60;
+            // 
+            // KsmHttp
+            // 
+            this.KsmHttp.Frozen = true;
+            this.KsmHttp.HeaderText = "КСМ";
+            this.KsmHttp.Name = "KsmHttp";
+            this.KsmHttp.ReadOnly = true;
+            this.KsmHttp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.KsmHttp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.KsmHttp.Width = 55;
+            // 
+            // BtnUseSort
+            // 
+            this.BtnUseSort.AutoSize = true;
+            this.BtnUseSort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnUseSort.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnUseSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnUseSort.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnUseSort.Location = new System.Drawing.Point(359, 0);
+            this.BtnUseSort.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnUseSort.Name = "BtnUseSort";
+            this.BtnUseSort.Size = new System.Drawing.Size(234, 28);
+            this.BtnUseSort.TabIndex = 14;
+            this.BtnUseSort.Text = "ПРИМЕНИТЬ ФИЛЬТР и НАЧАТЬ ПОИСК";
+            this.BtnUseSort.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnUseSort.UseVisualStyleBackColor = true;
+            // 
+            // panel81
+            // 
+            this.panel81.BackColor = System.Drawing.Color.Gray;
+            this.panel81.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel81.Location = new System.Drawing.Point(358, 0);
+            this.panel81.Name = "panel81";
+            this.panel81.Size = new System.Drawing.Size(1, 28);
+            this.panel81.TabIndex = 40;
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(330, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 28);
+            this.button2.TabIndex = 41;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(3);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
+            this.label2.Size = new System.Drawing.Size(125, 28);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Всего найдено:";
             // 
             // MainForm
             // 
@@ -3057,8 +3249,10 @@
             this.ControlPanel.PerformLayout();
             this.SortPanelOuter.ResumeLayout(false);
             this.SortPanelInner.ResumeLayout(false);
-            this.SortPanelCol0.ResumeLayout(false);
-            this.SortPanelCol0.PerformLayout();
+            this.SortPanel.ResumeLayout(false);
+            this.SortpanelInnerInfo.ResumeLayout(false);
+            this.SortpanelInnerInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3276,9 +3470,24 @@
         private System.Windows.Forms.FlowLayoutPanel CamPanelCol2;
         private System.Windows.Forms.Panel SortPanelOuter;
         private System.Windows.Forms.Panel SortPanelInner;
-        private System.Windows.Forms.FlowLayoutPanel SortPanelCol0;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel SortPanel;
+        private System.Windows.Forms.Label LblDGVCountRows;
         private System.Windows.Forms.FlowLayoutPanel SortPrefPanelFlow;
+        private System.Windows.Forms.Panel SortpanelInnerInfo;
+        private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KvfNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GKCommon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KvfModel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PodrOrg1Common;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PodrOrg2Common;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CamFixType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EtherProvider;
+        private System.Windows.Forms.DataGridViewButtonColumn DeviceIP;
+        private System.Windows.Forms.DataGridViewButtonColumn KsmHttp;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel81;
+        private System.Windows.Forms.Button BtnUseSort;
+        private System.Windows.Forms.Label label2;
     }
 }
 
