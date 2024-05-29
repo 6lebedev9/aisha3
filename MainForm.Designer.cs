@@ -2709,7 +2709,7 @@
             // 
             this.CamPanelOuter.BackColor = System.Drawing.Color.White;
             this.CamPanelOuter.Controls.Add(this.CamPanelInner);
-            this.CamPanelOuter.Location = new System.Drawing.Point(85, 0);
+            this.CamPanelOuter.Location = new System.Drawing.Point(220, 0);
             this.CamPanelOuter.Name = "CamPanelOuter";
             this.CamPanelOuter.Size = new System.Drawing.Size(396, 744);
             this.CamPanelOuter.TabIndex = 3;
@@ -2965,7 +2965,6 @@
             this.ClientSize = new System.Drawing.Size(1686, 773);
             this.ControlBox = false;
             this.Controls.Add(this.SortPanelOuter);
-            this.Controls.Add(this.CamPanelOuter);
             this.Controls.Add(this.SortPrefPanelOuter);
             this.Controls.Add(this.MapPanelOuter);
             this.Controls.Add(this.MainPanelOuter);
@@ -2975,6 +2974,7 @@
             this.Controls.Add(this.BtnSort);
             this.Controls.Add(this.BtnCams);
             this.Controls.Add(this.DEBUG_Btn);
+            this.Controls.Add(this.CamPanelOuter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";

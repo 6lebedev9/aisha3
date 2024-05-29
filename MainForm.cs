@@ -987,13 +987,11 @@ namespace aisha3
 
                     CamsOpen = true;
                     CamPanelOuter.Visible = true;
-                    CamPanelOuter.Location = new Point(220, 0);
                 }
                 else
                 {
                     CamsOpen = true;
                     CamPanelOuter.Visible = true;
-                    CamPanelOuter.Location = new Point(220, 0);
                 }
             }
         }
