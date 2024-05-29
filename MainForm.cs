@@ -42,6 +42,7 @@ namespace aisha3
                 "GKCommon", "KvfModel", "DeviceType", "CamFixType", "EtherProvider", "PodrOrg1Common",
                 "PodrOrg2Common", "NCode", "Speed", "Dist", "OrgOwner"
             };
+        public static Dictionary<int, Device> DevicesSort = new Dictionary<int, Device>();
         public static Device DeviceChosen;
         public static int ChosenIssueTheme = 0;
         public static bool MapOpen = false;
@@ -119,10 +120,6 @@ namespace aisha3
                 }
                 j++;
             }
-            foreach (var kvp in SortVarsDic)
-            {
-                Console.WriteLine($"Key: {kvp.Key}, VarName: {kvp.Value.VarName}, Chosen: {kvp.Value.Chosen}, Group: {kvp.Value.Group}");
-            }
             SortVars = SortVarsDic;
         }
 
@@ -132,21 +129,19 @@ namespace aisha3
 
             foreach (var group in groupedVars)
             {
-                // Создаем панель для группы
                 Panel groupPanel = new Panel
                 {
-                    Size = new Size(110, group.Count() * 20 + 20), // размер панели зависит от количества элементов
+                    Size = new Size(110, group.Count() * 20 + 20),
                     BorderStyle = BorderStyle.FixedSingle,
                     BackColor = Color.Black,
                     Margin = new Padding(0)
                 };
 
-                // Чекбокс и метка для группы
                 CheckBox groupCheckBox = new CheckBox
                 {
                     Location = new Point(0, 0),
                     Size = new Size(15, 15),
-                    Checked = true, // или false, в зависимости от необходимости
+                    Checked = true,
                     BackColor = Color.Black,
                     Margin = new Padding(0)
                 };
@@ -164,11 +159,10 @@ namespace aisha3
                 groupPanel.Controls.Add(groupCheckBox);
                 groupPanel.Controls.Add(groupLabel);
 
-                int itemYPos = 20; // начальная позиция элементов внутри группы
+                int itemYPos = 20; 
 
                 foreach (var item in group)
                 {
-                    // Чекбокс и метка для каждого элемента группы
                     CheckBox itemCheckBox = new CheckBox
                     {
                         Location = new Point(0, itemYPos),
@@ -176,7 +170,6 @@ namespace aisha3
                         Checked = item.Chosen,
                         Margin = new Padding(0)
                     };
-                    // Добавляем обработчик события для изменения состояния чекбокса
                     itemCheckBox.CheckedChanged += (sender, e) =>
                     {
                         item.Chosen = itemCheckBox.Checked;
@@ -196,7 +189,7 @@ namespace aisha3
                     groupPanel.Controls.Add(itemCheckBox);
                     groupPanel.Controls.Add(itemLabel);
 
-                    itemYPos += 20; // обновляем позицию для следующего элемента
+                    itemYPos += 20; 
                 }
 
                 groupCheckBox.CheckedChanged += (sender, e) =>
@@ -206,7 +199,6 @@ namespace aisha3
                         item.Chosen = groupCheckBox.Checked;
                     }
 
-                    // Обновляем состояние всех чекбоксов в группе
                     foreach (Control control in groupPanel.Controls)
                     {
                         if (control is CheckBox checkBoxx && control != groupCheckBox)
@@ -518,11 +510,19 @@ namespace aisha3
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
-            foreach (var kvp in SortVars)
+            Dictionary<int, Device> devices = DevicesSort;
+
+            if (devices != null)
             {
-                Console.WriteLine($"Key: {kvp.Key}, VarName: {kvp.Value.VarName}, Chosen: {kvp.Value.Chosen}, Group: {kvp.Value.Group}");
+                foreach (var kvp in devices)
+                {
+                    Console.WriteLine($"Key: {kvp.Key}, Device: {kvp.Value.ToString()}");
+                }
             }
-            Console.WriteLine(UniqVarNames[1]);
+            else
+            {
+                Console.WriteLine("No devices found or an error occurred.");
+            }
         }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {
@@ -1135,6 +1135,12 @@ namespace aisha3
                     SortPrefPanelOuter.Visible = true;
                 }
             }
+        }
+
+        private void BtnUseSort_Click(object sender, EventArgs e)
+        {
+            DevicesSort.Clear();
+            DevicesSort = Mssql.DevicesbySort();
         }
 
         //Main panel btns

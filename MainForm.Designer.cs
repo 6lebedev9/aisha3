@@ -3064,6 +3064,7 @@
             this.BtnUseSort.Text = "ПРИМЕНИТЬ ФИЛЬТР и НАЧАТЬ ПОИСК";
             this.BtnUseSort.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnUseSort.UseVisualStyleBackColor = true;
+            this.BtnUseSort.Click += new System.EventHandler(this.BtnUseSort_Click);
             // 
             // panel81
             // 
