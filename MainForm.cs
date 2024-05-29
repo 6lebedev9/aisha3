@@ -123,9 +123,9 @@ namespace aisha3
 
         public void ClearAllCamBtns()
         {
-            var toRemove1 = SortPanelCol1.Controls.OfType<Panel>().ToList();
-            var toRemove2 = SortPanelCol2.Controls.OfType<Panel>().ToList();
-            var toRemove3 = SortPanelCol3.Controls.OfType<Panel>().ToList();
+            var toRemove1 = CamPanelCol1.Controls.OfType<Panel>().ToList();
+            var toRemove2 = CamPanelCol2.Controls.OfType<Panel>().ToList();
+            var toRemove3 = CamPanelCol3.Controls.OfType<Panel>().ToList();
             foreach(var ctrl in toRemove1)
             {
                 Controls.Remove(ctrl);
@@ -229,13 +229,13 @@ namespace aisha3
                     switch (cam.CamFixType)
                     {
                         case "фикс.к.":
-                            CreateCamBtn(SortPanelCol1, i);
+                            CreateCamBtn(CamPanelCol1, i);
                             break;
                         case "обзор.к.":
-                            CreateCamBtn(SortPanelCol2, i);
+                            CreateCamBtn(CamPanelCol2, i);
                             break;
                         case "доп.к.":
-                            CreateCamBtn(SortPanelCol3, i);
+                            CreateCamBtn(CamPanelCol3, i);
                             break;
                         default: break;
                     }
@@ -243,6 +243,16 @@ namespace aisha3
             }
         }
 
+        public void SetSortOptions()
+        {
+            if(GKCommonUniqs != null && KvfModelUniqs != null && DeviceTypeUniqs != null &&
+                CamFixTypeUniqs != null && EtherProviderUniqs != null && PodrOrg1CommonUniqs != null &&
+                PodrOrg2CommonUniqs != null && NCodeUniqs != null && SpeedUniqs != null &&
+                DistUniqs != null && OrgOwnerUniqs != null)
+            {
+
+            }
+        }
         public void SetMainPanel(int i)
         {
             if(Devices != null)
@@ -314,7 +324,7 @@ namespace aisha3
         {
             System.Drawing.Color borderColor = Properties.Settings.Default.FormBorderColor;
             ControlPanelOuter.BackColor = borderColor;
-            SortPanelOuter.BackColor = borderColor;
+            CamPanelOuter.BackColor = borderColor;
             SortPrefPanelOuter.BackColor = borderColor;
             MainPanelOuter.BackColor = borderColor;
             MapPanelOuter.BackColor= borderColor;
@@ -965,21 +975,25 @@ namespace aisha3
             if (CamsOpen)
             {
                 CamsOpen = false;
-                SortPanelOuter.Visible = false;
+                CamPanelOuter.Visible = false;
             }
             else
             {
                 if (SortOpen)
                 {
+                    SortOpen = false;
+                    SortPanelOuter.Visible = false;
+                    SortPrefPanelOuter.Visible = false;
+
                     CamsOpen = true;
-                    SortPanelOuter.Visible = true;
-                    SortPanelOuter.Location = new Point(85, 0);
+                    CamPanelOuter.Visible = true;
+                    CamPanelOuter.Location = new Point(220, 0);
                 }
                 else
                 {
                     CamsOpen = true;
-                    SortPanelOuter.Visible = true;
-                    SortPanelOuter.Location = new Point(220, 0);
+                    CamPanelOuter.Visible = true;
+                    CamPanelOuter.Location = new Point(220, 0);
                 }
             }
         }
@@ -988,29 +1002,25 @@ namespace aisha3
         {
             if (SortOpen)
             {
-                if(CamsOpen)
-                {
-                    SortOpen = false;
-                    SortPrefPanelOuter.Visible = false;
-                    SortPanelOuter.Location = new Point(220, 0);
-                }
-                else
-                {
-                    SortOpen = false;
-                    SortPrefPanelOuter.Visible = false;
-                }
+                SortOpen = false;
+                SortPanelOuter.Visible = false;
+                SortPrefPanelOuter.Visible = false;
             }
             else
             {
                 if (CamsOpen)
                 {
-                    SortPanelOuter.Location = new Point(85, 0);
+                    CamsOpen = false;
+                    CamPanelOuter.Visible = false;
+
                     SortOpen = true;
+                    SortPanelOuter.Visible = true;
                     SortPrefPanelOuter.Visible = true;
                 }
                 else
                 {
                     SortOpen = true;
+                    SortPanelOuter.Visible = true;
                     SortPrefPanelOuter.Visible = true;
                 }
             }

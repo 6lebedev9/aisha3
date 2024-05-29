@@ -221,8 +221,14 @@
             this.MapPanelInner = new System.Windows.Forms.Panel();
             this.SortPrefPanelOuter = new System.Windows.Forms.Panel();
             this.SortPrefPanelInner = new System.Windows.Forms.Panel();
-            this.SortPanelOuter = new System.Windows.Forms.Panel();
-            this.SortPanelInner = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.BtnSrtGKCommonAll = new System.Windows.Forms.Button();
+            this.CamPanelOuter = new System.Windows.Forms.Panel();
+            this.CamPanelInner = new System.Windows.Forms.Panel();
+            this.CamPanelCol3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.CamPanelCol2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.CamPanelCol1 = new System.Windows.Forms.FlowLayoutPanel();
             this.ControlPanel = new System.Windows.Forms.Panel();
             this.DBState = new System.Windows.Forms.Button();
             this.LblProgName = new System.Windows.Forms.Label();
@@ -234,12 +240,10 @@
             this.BtnSort = new System.Windows.Forms.Button();
             this.BtnCams = new System.Windows.Forms.Button();
             this.DEBUG_Btn = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.SortPanelCol1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.SortPanelCol2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.SortPanelCol3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SortPanelOuter = new System.Windows.Forms.Panel();
+            this.SortPanelInner = new System.Windows.Forms.Panel();
+            this.SortPanelCol0 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -309,9 +313,12 @@
             this.MapPanelOuter.SuspendLayout();
             this.SortPrefPanelOuter.SuspendLayout();
             this.SortPrefPanelInner.SuspendLayout();
+            this.CamPanelOuter.SuspendLayout();
+            this.CamPanelInner.SuspendLayout();
+            this.ControlPanel.SuspendLayout();
             this.SortPanelOuter.SuspendLayout();
             this.SortPanelInner.SuspendLayout();
-            this.ControlPanel.SuspendLayout();
+            this.SortPanelCol0.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanelOuter
@@ -2644,32 +2651,108 @@
             this.SortPrefPanelInner.BackColor = System.Drawing.Color.Black;
             this.SortPrefPanelInner.Controls.Add(this.button15);
             this.SortPrefPanelInner.Controls.Add(this.button14);
-            this.SortPrefPanelInner.Controls.Add(this.button13);
+            this.SortPrefPanelInner.Controls.Add(this.BtnSrtGKCommonAll);
             this.SortPrefPanelInner.Location = new System.Drawing.Point(1, 1);
             this.SortPrefPanelInner.Name = "SortPrefPanelInner";
             this.SortPrefPanelInner.Size = new System.Drawing.Size(128, 742);
             this.SortPrefPanelInner.TabIndex = 3;
             // 
-            // SortPanelOuter
+            // button15
             // 
-            this.SortPanelOuter.BackColor = System.Drawing.Color.White;
-            this.SortPanelOuter.Controls.Add(this.SortPanelInner);
-            this.SortPanelOuter.Location = new System.Drawing.Point(85, 0);
-            this.SortPanelOuter.Name = "SortPanelOuter";
-            this.SortPanelOuter.Size = new System.Drawing.Size(396, 744);
-            this.SortPanelOuter.TabIndex = 3;
-            this.SortPanelOuter.Visible = false;
+            this.button15.AutoEllipsis = true;
+            this.button15.BackColor = System.Drawing.Color.Black;
+            this.button15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
+            this.button15.ForeColor = System.Drawing.Color.White;
+            this.button15.Location = new System.Drawing.Point(0, 46);
+            this.button15.Margin = new System.Windows.Forms.Padding(0);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(128, 23);
+            this.button15.TabIndex = 3;
+            this.button15.Text = "-";
+            this.button15.UseVisualStyleBackColor = false;
             // 
-            // SortPanelInner
+            // button14
             // 
-            this.SortPanelInner.BackColor = System.Drawing.Color.Black;
-            this.SortPanelInner.Controls.Add(this.SortPanelCol3);
-            this.SortPanelInner.Controls.Add(this.SortPanelCol2);
-            this.SortPanelInner.Controls.Add(this.SortPanelCol1);
-            this.SortPanelInner.Location = new System.Drawing.Point(1, 1);
-            this.SortPanelInner.Name = "SortPanelInner";
-            this.SortPanelInner.Size = new System.Drawing.Size(394, 742);
-            this.SortPanelInner.TabIndex = 4;
+            this.button14.AutoEllipsis = true;
+            this.button14.BackColor = System.Drawing.Color.Black;
+            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(0, 23);
+            this.button14.Margin = new System.Windows.Forms.Padding(0);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(128, 23);
+            this.button14.TabIndex = 2;
+            this.button14.Text = "-";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // BtnSrtGKCommonAll
+            // 
+            this.BtnSrtGKCommonAll.AutoEllipsis = true;
+            this.BtnSrtGKCommonAll.BackColor = System.Drawing.Color.Black;
+            this.BtnSrtGKCommonAll.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnSrtGKCommonAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSrtGKCommonAll.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
+            this.BtnSrtGKCommonAll.ForeColor = System.Drawing.Color.White;
+            this.BtnSrtGKCommonAll.Location = new System.Drawing.Point(0, 0);
+            this.BtnSrtGKCommonAll.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnSrtGKCommonAll.Name = "BtnSrtGKCommonAll";
+            this.BtnSrtGKCommonAll.Size = new System.Drawing.Size(128, 23);
+            this.BtnSrtGKCommonAll.TabIndex = 1;
+            this.BtnSrtGKCommonAll.Text = "ВСЕ ГК";
+            this.BtnSrtGKCommonAll.UseVisualStyleBackColor = false;
+            // 
+            // CamPanelOuter
+            // 
+            this.CamPanelOuter.BackColor = System.Drawing.Color.White;
+            this.CamPanelOuter.Controls.Add(this.CamPanelInner);
+            this.CamPanelOuter.Location = new System.Drawing.Point(85, 0);
+            this.CamPanelOuter.Name = "CamPanelOuter";
+            this.CamPanelOuter.Size = new System.Drawing.Size(396, 744);
+            this.CamPanelOuter.TabIndex = 3;
+            this.CamPanelOuter.Visible = false;
+            // 
+            // CamPanelInner
+            // 
+            this.CamPanelInner.AutoScroll = true;
+            this.CamPanelInner.BackColor = System.Drawing.Color.Black;
+            this.CamPanelInner.Controls.Add(this.CamPanelCol3);
+            this.CamPanelInner.Controls.Add(this.CamPanelCol2);
+            this.CamPanelInner.Controls.Add(this.CamPanelCol1);
+            this.CamPanelInner.Location = new System.Drawing.Point(1, 1);
+            this.CamPanelInner.Name = "CamPanelInner";
+            this.CamPanelInner.Size = new System.Drawing.Size(394, 742);
+            this.CamPanelInner.TabIndex = 4;
+            // 
+            // CamPanelCol3
+            // 
+            this.CamPanelCol3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CamPanelCol3.Location = new System.Drawing.Point(260, 0);
+            this.CamPanelCol3.Margin = new System.Windows.Forms.Padding(0);
+            this.CamPanelCol3.Name = "CamPanelCol3";
+            this.CamPanelCol3.Size = new System.Drawing.Size(130, 742);
+            this.CamPanelCol3.TabIndex = 4;
+            // 
+            // CamPanelCol2
+            // 
+            this.CamPanelCol2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CamPanelCol2.Location = new System.Drawing.Point(130, 0);
+            this.CamPanelCol2.Margin = new System.Windows.Forms.Padding(0);
+            this.CamPanelCol2.Name = "CamPanelCol2";
+            this.CamPanelCol2.Size = new System.Drawing.Size(130, 742);
+            this.CamPanelCol2.TabIndex = 3;
+            // 
+            // CamPanelCol1
+            // 
+            this.CamPanelCol1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CamPanelCol1.Location = new System.Drawing.Point(0, 0);
+            this.CamPanelCol1.Margin = new System.Windows.Forms.Padding(0);
+            this.CamPanelCol1.Name = "CamPanelCol1";
+            this.CamPanelCol1.Size = new System.Drawing.Size(130, 742);
+            this.CamPanelCol1.TabIndex = 2;
             // 
             // ControlPanel
             // 
@@ -2834,80 +2917,45 @@
             this.DEBUG_Btn.UseVisualStyleBackColor = false;
             this.DEBUG_Btn.Click += new System.EventHandler(this.DEBUG_Btn_Click);
             // 
-            // button13
+            // SortPanelOuter
             // 
-            this.button13.AutoEllipsis = true;
-            this.button13.BackColor = System.Drawing.Color.Black;
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(0, 0);
-            this.button13.Margin = new System.Windows.Forms.Padding(0);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(128, 23);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "-";
-            this.button13.UseVisualStyleBackColor = false;
+            this.SortPanelOuter.BackColor = System.Drawing.Color.White;
+            this.SortPanelOuter.Controls.Add(this.SortPanelInner);
+            this.SortPanelOuter.Location = new System.Drawing.Point(85, 0);
+            this.SortPanelOuter.Name = "SortPanelOuter";
+            this.SortPanelOuter.Size = new System.Drawing.Size(396, 744);
+            this.SortPanelOuter.TabIndex = 19;
+            this.SortPanelOuter.Visible = false;
             // 
-            // button14
+            // SortPanelInner
             // 
-            this.button14.AutoEllipsis = true;
-            this.button14.BackColor = System.Drawing.Color.Black;
-            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(0, 23);
-            this.button14.Margin = new System.Windows.Forms.Padding(0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(128, 23);
-            this.button14.TabIndex = 2;
-            this.button14.Text = "-";
-            this.button14.UseVisualStyleBackColor = false;
+            this.SortPanelInner.AutoScroll = true;
+            this.SortPanelInner.BackColor = System.Drawing.Color.Black;
+            this.SortPanelInner.Controls.Add(this.SortPanelCol0);
+            this.SortPanelInner.Location = new System.Drawing.Point(1, 1);
+            this.SortPanelInner.Name = "SortPanelInner";
+            this.SortPanelInner.Size = new System.Drawing.Size(394, 742);
+            this.SortPanelInner.TabIndex = 4;
             // 
-            // button15
+            // SortPanelCol0
             // 
-            this.button15.AutoEllipsis = true;
-            this.button15.BackColor = System.Drawing.Color.Black;
-            this.button15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Tw Cen MT Condensed", 10.5F);
-            this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(0, 46);
-            this.button15.Margin = new System.Windows.Forms.Padding(0);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(128, 23);
-            this.button15.TabIndex = 3;
-            this.button15.Text = "-";
-            this.button15.UseVisualStyleBackColor = false;
+            this.SortPanelCol0.Controls.Add(this.label2);
+            this.SortPanelCol0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SortPanelCol0.Location = new System.Drawing.Point(0, 0);
+            this.SortPanelCol0.Margin = new System.Windows.Forms.Padding(0);
+            this.SortPanelCol0.Name = "SortPanelCol0";
+            this.SortPanelCol0.Size = new System.Drawing.Size(394, 742);
+            this.SortPanelCol0.TabIndex = 2;
             // 
-            // SortPanelCol1
+            // label2
             // 
-            this.SortPanelCol1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SortPanelCol1.Location = new System.Drawing.Point(0, 0);
-            this.SortPanelCol1.Margin = new System.Windows.Forms.Padding(0);
-            this.SortPanelCol1.Name = "SortPanelCol1";
-            this.SortPanelCol1.Size = new System.Drawing.Size(130, 742);
-            this.SortPanelCol1.TabIndex = 2;
-            // 
-            // SortPanelCol2
-            // 
-            this.SortPanelCol2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SortPanelCol2.Location = new System.Drawing.Point(130, 0);
-            this.SortPanelCol2.Margin = new System.Windows.Forms.Padding(0);
-            this.SortPanelCol2.Name = "SortPanelCol2";
-            this.SortPanelCol2.Size = new System.Drawing.Size(130, 742);
-            this.SortPanelCol2.TabIndex = 3;
-            // 
-            // SortPanelCol3
-            // 
-            this.SortPanelCol3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SortPanelCol3.Location = new System.Drawing.Point(260, 0);
-            this.SortPanelCol3.Margin = new System.Windows.Forms.Padding(0);
-            this.SortPanelCol3.Name = "SortPanelCol3";
-            this.SortPanelCol3.Size = new System.Drawing.Size(130, 742);
-            this.SortPanelCol3.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label2";
             // 
             // MainForm
             // 
@@ -2917,6 +2965,7 @@
             this.ClientSize = new System.Drawing.Size(1686, 773);
             this.ControlBox = false;
             this.Controls.Add(this.SortPanelOuter);
+            this.Controls.Add(this.CamPanelOuter);
             this.Controls.Add(this.SortPrefPanelOuter);
             this.Controls.Add(this.MapPanelOuter);
             this.Controls.Add(this.MainPanelOuter);
@@ -3045,10 +3094,14 @@
             this.MapPanelOuter.ResumeLayout(false);
             this.SortPrefPanelOuter.ResumeLayout(false);
             this.SortPrefPanelInner.ResumeLayout(false);
-            this.SortPanelOuter.ResumeLayout(false);
-            this.SortPanelInner.ResumeLayout(false);
+            this.CamPanelOuter.ResumeLayout(false);
+            this.CamPanelInner.ResumeLayout(false);
             this.ControlPanel.ResumeLayout(false);
             this.ControlPanel.PerformLayout();
+            this.SortPanelOuter.ResumeLayout(false);
+            this.SortPanelInner.ResumeLayout(false);
+            this.SortPanelCol0.ResumeLayout(false);
+            this.SortPanelCol0.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3059,13 +3112,13 @@
         private System.Windows.Forms.Panel MainPanelOuter;
         private System.Windows.Forms.Panel MapPanelOuter;
         private System.Windows.Forms.Panel SortPrefPanelOuter;
-        private System.Windows.Forms.Panel SortPanelOuter;
+        private System.Windows.Forms.Panel CamPanelOuter;
         private System.Windows.Forms.Panel ControlPanel;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Button BtnCollapse;
         private System.Windows.Forms.Button BtnSettings;
         private System.Windows.Forms.Label LblProgName;
-        private System.Windows.Forms.Panel SortPanelInner;
+        private System.Windows.Forms.Panel CamPanelInner;
         private System.Windows.Forms.Panel SortPrefPanelInner;
         private System.Windows.Forms.Panel ControlPanelOuter;
         private System.Windows.Forms.Panel MainPanelInner;
@@ -3261,12 +3314,16 @@
         private System.Windows.Forms.Button BtnClipRCustom;
         private System.Windows.Forms.Panel panel80;
         private System.Windows.Forms.Button BtnClipSpeed;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button BtnSrtGKCommonAll;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.FlowLayoutPanel SortPanelCol1;
-        private System.Windows.Forms.FlowLayoutPanel SortPanelCol3;
-        private System.Windows.Forms.FlowLayoutPanel SortPanelCol2;
+        private System.Windows.Forms.FlowLayoutPanel CamPanelCol1;
+        private System.Windows.Forms.FlowLayoutPanel CamPanelCol3;
+        private System.Windows.Forms.FlowLayoutPanel CamPanelCol2;
+        private System.Windows.Forms.Panel SortPanelOuter;
+        private System.Windows.Forms.Panel SortPanelInner;
+        private System.Windows.Forms.FlowLayoutPanel SortPanelCol0;
+        private System.Windows.Forms.Label label2;
     }
 }
 
