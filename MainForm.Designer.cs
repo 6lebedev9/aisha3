@@ -241,7 +241,7 @@
             this.SortPanelOuter = new System.Windows.Forms.Panel();
             this.SortPanelInner = new System.Windows.Forms.Panel();
             this.SortpanelInnerInfo = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnDGVToClip = new System.Windows.Forms.Button();
             this.panel81 = new System.Windows.Forms.Panel();
             this.BtnUseSort = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -2917,7 +2917,7 @@
             // SortpanelInnerInfo
             // 
             this.SortpanelInnerInfo.Controls.Add(this.BtnDGVCount);
-            this.SortpanelInnerInfo.Controls.Add(this.button2);
+            this.SortpanelInnerInfo.Controls.Add(this.BtnDGVToClip);
             this.SortpanelInnerInfo.Controls.Add(this.panel81);
             this.SortpanelInnerInfo.Controls.Add(this.BtnUseSort);
             this.SortpanelInnerInfo.Controls.Add(this.label2);
@@ -2927,23 +2927,23 @@
             this.SortpanelInnerInfo.Size = new System.Drawing.Size(593, 28);
             this.SortpanelInnerInfo.TabIndex = 1;
             // 
-            // button2
+            // BtnDGVToClip
             // 
-            this.button2.AutoSize = true;
-            this.button2.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(330, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 41;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnDGVToClip.AutoSize = true;
+            this.BtnDGVToClip.BackgroundImage = global::aisha3.Properties.Resources.contentcopy;
+            this.BtnDGVToClip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnDGVToClip.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnDGVToClip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnDGVToClip.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F);
+            this.BtnDGVToClip.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnDGVToClip.Location = new System.Drawing.Point(330, 0);
+            this.BtnDGVToClip.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnDGVToClip.Name = "BtnDGVToClip";
+            this.BtnDGVToClip.Size = new System.Drawing.Size(28, 28);
+            this.BtnDGVToClip.TabIndex = 41;
+            this.BtnDGVToClip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnDGVToClip.UseVisualStyleBackColor = true;
+            this.BtnDGVToClip.Click += new System.EventHandler(this.BtnDGVToClip_Click);
             // 
             // panel81
             // 
@@ -3492,7 +3492,7 @@
         private System.Windows.Forms.FlowLayoutPanel SortPanel;
         private System.Windows.Forms.FlowLayoutPanel SortPrefPanelFlow;
         private System.Windows.Forms.Panel SortpanelInnerInfo;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnDGVToClip;
         private System.Windows.Forms.Panel panel81;
         private System.Windows.Forms.Button BtnUseSort;
         private System.Windows.Forms.Label label2;

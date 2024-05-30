@@ -1162,7 +1162,6 @@ namespace aisha3
         {
             Sort();
             BtnDGVCount.Text = DevicesSort.Count.ToString();
-
         }
 
         private void BtnDGVCount_Click(object sender, EventArgs e)
@@ -1190,6 +1189,31 @@ namespace aisha3
                 }
                 catch (Exception) { }
             }
+        }
+
+        private string DgvToClipString()
+        {
+            string output = "№ п.п.\t№ КВФ\tГК\tМодель\tТип\tТип камеры\tАдрес по ГК\tАдрес по РГИС\tвстречное\tпопутное\tрайон СПб\tGPS\tIP\tПодр.1\tПодр.2\tКС\tНарушения\tСкорость\r\n";
+            int i = 0;
+            foreach (var item in DevicesSort)
+            {
+                if (i <= DevicesSort.Count - 1)
+                {
+                    output += $"{i + 1}\t{DevicesSort[i].KvfNumber}\t{DevicesSort[i].GKCommon}\t{DevicesSort[i].KvfModelCommon}" +
+                        $"\t{DevicesSort[i].DeviceType}\t{DevicesSort[i].CamFixType}\t{DevicesSort[i].AddressDoc}" +
+                        $"\t{DevicesSort[i].AddressRGIS}\t{DevicesSort[i].Vstrech}\t{DevicesSort[i].Poput}" +
+                        $"\t{DevicesSort[i].Dist}\t{DevicesSort[i].Gps}\t{DevicesSort[i].DeviceIP}" +
+                        $"\t{DevicesSort[i].PodrOrg1Common}\t{DevicesSort[i].PodrOrg2Common}\t{DevicesSort[i].EtherProvider}" +
+                        $"\t{DevicesSort[i].NCode}\t{DevicesSort[i].Speed}\r\n";
+                    i++;
+                }
+            }
+            return output;
+        }
+
+        private void BtnDGVToClip_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(DgvToClipString());
         }
 
         //Main panel btns
