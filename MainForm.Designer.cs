@@ -221,6 +221,7 @@
             this.MapPanelInner = new System.Windows.Forms.Panel();
             this.SortPrefPanelOuter = new System.Windows.Forms.Panel();
             this.SortPrefPanelInner = new System.Windows.Forms.Panel();
+            this.SortPrefPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
             this.CamPanelOuter = new System.Windows.Forms.Panel();
             this.CamPanelInner = new System.Windows.Forms.Panel();
             this.CamPanelCol3 = new System.Windows.Forms.FlowLayoutPanel();
@@ -239,11 +240,15 @@
             this.DEBUG_Btn = new System.Windows.Forms.Button();
             this.SortPanelOuter = new System.Windows.Forms.Panel();
             this.SortPanelInner = new System.Windows.Forms.Panel();
-            this.SortPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.LblDGVCountRows = new System.Windows.Forms.Label();
-            this.SortPrefPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
             this.SortpanelInnerInfo = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel81 = new System.Windows.Forms.Panel();
+            this.BtnUseSort = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SortPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.DGV = new System.Windows.Forms.DataGridView();
+            this.BtnDGVCount = new System.Windows.Forms.Button();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KvfNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GKCommon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KvfModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -253,10 +258,6 @@
             this.EtherProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeviceIP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.KsmHttp = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.BtnUseSort = new System.Windows.Forms.Button();
-            this.panel81 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -331,8 +332,8 @@
             this.ControlPanel.SuspendLayout();
             this.SortPanelOuter.SuspendLayout();
             this.SortPanelInner.SuspendLayout();
-            this.SortPanel.SuspendLayout();
             this.SortpanelInnerInfo.SuspendLayout();
+            this.SortPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -2670,6 +2671,16 @@
             this.SortPrefPanelInner.Size = new System.Drawing.Size(128, 742);
             this.SortPrefPanelInner.TabIndex = 3;
             // 
+            // SortPrefPanelFlow
+            // 
+            this.SortPrefPanelFlow.AutoScroll = true;
+            this.SortPrefPanelFlow.AutoScrollMargin = new System.Drawing.Size(1, 1);
+            this.SortPrefPanelFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SortPrefPanelFlow.Location = new System.Drawing.Point(0, 0);
+            this.SortPrefPanelFlow.Name = "SortPrefPanelFlow";
+            this.SortPrefPanelFlow.Size = new System.Drawing.Size(128, 742);
+            this.SortPrefPanelFlow.TabIndex = 0;
+            // 
             // CamPanelOuter
             // 
             this.CamPanelOuter.BackColor = System.Drawing.Color.White;
@@ -2903,177 +2914,18 @@
             this.SortPanelInner.Size = new System.Drawing.Size(593, 742);
             this.SortPanelInner.TabIndex = 4;
             // 
-            // SortPanel
-            // 
-            this.SortPanel.AutoScroll = true;
-            this.SortPanel.Controls.Add(this.DGV);
-            this.SortPanel.Location = new System.Drawing.Point(0, 0);
-            this.SortPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.SortPanel.Name = "SortPanel";
-            this.SortPanel.Size = new System.Drawing.Size(593, 714);
-            this.SortPanel.TabIndex = 2;
-            // 
-            // LblDGVCountRows
-            // 
-            this.LblDGVCountRows.AutoSize = true;
-            this.LblDGVCountRows.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblDGVCountRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.LblDGVCountRows.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LblDGVCountRows.Location = new System.Drawing.Point(125, 0);
-            this.LblDGVCountRows.Margin = new System.Windows.Forms.Padding(3);
-            this.LblDGVCountRows.Name = "LblDGVCountRows";
-            this.LblDGVCountRows.Padding = new System.Windows.Forms.Padding(5);
-            this.LblDGVCountRows.Size = new System.Drawing.Size(23, 28);
-            this.LblDGVCountRows.TabIndex = 0;
-            this.LblDGVCountRows.Text = "-";
-            // 
-            // SortPrefPanelFlow
-            // 
-            this.SortPrefPanelFlow.AutoScroll = true;
-            this.SortPrefPanelFlow.AutoScrollMargin = new System.Drawing.Size(1, 1);
-            this.SortPrefPanelFlow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SortPrefPanelFlow.Location = new System.Drawing.Point(0, 0);
-            this.SortPrefPanelFlow.Name = "SortPrefPanelFlow";
-            this.SortPrefPanelFlow.Size = new System.Drawing.Size(128, 742);
-            this.SortPrefPanelFlow.TabIndex = 0;
-            // 
             // SortpanelInnerInfo
             // 
+            this.SortpanelInnerInfo.Controls.Add(this.BtnDGVCount);
             this.SortpanelInnerInfo.Controls.Add(this.button2);
             this.SortpanelInnerInfo.Controls.Add(this.panel81);
             this.SortpanelInnerInfo.Controls.Add(this.BtnUseSort);
-            this.SortpanelInnerInfo.Controls.Add(this.LblDGVCountRows);
             this.SortpanelInnerInfo.Controls.Add(this.label2);
             this.SortpanelInnerInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SortpanelInnerInfo.Location = new System.Drawing.Point(0, 714);
             this.SortpanelInnerInfo.Name = "SortpanelInnerInfo";
             this.SortpanelInnerInfo.Size = new System.Drawing.Size(593, 28);
             this.SortpanelInnerInfo.TabIndex = 1;
-            // 
-            // DGV
-            // 
-            this.DGV.AllowUserToAddRows = false;
-            this.DGV.AllowUserToDeleteRows = false;
-            this.DGV.AllowUserToOrderColumns = true;
-            this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.KvfNumber,
-            this.GKCommon,
-            this.KvfModel,
-            this.PodrOrg1Common,
-            this.PodrOrg2Common,
-            this.CamFixType,
-            this.EtherProvider,
-            this.DeviceIP,
-            this.KsmHttp});
-            this.DGV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DGV.Location = new System.Drawing.Point(0, 0);
-            this.DGV.Margin = new System.Windows.Forms.Padding(0);
-            this.DGV.Name = "DGV";
-            this.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.DGV.RowHeadersWidth = 10;
-            this.DGV.Size = new System.Drawing.Size(593, 714);
-            this.DGV.TabIndex = 0;
-            // 
-            // KvfNumber
-            // 
-            this.KvfNumber.Frozen = true;
-            this.KvfNumber.HeaderText = "№ КВФ";
-            this.KvfNumber.Name = "KvfNumber";
-            this.KvfNumber.ReadOnly = true;
-            this.KvfNumber.Width = 71;
-            // 
-            // GKCommon
-            // 
-            this.GKCommon.Frozen = true;
-            this.GKCommon.HeaderText = "ГК";
-            this.GKCommon.Name = "GKCommon";
-            this.GKCommon.ReadOnly = true;
-            this.GKCommon.Width = 45;
-            // 
-            // KvfModel
-            // 
-            this.KvfModel.Frozen = true;
-            this.KvfModel.HeaderText = "Модель";
-            this.KvfModel.Name = "KvfModel";
-            this.KvfModel.ReadOnly = true;
-            this.KvfModel.Width = 71;
-            // 
-            // PodrOrg1Common
-            // 
-            this.PodrOrg1Common.Frozen = true;
-            this.PodrOrg1Common.HeaderText = "Подр.1";
-            this.PodrOrg1Common.Name = "PodrOrg1Common";
-            this.PodrOrg1Common.ReadOnly = true;
-            this.PodrOrg1Common.Width = 67;
-            // 
-            // PodrOrg2Common
-            // 
-            this.PodrOrg2Common.Frozen = true;
-            this.PodrOrg2Common.HeaderText = "Подр.2";
-            this.PodrOrg2Common.Name = "PodrOrg2Common";
-            this.PodrOrg2Common.ReadOnly = true;
-            this.PodrOrg2Common.Width = 67;
-            // 
-            // CamFixType
-            // 
-            this.CamFixType.Frozen = true;
-            this.CamFixType.HeaderText = "Тип кам.";
-            this.CamFixType.Name = "CamFixType";
-            this.CamFixType.Width = 77;
-            // 
-            // EtherProvider
-            // 
-            this.EtherProvider.Frozen = true;
-            this.EtherProvider.HeaderText = "WAN";
-            this.EtherProvider.Name = "EtherProvider";
-            this.EtherProvider.Width = 58;
-            // 
-            // DeviceIP
-            // 
-            this.DeviceIP.Frozen = true;
-            this.DeviceIP.HeaderText = "IP";
-            this.DeviceIP.MinimumWidth = 60;
-            this.DeviceIP.Name = "DeviceIP";
-            this.DeviceIP.Width = 60;
-            // 
-            // KsmHttp
-            // 
-            this.KsmHttp.Frozen = true;
-            this.KsmHttp.HeaderText = "КСМ";
-            this.KsmHttp.Name = "KsmHttp";
-            this.KsmHttp.ReadOnly = true;
-            this.KsmHttp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.KsmHttp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.KsmHttp.Width = 55;
-            // 
-            // BtnUseSort
-            // 
-            this.BtnUseSort.AutoSize = true;
-            this.BtnUseSort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnUseSort.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BtnUseSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnUseSort.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnUseSort.Location = new System.Drawing.Point(359, 0);
-            this.BtnUseSort.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnUseSort.Name = "BtnUseSort";
-            this.BtnUseSort.Size = new System.Drawing.Size(234, 28);
-            this.BtnUseSort.TabIndex = 14;
-            this.BtnUseSort.Text = "ПРИМЕНИТЬ ФИЛЬТР и НАЧАТЬ ПОИСК";
-            this.BtnUseSort.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnUseSort.UseVisualStyleBackColor = true;
-            this.BtnUseSort.Click += new System.EventHandler(this.BtnUseSort_Click);
-            // 
-            // panel81
-            // 
-            this.panel81.BackColor = System.Drawing.Color.Gray;
-            this.panel81.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel81.Location = new System.Drawing.Point(358, 0);
-            this.panel81.Name = "panel81";
-            this.panel81.Size = new System.Drawing.Size(1, 28);
-            this.panel81.TabIndex = 40;
             // 
             // button2
             // 
@@ -3093,6 +2945,32 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // panel81
+            // 
+            this.panel81.BackColor = System.Drawing.Color.Gray;
+            this.panel81.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel81.Location = new System.Drawing.Point(358, 0);
+            this.panel81.Name = "panel81";
+            this.panel81.Size = new System.Drawing.Size(1, 28);
+            this.panel81.TabIndex = 40;
+            // 
+            // BtnUseSort
+            // 
+            this.BtnUseSort.AutoSize = true;
+            this.BtnUseSort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnUseSort.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnUseSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnUseSort.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnUseSort.Location = new System.Drawing.Point(359, 0);
+            this.BtnUseSort.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnUseSort.Name = "BtnUseSort";
+            this.BtnUseSort.Size = new System.Drawing.Size(234, 28);
+            this.BtnUseSort.TabIndex = 14;
+            this.BtnUseSort.Text = "ПРИМЕНИТЬ ФИЛЬТР и НАЧАТЬ ПОИСК";
+            this.BtnUseSort.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnUseSort.UseVisualStyleBackColor = true;
+            this.BtnUseSort.Click += new System.EventHandler(this.BtnUseSort_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -3106,6 +2984,146 @@
             this.label2.Size = new System.Drawing.Size(125, 28);
             this.label2.TabIndex = 42;
             this.label2.Text = "Всего найдено:";
+            // 
+            // SortPanel
+            // 
+            this.SortPanel.AutoScroll = true;
+            this.SortPanel.Controls.Add(this.DGV);
+            this.SortPanel.Location = new System.Drawing.Point(0, 0);
+            this.SortPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.SortPanel.Name = "SortPanel";
+            this.SortPanel.Size = new System.Drawing.Size(593, 714);
+            this.SortPanel.TabIndex = 2;
+            // 
+            // DGV
+            // 
+            this.DGV.AllowUserToAddRows = false;
+            this.DGV.AllowUserToDeleteRows = false;
+            this.DGV.AllowUserToOrderColumns = true;
+            this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.DGV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Number,
+            this.KvfNumber,
+            this.GKCommon,
+            this.KvfModel,
+            this.PodrOrg1Common,
+            this.PodrOrg2Common,
+            this.CamFixType,
+            this.EtherProvider,
+            this.DeviceIP,
+            this.KsmHttp});
+            this.DGV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DGV.Location = new System.Drawing.Point(0, 0);
+            this.DGV.Margin = new System.Windows.Forms.Padding(0);
+            this.DGV.Name = "DGV";
+            this.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.DGV.RowHeadersWidth = 10;
+            this.DGV.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.DGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Tw Cen MT", 7.25F);
+            this.DGV.RowTemplate.Height = 18;
+            this.DGV.Size = new System.Drawing.Size(593, 714);
+            this.DGV.TabIndex = 0;
+            this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellContentClick);
+            // 
+            // BtnDGVCount
+            // 
+            this.BtnDGVCount.AutoSize = true;
+            this.BtnDGVCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnDGVCount.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnDGVCount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnDGVCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtnDGVCount.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnDGVCount.Location = new System.Drawing.Point(125, 0);
+            this.BtnDGVCount.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnDGVCount.Name = "BtnDGVCount";
+            this.BtnDGVCount.Size = new System.Drawing.Size(55, 28);
+            this.BtnDGVCount.TabIndex = 43;
+            this.BtnDGVCount.Text = "-";
+            this.BtnDGVCount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnDGVCount.UseVisualStyleBackColor = true;
+            this.BtnDGVCount.Click += new System.EventHandler(this.BtnDGVCount_Click);
+            // 
+            // Number
+            // 
+            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Number.HeaderText = "#";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Width = 30;
+            // 
+            // KvfNumber
+            // 
+            this.KvfNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.KvfNumber.HeaderText = "№ КВФ";
+            this.KvfNumber.Name = "KvfNumber";
+            this.KvfNumber.ReadOnly = true;
+            this.KvfNumber.Width = 71;
+            // 
+            // GKCommon
+            // 
+            this.GKCommon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.GKCommon.HeaderText = "ГК";
+            this.GKCommon.Name = "GKCommon";
+            this.GKCommon.ReadOnly = true;
+            this.GKCommon.Width = 45;
+            // 
+            // KvfModel
+            // 
+            this.KvfModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.KvfModel.HeaderText = "Модель";
+            this.KvfModel.Name = "KvfModel";
+            this.KvfModel.ReadOnly = true;
+            this.KvfModel.Width = 68;
+            // 
+            // PodrOrg1Common
+            // 
+            this.PodrOrg1Common.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PodrOrg1Common.HeaderText = "Подр.1";
+            this.PodrOrg1Common.Name = "PodrOrg1Common";
+            this.PodrOrg1Common.ReadOnly = true;
+            this.PodrOrg1Common.Width = 35;
+            // 
+            // PodrOrg2Common
+            // 
+            this.PodrOrg2Common.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PodrOrg2Common.HeaderText = "Подр.2";
+            this.PodrOrg2Common.Name = "PodrOrg2Common";
+            this.PodrOrg2Common.ReadOnly = true;
+            this.PodrOrg2Common.Width = 35;
+            // 
+            // CamFixType
+            // 
+            this.CamFixType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CamFixType.HeaderText = "Тип кам.";
+            this.CamFixType.Name = "CamFixType";
+            this.CamFixType.Width = 60;
+            // 
+            // EtherProvider
+            // 
+            this.EtherProvider.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.EtherProvider.HeaderText = "WAN";
+            this.EtherProvider.Name = "EtherProvider";
+            this.EtherProvider.Width = 35;
+            // 
+            // DeviceIP
+            // 
+            this.DeviceIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DeviceIP.HeaderText = "IP";
+            this.DeviceIP.MinimumWidth = 60;
+            this.DeviceIP.Name = "DeviceIP";
+            this.DeviceIP.Width = 60;
+            // 
+            // KsmHttp
+            // 
+            this.KsmHttp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.KsmHttp.HeaderText = "КСМ";
+            this.KsmHttp.Name = "KsmHttp";
+            this.KsmHttp.ReadOnly = true;
+            this.KsmHttp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.KsmHttp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.KsmHttp.Width = 55;
             // 
             // MainForm
             // 
@@ -3250,9 +3268,9 @@
             this.ControlPanel.PerformLayout();
             this.SortPanelOuter.ResumeLayout(false);
             this.SortPanelInner.ResumeLayout(false);
-            this.SortPanel.ResumeLayout(false);
             this.SortpanelInnerInfo.ResumeLayout(false);
             this.SortpanelInnerInfo.PerformLayout();
+            this.SortPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -3472,10 +3490,15 @@
         private System.Windows.Forms.Panel SortPanelOuter;
         private System.Windows.Forms.Panel SortPanelInner;
         private System.Windows.Forms.FlowLayoutPanel SortPanel;
-        private System.Windows.Forms.Label LblDGVCountRows;
         private System.Windows.Forms.FlowLayoutPanel SortPrefPanelFlow;
         private System.Windows.Forms.Panel SortpanelInnerInfo;
-        private System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel81;
+        private System.Windows.Forms.Button BtnUseSort;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnDGVCount;
+        public System.Windows.Forms.DataGridView DGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn KvfNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn GKCommon;
         private System.Windows.Forms.DataGridViewTextBoxColumn KvfModel;
@@ -3485,10 +3508,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EtherProvider;
         private System.Windows.Forms.DataGridViewButtonColumn DeviceIP;
         private System.Windows.Forms.DataGridViewButtonColumn KsmHttp;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel81;
-        private System.Windows.Forms.Button BtnUseSort;
-        private System.Windows.Forms.Label label2;
     }
 }
 

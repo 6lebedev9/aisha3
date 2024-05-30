@@ -23,6 +23,7 @@ namespace aisha3
             WindowBorderColorLoad();
             CheckConnectAndVersion();
         }
+        public static bool Connected = false;
         public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
         public static Dictionary<int, Device> Cams = new Dictionary<int, Device>();
         public static Dictionary<int, string> GKCommonUniqs = new Dictionary<int, string>();
@@ -96,119 +97,125 @@ namespace aisha3
         }
         public void SetSortVars()
         {
-            Dictionary<int, string>[] DicsUniq = new Dictionary<int, string>[11]
+            if(Mssql.Connected)
+            {
+                Dictionary<int, string>[] DicsUniq = new Dictionary<int, string>[11]
             {
                 GKCommonUniqs, KvfModelUniqs, DeviceTypeUniqs, CamFixTypeUniqs, EtherProviderUniqs, PodrOrg1CommonUniqs,
                 PodrOrg2CommonUniqs, NCodeUniqs, SpeedUniqs, DistUniqs, OrgOwnerUniqs
             };
 
-            Dictionary<int, SortVar> SortVarsDic = new Dictionary<int, SortVar>();
-            int i = 0;
-            int j = 0;
-            foreach (var dic in DicsUniq)
-            {
-                foreach (var item in dic)
+                Dictionary<int, SortVar> SortVarsDic = new Dictionary<int, SortVar>();
+                int i = 0;
+                int j = 0;
+                foreach (var dic in DicsUniq)
                 {
-                    SortVar sortVar = new SortVar
+                    foreach (var item in dic)
                     {
-                        VarName = item.Value,
-                        Chosen = true,
-                        Group = j
-                    };
-                    SortVarsDic.Add(i, sortVar);
-                    i++;
+                        SortVar sortVar = new SortVar
+                        {
+                            VarName = item.Value,
+                            Chosen = true,
+                            Group = j
+                        };
+                        SortVarsDic.Add(i, sortVar);
+                        i++;
+                    }
+                    j++;
                 }
-                j++;
+                SortVars = SortVarsDic;
             }
-            SortVars = SortVarsDic;
         }
 
         private void CreateSortPrefPanel()
         {
-            var groupedVars = SortVars.Values.GroupBy(sv => sv.Group);
-
-            foreach (var group in groupedVars)
+            if (SortVars != null)
             {
-                Panel groupPanel = new Panel
-                {
-                    Size = new Size(110, group.Count() * 20 + 20),
-                    BorderStyle = BorderStyle.FixedSingle,
-                    BackColor = Color.Black,
-                    Margin = new Padding(0)
-                };
+                var groupedVars = SortVars.Values.GroupBy(sv => sv.Group);
 
-                CheckBox groupCheckBox = new CheckBox
+                foreach (var group in groupedVars)
                 {
-                    Location = new Point(0, 0),
-                    Size = new Size(15, 15),
-                    Checked = true,
-                    BackColor = Color.Black,
-                    Margin = new Padding(0)
-                };
-                Label groupLabel = new Label
-                {
-                    Location = new Point(20, 0),
-                    Size = new Size(95, 15),
-                    Text = $"{UniqVarNames[group.Key]}",
-                    BackColor = Color.Black,
-                    ForeColor = Color.White,
-                    Font = new Font("Arial", 8.0f),
-                    Margin = new Padding(0)
-                };
-
-                groupPanel.Controls.Add(groupCheckBox);
-                groupPanel.Controls.Add(groupLabel);
-
-                int itemYPos = 20; 
-
-                foreach (var item in group)
-                {
-                    CheckBox itemCheckBox = new CheckBox
+                    Panel groupPanel = new Panel
                     {
-                        Location = new Point(0, itemYPos),
-                        Size = new Size(15, 15),
-                        Checked = item.Chosen,
+                        Size = new Size(110, group.Count() * 20 + 20),
+                        BorderStyle = BorderStyle.FixedSingle,
+                        BackColor = Color.Black,
                         Margin = new Padding(0)
                     };
-                    itemCheckBox.CheckedChanged += (sender, e) =>
-                    {
-                        item.Chosen = itemCheckBox.Checked;
-                    };
 
-                    Label itemLabel = new Label
+                    CheckBox groupCheckBox = new CheckBox
                     {
-                        Location = new Point(15, itemYPos),
+                        Location = new Point(0, 0),
+                        Size = new Size(15, 15),
+                        Checked = true,
+                        BackColor = Color.Black,
+                        Margin = new Padding(0)
+                    };
+                    Label groupLabel = new Label
+                    {
+                        Location = new Point(20, 0),
                         Size = new Size(95, 15),
-                        Text = item.VarName,
+                        Text = $"{UniqVarNames[group.Key]}",
                         BackColor = Color.Black,
                         ForeColor = Color.White,
-                        Font = new Font("Arial", 7.0f),
+                        Font = new Font("Arial", 8.0f),
                         Margin = new Padding(0)
                     };
 
-                    groupPanel.Controls.Add(itemCheckBox);
-                    groupPanel.Controls.Add(itemLabel);
+                    groupPanel.Controls.Add(groupCheckBox);
+                    groupPanel.Controls.Add(groupLabel);
 
-                    itemYPos += 20; 
-                }
+                    int itemYPos = 20;
 
-                groupCheckBox.CheckedChanged += (sender, e) =>
-                {
                     foreach (var item in group)
                     {
-                        item.Chosen = groupCheckBox.Checked;
-                    }
-
-                    foreach (Control control in groupPanel.Controls)
-                    {
-                        if (control is CheckBox checkBoxx && control != groupCheckBox)
+                        CheckBox itemCheckBox = new CheckBox
                         {
-                            checkBoxx.Checked = groupCheckBox.Checked;
-                        }
-                    }
-                };
+                            Location = new Point(0, itemYPos),
+                            Size = new Size(15, 15),
+                            Checked = item.Chosen,
+                            Margin = new Padding(0)
+                        };
+                        itemCheckBox.CheckedChanged += (sender, e) =>
+                        {
+                            item.Chosen = itemCheckBox.Checked;
+                        };
 
-                SortPrefPanelFlow.Controls.Add(groupPanel);
+                        Label itemLabel = new Label
+                        {
+                            Location = new Point(15, itemYPos),
+                            Size = new Size(95, 15),
+                            Text = item.VarName,
+                            BackColor = Color.Black,
+                            ForeColor = Color.White,
+                            Font = new Font("Arial", 7.0f),
+                            Margin = new Padding(0)
+                        };
+
+                        groupPanel.Controls.Add(itemCheckBox);
+                        groupPanel.Controls.Add(itemLabel);
+
+                        itemYPos += 20;
+                    }
+
+                    groupCheckBox.CheckedChanged += (sender, e) =>
+                    {
+                        foreach (var item in group)
+                        {
+                            item.Chosen = groupCheckBox.Checked;
+                        }
+
+                        foreach (Control control in groupPanel.Controls)
+                        {
+                            if (control is CheckBox checkBoxx && control != groupCheckBox)
+                            {
+                                checkBoxx.Checked = groupCheckBox.Checked;
+                            }
+                        }
+                    };
+
+                    SortPrefPanelFlow.Controls.Add(groupPanel);
+                }
             }
         }
 
@@ -510,19 +517,8 @@ namespace aisha3
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
-            Dictionary<int, Device> devices = DevicesSort;
+            Console.WriteLine($"Keys count: {DevicesSort.Count}.");
 
-            if (devices != null)
-            {
-                foreach (var kvp in devices)
-                {
-                    Console.WriteLine($"Key: {kvp.Key}, Device: {kvp.Value.ToString()}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("No devices found or an error occurred.");
-            }
         }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {
@@ -1137,10 +1133,63 @@ namespace aisha3
             }
         }
 
+        private void Sort()
+        {
+            try
+            {
+                DevicesSort.Clear();
+                DGV.Rows.Clear();
+                DevicesSort = Mssql.DevicesbySort();
+                int i = 0;
+                foreach(var item in DevicesSort)
+                {
+                    if(i <= DevicesSort.Count-1)
+                    {
+                        DGV.Rows.Add(i+1, DevicesSort[i].KvfNumber, DevicesSort[i].GKCommon, DevicesSort[i].KvfModel,
+                            DevicesSort[i].PodrOrg1Common, DevicesSort[i].PodrOrg2Common, DevicesSort[i].CamFixType,
+                            DevicesSort[i].EtherProvider, DevicesSort[i].DeviceIP, DevicesSort[i].KsmHttp);
+                        i++;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ERROR SORT: {ex.Message}");
+            }
+        }
+
         private void BtnUseSort_Click(object sender, EventArgs e)
         {
-            DevicesSort.Clear();
-            DevicesSort = Mssql.DevicesbySort();
+            Sort();
+            BtnDGVCount.Text = DevicesSort.Count.ToString();
+
+        }
+
+        private void BtnDGVCount_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(BtnDGVCount.Text.ToString());
+        }
+
+        private void DGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (e.ColumnIndex == 8 && senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start("http://" + senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                }
+                catch (Exception) { }
+            }
+            if (e.ColumnIndex == 9 && senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                }
+                catch (Exception) { }
+            }
         }
 
         //Main panel btns

@@ -134,6 +134,7 @@ namespace aisha3
                         i++;
                     }
                 }
+                MainForm.Connected = true;
                 return Devices;
             }
             catch (Exception ex)
@@ -412,7 +413,6 @@ namespace aisha3
                 Dictionary<int, Device> Devices = new Dictionary<int, Device>();
                 OpenConnection();
                 string selectString = SelectSorted();
-                Console.WriteLine(SelectSorted());
                 MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
                 SqlDAdapter adapter = new SqlDAdapter(selectString, conn);
                 DataSet ds = new DataSet();
