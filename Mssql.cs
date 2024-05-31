@@ -144,6 +144,79 @@ namespace aisha3
             }
         }
 
+        public static Dictionary<int, Device> DevicesAll()
+        {
+            try
+            {
+                Dictionary<int, Device> Devices = new Dictionary<int, Device>();
+                OpenConnection();
+                string selectString = $"SELECT * FROM dbo.aishadt";
+                MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
+                SqlDAdapter adapter = new SqlDAdapter(selectString, conn);
+                DataSet ds = new DataSet();
+                ds?.Clear();
+                adapter.Fill(ds);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    int i = 0;
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        Device device = new Device
+                        {
+                            Code = ds.Tables[0].Rows[i].Field<string>("Code").ToString(),
+                            KvfNumber = ds.Tables[0].Rows[i].Field<string>("KvfNumber").ToString(),
+                            AddressDoc = ds.Tables[0].Rows[i].Field<string>("AddressDoc").ToString(),
+                            AddressRGIS = ds.Tables[0].Rows[i].Field<string>("AddressRGIS").ToString(),
+                            Vstrech = ds.Tables[0].Rows[i].Field<string>("Vstrech").ToString(),
+                            Poput = ds.Tables[0].Rows[i].Field<string>("Poput").ToString(),
+                            Dist = ds.Tables[0].Rows[i].Field<string>("Dist").ToString(),
+                            Gps = ds.Tables[0].Rows[i].Field<string>("Gps").ToString(),
+                            Azimut = ds.Tables[0].Rows[i].Field<Int32>("Azimut").ToString(),
+                            InfoConst = ds.Tables[0].Rows[i].Field<string>("InfoConst").ToString(),
+                            InfoDyn = ds.Tables[0].Rows[i].Field<string>("InfoDyn").ToString(),
+                            KvfModel = ds.Tables[0].Rows[i].Field<string>("KvfModel").ToString(),
+                            KvfModelCommon = ds.Tables[0].Rows[i].Field<string>("KvfModelCommon").ToString(),
+                            DeviceType = ds.Tables[0].Rows[i].Field<string>("DeviceType").ToString(),
+                            DeviceIP = ds.Tables[0].Rows[i].Field<string>("DeviceIP").ToString(),
+                            DeviceGWIP = ds.Tables[0].Rows[i].Field<string>("DeviceGWIP").ToString(),
+                            CamOwnerKvfNumber = ds.Tables[0].Rows[i].Field<string>("CamOwnerKvfNumber").ToString(),
+                            CamFixType = ds.Tables[0].Rows[i].Field<string>("CamFixType").ToString(),
+                            CamQuant = ds.Tables[0].Rows[i].Field<string>("CamQuant").ToString(),
+                            GK = ds.Tables[0].Rows[i].Field<string>("GK").ToString(),
+                            GKCommon = ds.Tables[0].Rows[i].Field<string>("GKCommon").ToString(),
+                            OrgOwner = ds.Tables[0].Rows[i].Field<string>("OrgOwner").ToString(),
+                            OrgOwnerCommon = ds.Tables[0].Rows[i].Field<string>("OrgOwnerCommon").ToString(),
+                            PodrOrg1 = ds.Tables[0].Rows[i].Field<string>("PodrOrg1").ToString(),
+                            PodrOrg1Common = ds.Tables[0].Rows[i].Field<string>("PodrOrg1Common").ToString(),
+                            PodrOrg2 = ds.Tables[0].Rows[i].Field<string>("PodrOrg2").ToString(),
+                            PodrOrg2Common = ds.Tables[0].Rows[i].Field<string>("PodrOrg2Common").ToString(),
+                            EtherProvider = ds.Tables[0].Rows[i].Field<string>("EtherProvider").ToString(),
+                            EtherProviderID = ds.Tables[0].Rows[i].Field<string>("EtherProviderID").ToString(),
+                            KsmHttp = ds.Tables[0].Rows[i].Field<string>("KsmHttp").ToString(),
+                            NCode = ds.Tables[0].Rows[i].Field<string>("NCode").ToString(),
+                            Speed = ds.Tables[0].Rows[i].Field<Int32>("Speed").ToString(),
+                            IrzIp = ds.Tables[0].Rows[i].Field<string>("IrzIp").ToString(),
+                            Duplo1Ip = ds.Tables[0].Rows[i].Field<string>("Duplo1Ip").ToString(),
+                            Duplo2Ip = ds.Tables[0].Rows[i].Field<string>("Duplo2Ip").ToString(),
+                            DeviceIPTech = ds.Tables[0].Rows[i].Field<string>("DeviceIPTech").ToString(),
+                            ShinobiIp = ds.Tables[0].Rows[i].Field<string>("ShinobiIp").ToString(),
+                            Rtsp = ds.Tables[0].Rows[i].Field<string>("Rtsp").ToString(),
+                            XlsName = ds.Tables[0].Rows[i].Field<string>("XlsName").ToString()
+                        };
+                        Devices.Add(i, device);
+                        i++;
+                    }
+                }
+                MainForm.Connected = true;
+                return Devices;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR5 - main search: " + ex.Message);
+                return null;
+            }
+        }
+
         public static void SetInfoDyn(string kvfNumber, string info)
         {
             try

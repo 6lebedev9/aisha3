@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.ConstrainedExecution;
@@ -11,11 +13,31 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using System.Windows;
+using System.Windows.Controls;
+using DragEventArgs = System.Windows.Forms.DragEventArgs;
+using DataFormats = System.Windows.Forms.DataFormats;
+using DragDropEffects = System.Windows.Forms.DragDropEffects;
+using Panel = System.Windows.Forms.Panel;
+using Button = System.Windows.Forms.Button;
+using Size = System.Drawing.Size;
+using Clipboard = System.Windows.Clipboard;
+using Point = System.Drawing.Point;
+using DataGridCell = System.Windows.Controls.DataGridCell;
+using MessageBox = System.Windows.Forms.MessageBox;
+using CheckBox = System.Windows.Forms.CheckBox;
+using Label = System.Windows.Forms.Label;
+using Control = System.Windows.Forms.Control;
+
 
 namespace aisha3
 {
     public partial class MainForm : Form
     {
+        private DataGridView DGVxls;
         public MainForm()
         {
             InitializeComponent();
@@ -23,6 +45,378 @@ namespace aisha3
             WindowBorderColorLoad();
             CheckConnectAndVersion();
         }
+        //XLS EDIT
+        
+
+
+        private void DGV_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+        private void DGV_DragDrop(object sender, DragEventArgs e)
+        {
+            Form dataGridViewForm = new Form
+            {
+                Text = "Статистика видео. Добавление информации по первому столбцу.",
+                StartPosition = FormStartPosition.CenterScreen,
+                Width = 800,
+                Height = 600
+            };
+
+            DGVxls = new DataGridView
+            {
+                Name = "DGVxls",
+                Dock = DockStyle.Fill,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,  // Автоматическое изменение размера столбцов
+                ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,  // Автоматическая настройка высоты заголовков столбцов
+                AllowUserToOrderColumns = true
+            };
+
+            dataGridViewForm.Controls.Add(DGVxls);
+            dataGridViewForm.Show();
+
+            Panel panel = new Panel
+            {
+                Dock = DockStyle.Top,
+                Height = 40
+            };
+
+            Button btnToAddGKCommon = new Button
+            {
+                Text = "ГК",
+                Dock = DockStyle.Left
+            };
+            Button btnToAddKvfModelCommon = new Button
+            {
+                Text = "Модель",
+                Dock = DockStyle.Left
+            };
+            Button btnToAddCamFixType = new Button
+            {
+                Text = "тип к.",
+                Dock = DockStyle.Left
+            };
+            Button btnToAddAddressRGIS = new Button
+            {
+                Text = "Адрес РГИС",
+                Dock = DockStyle.Left
+            };
+            Button btnToAddPodrOrg1Common = new Button
+            {
+                Text = "Подр.",
+                Dock = DockStyle.Left
+            };
+            Button btnToAddEtherProvider = new Button
+            {
+                Text = "КС",
+                Dock = DockStyle.Left
+            };
+            Button btnToAddDeviceIP = new Button
+            {
+                Text = "IP",
+                Dock = DockStyle.Left
+            };
+            Button btnToClipBoard = new Button
+            {
+                Text = "Копировать в буфер для вставки в MS.Excel",
+                Dock = DockStyle.Right
+            };
+
+            dataGridViewForm.Controls.Add(panel);
+            panel.Controls.Add(btnToAddGKCommon);
+            panel.Controls.Add(btnToAddKvfModelCommon);
+            panel.Controls.Add(btnToAddCamFixType);
+            panel.Controls.Add(btnToAddAddressRGIS);
+            panel.Controls.Add(btnToAddPodrOrg1Common);
+            panel.Controls.Add(btnToAddEtherProvider);
+            panel.Controls.Add(btnToAddDeviceIP);
+            panel.Controls.Add(btnToClipBoard);
+            btnToAddGKCommon.Click += InsertColumnWithGKCommon;
+            btnToAddKvfModelCommon.Click += InsertColumnWithKvfModelCommon;
+            btnToAddCamFixType.Click += InsertColumnWithCamFixType;
+            btnToAddAddressRGIS.Click += InsertColumnWithAddressRGIS;
+            btnToAddPodrOrg1Common.Click += InsertColumnWithPodrOrg1Common;
+            btnToAddEtherProvider.Click += InsertColumnWithEtherProvider;
+            btnToAddDeviceIP.Click += InsertColumnWithDeviceIP;
+            btnToClipBoard.Click += CopyButton_Click;
+            try
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                string file = files[0];
+
+                // Убедитесь, что файл существует
+                if (!File.Exists(file))
+                {
+                    throw new FileNotFoundException("Файл не найден", file);
+                }
+
+                IWorkbook workbook;
+                // Определяем формат файла (xls или xlsx) и загружаем его
+                using (FileStream fileStream = new FileStream(file, FileMode.Open, FileAccess.Read))
+                {
+                    if (file.EndsWith(".xls"))
+                    {
+                        workbook = new HSSFWorkbook(fileStream);
+                    }
+                    else if (file.EndsWith(".xlsx"))
+                    {
+                        workbook = new XSSFWorkbook(fileStream);
+                    }
+                    else
+                    {
+                        throw new NotSupportedException("Unsupported file extension");
+                    }
+                }
+
+                // Получаем первый лист из книги
+                ISheet sheet = workbook.GetSheetAt(0) ?? throw new Exception("Нет доступных листов в файле Excel.");
+
+                // Очищаем DataGridView перед заполнением
+                DGVxls.Rows.Clear();
+                DGVxls.Columns.Clear();
+
+                // Добавляем колонки в DataGridView
+                IRow headerRow = sheet.GetRow(sheet.FirstRowNum);
+                foreach (ICell headerCell in headerRow.Cells)
+                {
+                    DGVxls.Columns.Add(headerCell.ToString(), headerCell.ToString());
+                }
+
+                // Регулярное выражение для извлечения значения внутри функции TIMEVALUE
+                Regex timeValueRegex = new Regex(@"TIMEVALUE\(""([^""]+)""\)");
+
+                // Перебираем все строки и столбцы на листе и добавляем данные в DataGridView
+                for (int row = sheet.FirstRowNum + 1; row <= sheet.LastRowNum; row++)
+                {
+                    IRow currentRow = sheet.GetRow(row);
+                    if (currentRow == null) continue;
+
+                    var fields = new List<string>();
+                    foreach (ICell cell in currentRow.Cells)
+                    {
+                        string cellValue = cell.ToString();
+                        Match match = timeValueRegex.Match(cellValue);
+                        if (match.Success)
+                        {
+                            fields.Add(match.Groups[1].Value); // извлекаем значение внутри TIMEVALUE
+                        }
+                        else
+                        {
+                            fields.Add(cellValue);
+                        }
+                    }
+
+                    DGVxls.Rows.Add(fields.ToArray());
+                    //Console.WriteLine(string.Join("\t", fields)); //FOR DBG
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+        private void CopyButton_Click(object sender, EventArgs e)
+        {
+            DataGridViewExtensions.CopyDataGridViewToClipboard(DGVxls);
+        }
+        private void InsertColumnWithGKCommon(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли хотя бы один столбец в DataGridView
+            if (DGVxls.Columns.Count == 0)
+            {
+                MessageBox.Show("DataGridView пуст.");
+                return;
+            }
+
+            // Вставляем новый столбец между первым и вторым столбцом
+            DGVxls.Columns.Insert(1, new DataGridViewTextBoxColumn() { Name = "GKCommon", HeaderText = "ГК" });
+
+            // Перебираем все строки DataGridView
+            foreach (DataGridViewRow row in DGVxls.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string firstColumnValue = row.Cells[0].Value.ToString();
+                    
+                        row.Cells[1].Value = GetDevicePropertyByXlsName(firstColumnValue.Trim(), device => device.GKCommon);
+                    
+                }
+                else
+                {
+                    row.Cells[1].Value = "нет данных";
+                }
+            }
+        }
+        private void InsertColumnWithKvfModelCommon(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли хотя бы один столбец в DataGridView
+            if (DGVxls.Columns.Count == 0)
+            {
+                MessageBox.Show("DataGridView пуст.");
+                return;
+            }
+
+            // Вставляем новый столбец между первым и вторым столбцом
+            DGVxls.Columns.Insert(1, new DataGridViewTextBoxColumn() { Name = "KvfModelCommon", HeaderText = "Модель" });
+
+            // Перебираем все строки DataGridView
+            foreach (DataGridViewRow row in DGVxls.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string firstColumnValue = row.Cells[0].Value.ToString();
+
+                    row.Cells[1].Value = GetDevicePropertyByXlsName(firstColumnValue.Trim(), device => device.KvfModelCommon);
+
+                }
+                else
+                {
+                    row.Cells[1].Value = "нет данных";
+                }
+            }
+        }
+        private void InsertColumnWithCamFixType(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли хотя бы один столбец в DataGridView
+            if (DGVxls.Columns.Count == 0)
+            {
+                MessageBox.Show("DataGridView пуст.");
+                return;
+            }
+
+            // Вставляем новый столбец между первым и вторым столбцом
+            DGVxls.Columns.Insert(1, new DataGridViewTextBoxColumn() { Name = "CamFixType", HeaderText = "тип к." });
+
+            // Перебираем все строки DataGridView
+            foreach (DataGridViewRow row in DGVxls.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string firstColumnValue = row.Cells[0].Value.ToString();
+
+                    row.Cells[1].Value = GetDevicePropertyByXlsName(firstColumnValue.Trim(), device => device.CamFixType);
+
+                }
+                else
+                {
+                    row.Cells[1].Value = "нет данных";
+                }
+            }
+        }
+        private void InsertColumnWithAddressRGIS(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли хотя бы один столбец в DataGridView
+            if (DGVxls.Columns.Count == 0)
+            {
+                MessageBox.Show("DataGridView пуст.");
+                return;
+            }
+
+            // Вставляем новый столбец между первым и вторым столбцом
+            DGVxls.Columns.Insert(1, new DataGridViewTextBoxColumn() { Name = "AddressRGIS", HeaderText = "Адрес РГИС" });
+
+            // Перебираем все строки DataGridView
+            foreach (DataGridViewRow row in DGVxls.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string firstColumnValue = row.Cells[0].Value.ToString();
+
+                    row.Cells[1].Value = GetDevicePropertyByXlsName(firstColumnValue.Trim(), device => device.AddressRGIS);
+
+                }
+                else
+                {
+                    row.Cells[1].Value = "нет данных";
+                }
+            }
+        }
+        private void InsertColumnWithPodrOrg1Common(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли хотя бы один столбец в DataGridView
+            if (DGVxls.Columns.Count == 0)
+            {
+                MessageBox.Show("DataGridView пуст.");
+                return;
+            }
+
+            // Вставляем новый столбец между первым и вторым столбцом
+            DGVxls.Columns.Insert(1, new DataGridViewTextBoxColumn() { Name = "PodrOrg1Common", HeaderText = "Подр." });
+
+            // Перебираем все строки DataGridView
+            foreach (DataGridViewRow row in DGVxls.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string firstColumnValue = row.Cells[0].Value.ToString();
+
+                    row.Cells[1].Value = GetDevicePropertyByXlsName(firstColumnValue.Trim(), device => device.PodrOrg1Common);
+
+                }
+                else
+                {
+                    row.Cells[1].Value = "нет данных";
+                }
+            }
+        }
+        private void InsertColumnWithEtherProvider(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли хотя бы один столбец в DataGridView
+            if (DGVxls.Columns.Count == 0)
+            {
+                MessageBox.Show("DataGridView пуст.");
+                return;
+            }
+
+            // Вставляем новый столбец между первым и вторым столбцом
+            DGVxls.Columns.Insert(1, new DataGridViewTextBoxColumn() { Name = "EtherProvider", HeaderText = "КС" });
+
+            // Перебираем все строки DataGridView
+            foreach (DataGridViewRow row in DGVxls.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string firstColumnValue = row.Cells[0].Value.ToString();
+
+                    row.Cells[1].Value = GetDevicePropertyByXlsName(firstColumnValue.Trim(), device => device.EtherProvider);
+
+                }
+                else
+                {
+                    row.Cells[1].Value = "нет данных";
+                }
+            }
+        }
+        private void InsertColumnWithDeviceIP(object sender, EventArgs e)
+        {
+            // Проверяем, есть ли хотя бы один столбец в DataGridView
+            if (DGVxls.Columns.Count == 0)
+            {
+                MessageBox.Show("DataGridView пуст.");
+                return;
+            }
+
+            // Вставляем новый столбец между первым и вторым столбцом
+            DGVxls.Columns.Insert(1, new DataGridViewTextBoxColumn() { Name = "DeviceIP", HeaderText = "IP" });
+
+            // Перебираем все строки DataGridView
+            foreach (DataGridViewRow row in DGVxls.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string firstColumnValue = row.Cells[0].Value.ToString();
+
+                    row.Cells[1].Value = GetDevicePropertyByXlsName(firstColumnValue.Trim(), device => device.DeviceIP);
+
+                }
+                else
+                {
+                    row.Cells[1].Value = "нет данных";
+                }
+            }
+        }
+        // XLS EDIT
+
         public static bool Connected = false;
         public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
         public static Dictionary<int, Device> Cams = new Dictionary<int, Device>();
@@ -44,11 +438,24 @@ namespace aisha3
                 "PodrOrg2Common", "NCode", "Speed", "Dist", "OrgOwner"
             };
         public static Dictionary<int, Device> DevicesSort = new Dictionary<int, Device>();
+        public static Dictionary<int, Device> DevicesALL = new Dictionary<int, Device>();
         public static Device DeviceChosen;
         public static int ChosenIssueTheme = 0;
         public static bool MapOpen = false;
         public static bool CamsOpen = false;
         public static bool SortOpen = false;
+
+        public string GetDevicePropertyByXlsName(string xlsName, Func<Device, string> propertySelector)
+        {
+            foreach (var device in DevicesALL.Values)
+            {
+                if (device.XlsName == xlsName)
+                {
+                    return propertySelector(device);
+                }
+            }
+            return null;
+        }
 
         public void CheckConnectAndVersion()
         {
@@ -68,6 +475,7 @@ namespace aisha3
                 OrgOwnerUniqs = Mssql.Uniqs("OrgOwner");
                 SetSortVars();
                 CreateSortPrefPanel();
+                DevicesALL = Mssql.DevicesAll();
                 int verCurrent = Int32.Parse(System.Windows.Forms.Application.CompanyName);
                 if (verInDB > 0)
                 {
@@ -138,7 +546,7 @@ namespace aisha3
                     Panel groupPanel = new Panel
                     {
                         Size = new Size(110, group.Count() * 20 + 20),
-                        BorderStyle = BorderStyle.FixedSingle,
+                        BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                         BackColor = Color.Black,
                         Margin = new Padding(0)
                     };
@@ -286,7 +694,7 @@ namespace aisha3
             Panel camMiniPanel = new FlowLayoutPanel();
             parent.Controls.Add(camMiniPanel);
             camMiniPanel.BackColor = Color.White;
-            camMiniPanel.BorderStyle = BorderStyle.None;
+            camMiniPanel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             camMiniPanel.AutoSize = false;
             camMiniPanel.Size = new Size(130, 45);
             camMiniPanel.Tag = i;

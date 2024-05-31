@@ -241,13 +241,13 @@
             this.SortPanelOuter = new System.Windows.Forms.Panel();
             this.SortPanelInner = new System.Windows.Forms.Panel();
             this.SortpanelInnerInfo = new System.Windows.Forms.Panel();
+            this.BtnDGVCount = new System.Windows.Forms.Button();
             this.BtnDGVToClip = new System.Windows.Forms.Button();
             this.panel81 = new System.Windows.Forms.Panel();
             this.BtnUseSort = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SortPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.DGV = new System.Windows.Forms.DataGridView();
-            this.BtnDGVCount = new System.Windows.Forms.Button();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KvfNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GKCommon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -2927,6 +2927,24 @@
             this.SortpanelInnerInfo.Size = new System.Drawing.Size(593, 28);
             this.SortpanelInnerInfo.TabIndex = 1;
             // 
+            // BtnDGVCount
+            // 
+            this.BtnDGVCount.AutoSize = true;
+            this.BtnDGVCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnDGVCount.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnDGVCount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnDGVCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtnDGVCount.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnDGVCount.Location = new System.Drawing.Point(125, 0);
+            this.BtnDGVCount.Margin = new System.Windows.Forms.Padding(1);
+            this.BtnDGVCount.Name = "BtnDGVCount";
+            this.BtnDGVCount.Size = new System.Drawing.Size(55, 28);
+            this.BtnDGVCount.TabIndex = 43;
+            this.BtnDGVCount.Text = "-";
+            this.BtnDGVCount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnDGVCount.UseVisualStyleBackColor = true;
+            this.BtnDGVCount.Click += new System.EventHandler(this.BtnDGVCount_Click);
+            // 
             // BtnDGVToClip
             // 
             this.BtnDGVToClip.AutoSize = true;
@@ -3027,24 +3045,6 @@
             this.DGV.TabIndex = 0;
             this.DGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellContentClick);
             // 
-            // BtnDGVCount
-            // 
-            this.BtnDGVCount.AutoSize = true;
-            this.BtnDGVCount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnDGVCount.Dock = System.Windows.Forms.DockStyle.Left;
-            this.BtnDGVCount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnDGVCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.BtnDGVCount.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnDGVCount.Location = new System.Drawing.Point(125, 0);
-            this.BtnDGVCount.Margin = new System.Windows.Forms.Padding(1);
-            this.BtnDGVCount.Name = "BtnDGVCount";
-            this.BtnDGVCount.Size = new System.Drawing.Size(55, 28);
-            this.BtnDGVCount.TabIndex = 43;
-            this.BtnDGVCount.Text = "-";
-            this.BtnDGVCount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnDGVCount.UseVisualStyleBackColor = true;
-            this.BtnDGVCount.Click += new System.EventHandler(this.BtnDGVCount_Click);
-            // 
             // Number
             // 
             this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -3127,6 +3127,7 @@
             // 
             // MainForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
@@ -3149,6 +3150,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Aisha";
             this.TransparencyKey = System.Drawing.Color.Pink;
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.DGV_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.DGV_DragEnter);
             this.MainPanelOuter.ResumeLayout(false);
             this.MainPanelInner.ResumeLayout(false);
             this.panel44.ResumeLayout(false);
