@@ -60,7 +60,8 @@ namespace aisha3
                 Text = "Статистика видео. Добавление информации по первому столбцу.",
                 StartPosition = FormStartPosition.CenterScreen,
                 Width = 800,
-                Height = 600
+                Height = 600,
+                Icon = new Icon(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "icon_x256.ico"))
             };
 
             DGVxls = new DataGridView

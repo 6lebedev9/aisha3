@@ -2640,7 +2640,7 @@
             this.MapPanelOuter.Controls.Add(this.MapPanelInner);
             this.MapPanelOuter.Location = new System.Drawing.Point(1243, 0);
             this.MapPanelOuter.Name = "MapPanelOuter";
-            this.MapPanelOuter.Size = new System.Drawing.Size(410, 710);
+            this.MapPanelOuter.Size = new System.Drawing.Size(432, 744);
             this.MapPanelOuter.TabIndex = 1;
             this.MapPanelOuter.Visible = false;
             // 
@@ -2649,7 +2649,7 @@
             this.MapPanelInner.BackColor = System.Drawing.Color.Black;
             this.MapPanelInner.Location = new System.Drawing.Point(1, 1);
             this.MapPanelInner.Name = "MapPanelInner";
-            this.MapPanelInner.Size = new System.Drawing.Size(408, 708);
+            this.MapPanelInner.Size = new System.Drawing.Size(430, 742);
             this.MapPanelInner.TabIndex = 2;
             // 
             // SortPrefPanelOuter
