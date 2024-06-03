@@ -220,9 +220,11 @@
             this.MapPanelOuter = new System.Windows.Forms.Panel();
             this.MapPanelInner = new System.Windows.Forms.Panel();
             this.PanelMap3Row = new System.Windows.Forms.Panel();
+            this.GMapSearchTBox = new System.Windows.Forms.TextBox();
             this.PanelMap2Row = new System.Windows.Forms.Panel();
             this.GMapUI = new GMap.NET.WindowsForms.GMapControl();
             this.PanelMap1Row = new System.Windows.Forms.Panel();
+            this.BtnClipGPSAddress = new System.Windows.Forms.Button();
             this.SortPrefPanelOuter = new System.Windows.Forms.Panel();
             this.SortPrefPanelInner = new System.Windows.Forms.Panel();
             this.SortPrefPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
@@ -262,8 +264,6 @@
             this.EtherProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeviceIP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.KsmHttp = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.GMapSearchTBox = new System.Windows.Forms.TextBox();
-            this.BtnClipGPSAddress = new System.Windows.Forms.Button();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -2674,6 +2674,16 @@
             this.PanelMap3Row.Size = new System.Drawing.Size(430, 50);
             this.PanelMap3Row.TabIndex = 2;
             // 
+            // GMapSearchTBox
+            // 
+            this.GMapSearchTBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GMapSearchTBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.GMapSearchTBox.Location = new System.Drawing.Point(0, 0);
+            this.GMapSearchTBox.Name = "GMapSearchTBox";
+            this.GMapSearchTBox.Size = new System.Drawing.Size(430, 23);
+            this.GMapSearchTBox.TabIndex = 0;
+            this.GMapSearchTBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GMapSearchTBox_KeyPress);
+            // 
             // PanelMap2Row
             // 
             this.PanelMap2Row.Controls.Add(this.GMapUI);
@@ -2718,6 +2728,24 @@
             this.PanelMap1Row.Name = "PanelMap1Row";
             this.PanelMap1Row.Size = new System.Drawing.Size(430, 64);
             this.PanelMap1Row.TabIndex = 0;
+            // 
+            // BtnClipGPSAddress
+            // 
+            this.BtnClipGPSAddress.AutoSize = true;
+            this.BtnClipGPSAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipGPSAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipGPSAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipGPSAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
+            this.BtnClipGPSAddress.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipGPSAddress.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipGPSAddress.Name = "BtnClipGPSAddress";
+            this.BtnClipGPSAddress.Size = new System.Drawing.Size(430, 64);
+            this.BtnClipGPSAddress.TabIndex = 11;
+            this.BtnClipGPSAddress.Text = "_";
+            this.BtnClipGPSAddress.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnClipGPSAddress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipGPSAddress.UseVisualStyleBackColor = true;
+            this.BtnClipGPSAddress.Click += new System.EventHandler(this.BtnClipGPSAddress_Click);
             // 
             // SortPrefPanelOuter
             // 
@@ -3191,34 +3219,6 @@
             this.KsmHttp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.KsmHttp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.KsmHttp.Width = 55;
-            // 
-            // GMapSearchTBox
-            // 
-            this.GMapSearchTBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GMapSearchTBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.GMapSearchTBox.Location = new System.Drawing.Point(0, 0);
-            this.GMapSearchTBox.Name = "GMapSearchTBox";
-            this.GMapSearchTBox.Size = new System.Drawing.Size(430, 23);
-            this.GMapSearchTBox.TabIndex = 0;
-            this.GMapSearchTBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GMapSearchTBox_KeyPress);
-            // 
-            // BtnClipGPSAddress
-            // 
-            this.BtnClipGPSAddress.AutoSize = true;
-            this.BtnClipGPSAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnClipGPSAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnClipGPSAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnClipGPSAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
-            this.BtnClipGPSAddress.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnClipGPSAddress.Location = new System.Drawing.Point(0, 0);
-            this.BtnClipGPSAddress.Name = "BtnClipGPSAddress";
-            this.BtnClipGPSAddress.Size = new System.Drawing.Size(430, 64);
-            this.BtnClipGPSAddress.TabIndex = 11;
-            this.BtnClipGPSAddress.Text = "_";
-            this.BtnClipGPSAddress.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.BtnClipGPSAddress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnClipGPSAddress.UseVisualStyleBackColor = true;
-            this.BtnClipGPSAddress.Click += new System.EventHandler(this.BtnClipGPSAddress_Click);
             // 
             // MainForm
             // 

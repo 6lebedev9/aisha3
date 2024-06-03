@@ -32,6 +32,7 @@ using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using Newtonsoft.Json.Linq;
 using Microsoft.Identity.Client;
+using System.Drawing.Drawing2D;
 
 
 namespace aisha3
@@ -1633,6 +1634,43 @@ namespace aisha3
         //Main panel btns
 
         //MAP
+        public void MapMakeMarker(Device device)
+        {
+            string[] coords = device.Gps.ToString().Split(" ".ToCharArray());
+            string latitudeStr = coords[0];
+            string longitudeStr = coords[1];
+            int azimuth = 0;
+            if (double.TryParse(latitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude) &&
+                        double.TryParse(longitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+            {
+                if (int.TryParse(device.Azimut, out azimuth))
+                { } else { }
+                // Создаем иконку и поворачиваем её
+                Bitmap icon = CreateVectorIcon(32, 32);
+                Bitmap rotatedIcon = RotateImage(icon, azimuth);
+
+                // Создаем новый слой маркеров
+                GMapOverlay markersOverlay = new GMapOverlay("markers");
+
+                // Создаем маркер с кастомной иконкой
+                GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(latitude, longitude), rotatedIcon);
+
+                // Настраиваем тултип
+                marker.ToolTip = new GMapRoundedToolTip(marker);
+                marker.ToolTipMode = MarkerTooltipMode.Always;
+                marker.ToolTipText = device.KvfNumber + " - " + device.KvfModelCommon;
+
+                // Добавляем маркер в слой
+                markersOverlay.Markers.Add(marker);
+
+                // Добавляем слой на карту
+                GMapUI.Overlays.Add(markersOverlay);
+            }
+            else
+            {
+                Console.WriteLine("ERROR 15: Failed to make marker latitude and longitude.");
+            }
+        }
 
         public void MapShowKvf(Device device)
         {
@@ -1647,10 +1685,11 @@ namespace aisha3
             { 
                 GMapUI.Position = new PointLatLng(latitude, longitude);
                 GMapUI.Zoom = 16;
+                MapMakeMarker(device);
             }
             else
             {
-                Console.WriteLine("Failed to parse latitude and longitude.");
+                Console.WriteLine("ERROR 16: Failed to parse latitude and longitude.");
             }
             BtnClipGPSAddress.Text = $"{device.KvfModel} {device.KvfNumber} {device.DeviceType} - ГК: {device.GKCommon}" +
                 $"\nАдрес РГИС: {device.AddressRGIS} - Кол-во камер: {device.CamQuant}";
@@ -1682,7 +1721,7 @@ namespace aisha3
                     }
                     else
                     {
-                        Console.WriteLine("Failed to parse latitude and longitude.");
+                        Console.WriteLine("ERROR 17: Failed to parse latitude and longitude.");
                         BtnClipGPSAddress.Text = $"Не удалось найти \"text\"";
                     }
                 }
@@ -1727,12 +1766,62 @@ namespace aisha3
             GMapUI.Zoom = 10;
             GMapUI.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
             GMapUI.MapProvider = GMapProviders.OpenStreetMap;
+            
             GMapUI.Position = new PointLatLng(59.942998, 30.269919);
             if(DeviceChosen != null)
             {
                 MapShowKvf(DeviceChosen);
             }
         }
+
+        private Bitmap CreateVectorIcon(int width, int height)
+        {
+            Bitmap bmp = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                g.Clear(Color.Transparent);
+
+                GraphicsPath path = new GraphicsPath();
+
+                // Рисуем вытянутый треугольник с прозрачным основанием
+                path.AddPolygon(new PointF[]
+                {
+            new PointF(width / 2, 0),
+            new PointF(width * 3 / 4, height),
+            new PointF(width / 4, height)
+                });
+
+                // Создаем кисть с полупрозрачным цветом
+                Color semiTransparentBlue = Color.FromArgb(128, Color.Blue);
+                using (Brush semiTransparentBrush = new SolidBrush(semiTransparentBlue))
+                {
+                    g.FillPath(semiTransparentBrush, path);
+                }
+                using (Pen semiTransparentPen = new Pen(Color.FromArgb(128, Color.Black)))
+                {
+                    g.DrawPath(semiTransparentPen, path);
+                }
+            }
+            return bmp;
+        }
+
+
+        private Bitmap RotateImage(Bitmap bmp, float angle)
+        {
+            Bitmap rotatedImage = new Bitmap(bmp.Width, bmp.Height);
+            using (Graphics g = Graphics.FromImage(rotatedImage))
+            {
+                g.TranslateTransform((float)bmp.Width / 2, (float)bmp.Height / 2);
+                g.RotateTransform(angle);
+                g.TranslateTransform(-(float)bmp.Width / 2, -(float)bmp.Height / 2);
+                g.DrawImage(bmp, new Point(0, 0));
+            }
+            return rotatedImage;
+        }
+
+
+
         private void GMap_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
