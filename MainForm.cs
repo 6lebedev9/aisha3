@@ -1652,11 +1652,8 @@ namespace aisha3
             {
                 Console.WriteLine("Failed to parse latitude and longitude.");
             }
-            BtnClipGPSAddress.Text = $"{device.KvfModel} {device.KvfNumber}" +
-                $"\n{device.GKCommon}" +
-                $"\nАдрес РГИС: {device.AddressRGIS}" +
-                $"\nАдрес ГК: {device.AddressDoc}" +
-                $"\nGPS: {device.Gps}";
+            BtnClipGPSAddress.Text = $"{device.KvfModel} {device.KvfNumber} {device.DeviceType} - ГК: {device.GKCommon}" +
+                $"\nАдрес РГИС: {device.AddressRGIS} - Кол-во камер: {device.CamQuant}";
         }
 
         public void MapSearchAndShow(string text)
@@ -1731,7 +1728,10 @@ namespace aisha3
             GMapUI.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
             GMapUI.MapProvider = GMapProviders.OpenStreetMap;
             GMapUI.Position = new PointLatLng(59.942998, 30.269919);
-            //GMap.Instance.Mode = AccessMode.ServerAndCache;
+            if(DeviceChosen != null)
+            {
+                MapShowKvf(DeviceChosen);
+            }
         }
         private void GMap_MouseDown(object sender, MouseEventArgs e)
         {
