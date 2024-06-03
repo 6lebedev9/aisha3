@@ -219,6 +219,10 @@
             this.TBox = new System.Windows.Forms.TextBox();
             this.MapPanelOuter = new System.Windows.Forms.Panel();
             this.MapPanelInner = new System.Windows.Forms.Panel();
+            this.PanelMap3Row = new System.Windows.Forms.Panel();
+            this.PanelMap2Row = new System.Windows.Forms.Panel();
+            this.GMapUI = new GMap.NET.WindowsForms.GMapControl();
+            this.PanelMap1Row = new System.Windows.Forms.Panel();
             this.SortPrefPanelOuter = new System.Windows.Forms.Panel();
             this.SortPrefPanelInner = new System.Windows.Forms.Panel();
             this.SortPrefPanelFlow = new System.Windows.Forms.FlowLayoutPanel();
@@ -258,6 +262,8 @@
             this.EtherProvider = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeviceIP = new System.Windows.Forms.DataGridViewButtonColumn();
             this.KsmHttp = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.GMapSearchTBox = new System.Windows.Forms.TextBox();
+            this.BtnClipGPSAddress = new System.Windows.Forms.Button();
             this.MainPanelOuter.SuspendLayout();
             this.MainPanelInner.SuspendLayout();
             this.panel44.SuspendLayout();
@@ -325,6 +331,10 @@
             this.MainPanelInner2.SuspendLayout();
             this.MainPanelInner1.SuspendLayout();
             this.MapPanelOuter.SuspendLayout();
+            this.MapPanelInner.SuspendLayout();
+            this.PanelMap3Row.SuspendLayout();
+            this.PanelMap2Row.SuspendLayout();
+            this.PanelMap1Row.SuspendLayout();
             this.SortPrefPanelOuter.SuspendLayout();
             this.SortPrefPanelInner.SuspendLayout();
             this.CamPanelOuter.SuspendLayout();
@@ -2647,10 +2657,67 @@
             // MapPanelInner
             // 
             this.MapPanelInner.BackColor = System.Drawing.Color.Black;
+            this.MapPanelInner.Controls.Add(this.PanelMap3Row);
+            this.MapPanelInner.Controls.Add(this.PanelMap2Row);
+            this.MapPanelInner.Controls.Add(this.PanelMap1Row);
             this.MapPanelInner.Location = new System.Drawing.Point(1, 1);
             this.MapPanelInner.Name = "MapPanelInner";
             this.MapPanelInner.Size = new System.Drawing.Size(430, 742);
             this.MapPanelInner.TabIndex = 2;
+            // 
+            // PanelMap3Row
+            // 
+            this.PanelMap3Row.Controls.Add(this.GMapSearchTBox);
+            this.PanelMap3Row.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelMap3Row.Location = new System.Drawing.Point(0, 692);
+            this.PanelMap3Row.Name = "PanelMap3Row";
+            this.PanelMap3Row.Size = new System.Drawing.Size(430, 50);
+            this.PanelMap3Row.TabIndex = 2;
+            // 
+            // PanelMap2Row
+            // 
+            this.PanelMap2Row.Controls.Add(this.GMapUI);
+            this.PanelMap2Row.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelMap2Row.Location = new System.Drawing.Point(0, 64);
+            this.PanelMap2Row.Name = "PanelMap2Row";
+            this.PanelMap2Row.Size = new System.Drawing.Size(430, 678);
+            this.PanelMap2Row.TabIndex = 1;
+            // 
+            // GMapUI
+            // 
+            this.GMapUI.Bearing = 0F;
+            this.GMapUI.CanDragMap = true;
+            this.GMapUI.EmptyTileColor = System.Drawing.Color.Navy;
+            this.GMapUI.GrayScaleMode = false;
+            this.GMapUI.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.GMapUI.LevelsKeepInMemory = 5;
+            this.GMapUI.Location = new System.Drawing.Point(3, 3);
+            this.GMapUI.MarkersEnabled = true;
+            this.GMapUI.MaxZoom = 2;
+            this.GMapUI.MinZoom = 2;
+            this.GMapUI.MouseWheelZoomEnabled = true;
+            this.GMapUI.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.GMapUI.Name = "GMapUI";
+            this.GMapUI.NegativeMode = false;
+            this.GMapUI.PolygonsEnabled = true;
+            this.GMapUI.RetryLoadTile = 0;
+            this.GMapUI.RoutesEnabled = true;
+            this.GMapUI.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.GMapUI.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.GMapUI.ShowTileGridLines = false;
+            this.GMapUI.Size = new System.Drawing.Size(424, 633);
+            this.GMapUI.TabIndex = 5;
+            this.GMapUI.Zoom = 0D;
+            this.GMapUI.Load += new System.EventHandler(this.GMapUI_Load);
+            // 
+            // PanelMap1Row
+            // 
+            this.PanelMap1Row.Controls.Add(this.BtnClipGPSAddress);
+            this.PanelMap1Row.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelMap1Row.Location = new System.Drawing.Point(0, 0);
+            this.PanelMap1Row.Name = "PanelMap1Row";
+            this.PanelMap1Row.Size = new System.Drawing.Size(430, 64);
+            this.PanelMap1Row.TabIndex = 0;
             // 
             // SortPrefPanelOuter
             // 
@@ -3125,6 +3192,34 @@
             this.KsmHttp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.KsmHttp.Width = 55;
             // 
+            // GMapSearchTBox
+            // 
+            this.GMapSearchTBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GMapSearchTBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.GMapSearchTBox.Location = new System.Drawing.Point(0, 0);
+            this.GMapSearchTBox.Name = "GMapSearchTBox";
+            this.GMapSearchTBox.Size = new System.Drawing.Size(430, 23);
+            this.GMapSearchTBox.TabIndex = 0;
+            this.GMapSearchTBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GMapSearchTBox_KeyPress);
+            // 
+            // BtnClipGPSAddress
+            // 
+            this.BtnClipGPSAddress.AutoSize = true;
+            this.BtnClipGPSAddress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnClipGPSAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClipGPSAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClipGPSAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
+            this.BtnClipGPSAddress.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnClipGPSAddress.Location = new System.Drawing.Point(0, 0);
+            this.BtnClipGPSAddress.Name = "BtnClipGPSAddress";
+            this.BtnClipGPSAddress.Size = new System.Drawing.Size(430, 64);
+            this.BtnClipGPSAddress.TabIndex = 11;
+            this.BtnClipGPSAddress.Text = "_";
+            this.BtnClipGPSAddress.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.BtnClipGPSAddress.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnClipGPSAddress.UseVisualStyleBackColor = true;
+            this.BtnClipGPSAddress.Click += new System.EventHandler(this.BtnClipGPSAddress_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -3263,6 +3358,12 @@
             this.MainPanelInner1.ResumeLayout(false);
             this.MainPanelInner1.PerformLayout();
             this.MapPanelOuter.ResumeLayout(false);
+            this.MapPanelInner.ResumeLayout(false);
+            this.PanelMap3Row.ResumeLayout(false);
+            this.PanelMap3Row.PerformLayout();
+            this.PanelMap2Row.ResumeLayout(false);
+            this.PanelMap1Row.ResumeLayout(false);
+            this.PanelMap1Row.PerformLayout();
             this.SortPrefPanelOuter.ResumeLayout(false);
             this.SortPrefPanelInner.ResumeLayout(false);
             this.CamPanelOuter.ResumeLayout(false);
@@ -3511,6 +3612,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EtherProvider;
         private System.Windows.Forms.DataGridViewButtonColumn DeviceIP;
         private System.Windows.Forms.DataGridViewButtonColumn KsmHttp;
+        private System.Windows.Forms.Panel PanelMap3Row;
+        private System.Windows.Forms.Panel PanelMap2Row;
+        private System.Windows.Forms.Panel PanelMap1Row;
+        public GMap.NET.WindowsForms.GMapControl GMapUI;
+        public System.Windows.Forms.TextBox GMapSearchTBox;
+        public System.Windows.Forms.Button BtnClipGPSAddress;
     }
 }
 

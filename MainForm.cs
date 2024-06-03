@@ -1,23 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using System.Windows;
-using System.Windows.Controls;
 using DragEventArgs = System.Windows.Forms.DragEventArgs;
 using DataFormats = System.Windows.Forms.DataFormats;
 using DragDropEffects = System.Windows.Forms.DragDropEffects;
@@ -26,11 +18,20 @@ using Button = System.Windows.Forms.Button;
 using Size = System.Drawing.Size;
 using Clipboard = System.Windows.Clipboard;
 using Point = System.Drawing.Point;
-using DataGridCell = System.Windows.Controls.DataGridCell;
 using MessageBox = System.Windows.Forms.MessageBox;
 using CheckBox = System.Windows.Forms.CheckBox;
 using Label = System.Windows.Forms.Label;
 using Control = System.Windows.Forms.Control;
+using Microsoft.IdentityModel.Tokens;
+using System.Globalization;
+using System.Net;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms.ToolTips;
+using Newtonsoft.Json.Linq;
+using Microsoft.Identity.Client;
 
 
 namespace aisha3
@@ -801,6 +802,7 @@ namespace aisha3
                 if (Devices.ContainsKey(i))
                 {
                     DeviceChosen = Devices[i];
+                    MapShowKvf(DeviceChosen);
                     if (DeviceChosen.DeviceType == "перекресток")
                     {
                         Cams.Clear();
@@ -1485,6 +1487,7 @@ namespace aisha3
             {
                 MapOpen = true;
                 MapPanelOuter.Visible = true;
+                
             }
         }
 
@@ -1625,6 +1628,132 @@ namespace aisha3
             Clipboard.SetText(DgvToClipString());
         }
 
+
+
         //Main panel btns
+
+        //MAP
+
+        public void MapShowKvf(Device device)
+        {
+            GMapUI.Overlays.Clear();
+            GMapUI.Zoom = 10;
+            string[] coords = device.Gps.ToString().Split(" ".ToCharArray());
+            string latitudeStr = coords[0];
+            string longitudeStr = coords[1];
+
+            if (double.TryParse(latitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude) &&
+                        double.TryParse(longitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+            { 
+                GMapUI.Position = new PointLatLng(latitude, longitude);
+                GMapUI.Zoom = 16;
+            }
+            else
+            {
+                Console.WriteLine("Failed to parse latitude and longitude.");
+            }
+            BtnClipGPSAddress.Text = $"{device.KvfModel} {device.KvfNumber}" +
+                $"\n{device.GKCommon}" +
+                $"\nАдрес РГИС: {device.AddressRGIS}" +
+                $"\nАдрес ГК: {device.AddressDoc}" +
+                $"\nGPS: {device.Gps}";
+        }
+
+        public void MapSearchAndShow(string text)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                using (WebClient webClient = new WebClient())
+                {
+                    webClient.Headers.Add("User-Agent: Other");
+                    string nomStrStart = "https://nominatim.openstreetmap.org/search?addressdetails=1&q=";
+                    string nomStrMiddle = text.Trim().Replace(" ", "+");
+                    string nomStrEnd = "&format=jsonv2&limit=1";
+                    byte[] jsonData = webClient.DownloadData(nomStrStart + nomStrMiddle + nomStrEnd);
+                    string json = System.Text.Encoding.UTF8.GetString(jsonData);
+                    JArray jsonArray = JArray.Parse(json);
+
+                    string latitudeStr = jsonArray[0]["lat"].ToString();
+                    string longitudeStr = jsonArray[0]["lon"].ToString();
+
+                    if (double.TryParse(latitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude) &&
+                        double.TryParse(longitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+                    {
+                        string address = jsonArray[0]["display_name"].ToString();
+                        BtnClipGPSAddress.Text = $"Широта N: {latitude}, Долгота E {longitude}\nAddress: {address}";
+                        GMapUI.Position = new PointLatLng(latitude, longitude);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to parse latitude and longitude.");
+                        BtnClipGPSAddress.Text = $"Не удалось найти \"text\"";
+                    }
+                }
+            }
+        }
+
+        private void BtnClipGPSAddress_Click(object sender, EventArgs e)
+        {
+            if (BtnClipGPSAddress.Text.ToString() != "")
+            {
+                Clipboard.SetText(BtnClipGPSAddress.Text.ToString());
+            }
+        }
+
+        private void GMapSearchTBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(GMapSearchTBox.Text.ToString().Trim() != "")
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    // Вызываем метод GetGPSRequest при нажатии клавиши Enter
+                    MapSearchAndShow(GMapSearchTBox.Text.ToString());
+                    // После вызова метода можно предотвратить дальнейшее обработка события клавиши Enter
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void GMapUI_Load(object sender, EventArgs e)
+        {
+            GMapUI.MouseDown += GMap_MouseDown;
+            GMapUI.MouseMove += GMap_MouseMove;
+            GMapUI.MouseUp += GMap_MouseUp;
+
+            GMapUI.Bearing = 0;
+            GMapUI.CanDragMap = true;
+            GMapUI.DragButton = MouseButtons.Left;
+            GMapUI.GrayScaleMode = false;
+            GMapUI.MarkersEnabled = true;
+            GMapUI.MaxZoom = 20;
+            GMapUI.MinZoom = 8;
+            GMapUI.Zoom = 10;
+            GMapUI.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
+            GMapUI.MapProvider = GMapProviders.OpenStreetMap;
+            GMapUI.Position = new PointLatLng(59.942998, 30.269919);
+            //GMap.Instance.Mode = AccessMode.ServerAndCache;
+        }
+        private void GMap_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+
+            }
+        }
+        private void GMap_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+
+            }
+        }
+        private void GMap_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+
+            }
+        }
+        //MAP
     }
 }
