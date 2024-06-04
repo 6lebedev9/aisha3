@@ -1639,11 +1639,10 @@ namespace aisha3
             string[] coords = device.Gps.ToString().Split(" ".ToCharArray());
             string latitudeStr = coords[0];
             string longitudeStr = coords[1];
-            int azimuth = 0;
             if (double.TryParse(latitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude) &&
                         double.TryParse(longitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
             {
-                if (int.TryParse(device.Azimut, out azimuth))
+                if (int.TryParse(device.Azimut, out int azimuth))
                 { }
                 else { Console.WriteLine("ERROR 18: Failed to parse marker azimuth."); }
 
@@ -1684,9 +1683,9 @@ namespace aisha3
 
         public class CustomToolTip : GMapToolTip
         {
-            private Font _font;
-            private Brush _backgroundBrush;
-            private Brush _textBrush;
+            private readonly Font _font;
+            private readonly Brush _backgroundBrush;
+            private readonly Brush _textBrush;
 
             public CustomToolTip(GMapMarker marker) : base(marker)
             {
