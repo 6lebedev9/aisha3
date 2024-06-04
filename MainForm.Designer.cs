@@ -220,6 +220,7 @@
             this.MapPanelOuter = new System.Windows.Forms.Panel();
             this.MapPanelInner = new System.Windows.Forms.Panel();
             this.PanelMap3Row = new System.Windows.Forms.Panel();
+            this.BtnShowCamsOnMap = new System.Windows.Forms.Button();
             this.GMapSearchTBox = new System.Windows.Forms.TextBox();
             this.PanelMap2Row = new System.Windows.Forms.Panel();
             this.GMapUI = new GMap.NET.WindowsForms.GMapControl();
@@ -257,7 +258,8 @@
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KvfNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GKCommon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KvfModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vstrech = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Poput = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PodrOrg1Common = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PodrOrg2Common = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CamFixType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -2667,12 +2669,31 @@
             // 
             // PanelMap3Row
             // 
+            this.PanelMap3Row.Controls.Add(this.BtnShowCamsOnMap);
             this.PanelMap3Row.Controls.Add(this.GMapSearchTBox);
             this.PanelMap3Row.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelMap3Row.Location = new System.Drawing.Point(0, 692);
             this.PanelMap3Row.Name = "PanelMap3Row";
             this.PanelMap3Row.Size = new System.Drawing.Size(430, 50);
             this.PanelMap3Row.TabIndex = 2;
+            // 
+            // BtnShowCamsOnMap
+            // 
+            this.BtnShowCamsOnMap.AutoSize = true;
+            this.BtnShowCamsOnMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnShowCamsOnMap.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnShowCamsOnMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnShowCamsOnMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
+            this.BtnShowCamsOnMap.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnShowCamsOnMap.Location = new System.Drawing.Point(214, 23);
+            this.BtnShowCamsOnMap.Name = "BtnShowCamsOnMap";
+            this.BtnShowCamsOnMap.Padding = new System.Windows.Forms.Padding(2);
+            this.BtnShowCamsOnMap.Size = new System.Drawing.Size(216, 27);
+            this.BtnShowCamsOnMap.TabIndex = 16;
+            this.BtnShowCamsOnMap.Text = "показать камеры перекрестка на карте";
+            this.BtnShowCamsOnMap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnShowCamsOnMap.UseVisualStyleBackColor = true;
+            this.BtnShowCamsOnMap.Click += new System.EventHandler(this.BtnShowCamsOnMap_Click);
             // 
             // GMapSearchTBox
             // 
@@ -3120,7 +3141,8 @@
             this.Number,
             this.KvfNumber,
             this.GKCommon,
-            this.KvfModel,
+            this.Vstrech,
+            this.Poput,
             this.PodrOrg1Common,
             this.PodrOrg2Common,
             this.CamFixType,
@@ -3164,13 +3186,19 @@
             this.GKCommon.ReadOnly = true;
             this.GKCommon.Width = 45;
             // 
-            // KvfModel
+            // Vstrech
             // 
-            this.KvfModel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.KvfModel.HeaderText = "Модель";
-            this.KvfModel.Name = "KvfModel";
-            this.KvfModel.ReadOnly = true;
-            this.KvfModel.Width = 68;
+            this.Vstrech.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Vstrech.HeaderText = "Встречное";
+            this.Vstrech.Name = "Vstrech";
+            this.Vstrech.ReadOnly = true;
+            this.Vstrech.Width = 68;
+            // 
+            // Poput
+            // 
+            this.Poput.HeaderText = "Попутное";
+            this.Poput.Name = "Poput";
+            this.Poput.Width = 80;
             // 
             // PodrOrg1Common
             // 
@@ -3602,22 +3630,24 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnDGVCount;
         public System.Windows.Forms.DataGridView DGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KvfNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GKCommon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KvfModel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PodrOrg1Common;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PodrOrg2Common;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CamFixType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EtherProvider;
-        private System.Windows.Forms.DataGridViewButtonColumn DeviceIP;
-        private System.Windows.Forms.DataGridViewButtonColumn KsmHttp;
         private System.Windows.Forms.Panel PanelMap3Row;
         private System.Windows.Forms.Panel PanelMap2Row;
         private System.Windows.Forms.Panel PanelMap1Row;
         public GMap.NET.WindowsForms.GMapControl GMapUI;
         public System.Windows.Forms.TextBox GMapSearchTBox;
         public System.Windows.Forms.Button BtnClipGPSAddress;
+        private System.Windows.Forms.Button BtnShowCamsOnMap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KvfNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GKCommon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vstrech;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Poput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PodrOrg1Common;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PodrOrg2Common;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CamFixType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EtherProvider;
+        private System.Windows.Forms.DataGridViewButtonColumn DeviceIP;
+        private System.Windows.Forms.DataGridViewButtonColumn KsmHttp;
     }
 }
 

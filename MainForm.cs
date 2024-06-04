@@ -1558,7 +1558,7 @@ namespace aisha3
                 {
                     if(i <= DevicesSort.Count-1)
                     {
-                        DGV.Rows.Add(i+1, DevicesSort[i].KvfNumber, DevicesSort[i].GKCommon, DevicesSort[i].KvfModel,
+                        DGV.Rows.Add(i+1, DevicesSort[i].KvfNumber, DevicesSort[i].GKCommon, DevicesSort[i].Vstrech, DevicesSort[i].Poput,
                             DevicesSort[i].PodrOrg1Common, DevicesSort[i].PodrOrg2Common, DevicesSort[i].CamFixType,
                             DevicesSort[i].EtherProvider, DevicesSort[i].DeviceIP, DevicesSort[i].KsmHttp);
                         i++;
@@ -1644,26 +1644,36 @@ namespace aisha3
                         double.TryParse(longitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
             {
                 if (int.TryParse(device.Azimut, out azimuth))
-                { } else { }
-                // Создаем иконку и поворачиваем её
+                { }
+                else { Console.WriteLine("ERROR 18: Failed to parse marker azimuth."); }
+
                 Bitmap icon = CreateVectorIcon(32, 32);
                 Bitmap rotatedIcon = RotateImage(icon, azimuth);
 
-                // Создаем новый слой маркеров
                 GMapOverlay markersOverlay = new GMapOverlay("markers");
-
-                // Создаем маркер с кастомной иконкой
                 GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(latitude, longitude), rotatedIcon);
 
-                // Настраиваем тултип
-                marker.ToolTip = new GMapRoundedToolTip(marker);
+                marker.ToolTip = new CustomToolTip(marker);
                 marker.ToolTipMode = MarkerTooltipMode.Always;
-                marker.ToolTipText = device.KvfNumber + " - " + device.KvfModelCommon;
 
-                // Добавляем маркер в слой
+                if (device.DeviceType == "перекресток")
+                {
+                    marker.ToolTipText = device.KvfNumber + " - " + device.KvfModelCommon + " - " + device.GKCommon;
+                }
+                else if (device.DeviceType == "камера")
+                {
+                    marker.ToolTipText = device.KvfNumber + " - " + device.CamFixType +
+                        $"\nВстречное: {device.Vstrech}" +
+                        $"\nПопутное: {device.Poput}";
+                }
+                else
+                {
+                    marker.ToolTipText = device.KvfNumber + " - " + device.KvfModelCommon + " - " + device.GKCommon +
+                        $"\nВстречное: {device.Vstrech}" +
+                        $"\nПопутное: {device.Poput}";
+                }
+
                 markersOverlay.Markers.Add(marker);
-
-                // Добавляем слой на карту
                 GMapUI.Overlays.Add(markersOverlay);
             }
             else
@@ -1672,27 +1682,81 @@ namespace aisha3
             }
         }
 
+        public class CustomToolTip : GMapToolTip
+        {
+            private Font _font;
+            private Brush _backgroundBrush;
+            private Brush _textBrush;
+
+            public CustomToolTip(GMapMarker marker) : base(marker)
+            {
+                _font = new Font("Arial", 7); // Уменьшаем кегль текста
+                _backgroundBrush = new SolidBrush(Color.FromArgb(10, Color.Gray)); // Устанавливаем более прозрачный фон
+                _textBrush = new SolidBrush(Color.Black);
+            }
+
+            public override void OnRender(Graphics g)
+            {
+                SizeF textSize = g.MeasureString(Marker.ToolTipText, _font);
+                SizeF adjustedSize = new SizeF(textSize.Width, textSize.Height * 0.6f); // Уменьшаем высоту
+                RectangleF rect = new RectangleF(Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y - adjustedSize.Height, adjustedSize.Width + TextPadding.Width, adjustedSize.Height + TextPadding.Height);
+                RectangleF rectText = new RectangleF(Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y - adjustedSize.Height, adjustedSize.Width + TextPadding.Width, adjustedSize.Height + TextPadding.Height);
+                rect.Offset(Offset.X, Offset.Y);
+                rectText.Offset(Offset.X + 7, Offset.Y + 7);
+                g.DrawLine(Stroke, Marker.ToolTipPosition.X, Marker.ToolTipPosition.Y, rect.X, rect.Y + rect.Height / 2f);
+                g.FillRectangle(_backgroundBrush, rect);
+                DrawRoundRectangle(g, Stroke, rect.X, rect.Y, rect.Width, rect.Height, 8f);
+                g.DrawString(Marker.ToolTipText, _font, _textBrush, rectText);
+                g.Flush();
+            }
+        }
+
         public void MapShowKvf(Device device)
         {
-            GMapUI.Overlays.Clear();
-            GMapUI.Zoom = 10;
-            string[] coords = device.Gps.ToString().Split(" ".ToCharArray());
-            string latitudeStr = coords[0];
-            string longitudeStr = coords[1];
+            if(device.DeviceType == "перекресток")
+            {
+                GMapUI.Overlays.Clear();
+                GMapUI.Zoom = 10;
+                string[] coords = device.Gps.ToString().Split(" ".ToCharArray());
+                string latitudeStr = coords[0];
+                string longitudeStr = coords[1];
 
-            if (double.TryParse(latitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude) &&
+                if (double.TryParse(latitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude) &&
                         double.TryParse(longitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
-            { 
-                GMapUI.Position = new PointLatLng(latitude, longitude);
-                GMapUI.Zoom = 16;
-                MapMakeMarker(device);
+                {
+                    GMapUI.Position = new PointLatLng(latitude, longitude);
+                    GMapUI.Zoom = 16;
+                    MapMakeMarker(device);
+                }
+                else
+                {
+                    Console.WriteLine("ERROR 16: Failed to parse latitude and longitude.");
+                }
+                BtnClipGPSAddress.Text = $"{device.KvfModel} {device.KvfNumber} {device.DeviceType} - ГК: {device.GKCommon}" +
+                    $"\nАдрес РГИС: {device.AddressRGIS} - Кол-во камер: {device.CamQuant}";
             }
             else
             {
-                Console.WriteLine("ERROR 16: Failed to parse latitude and longitude.");
+                GMapUI.Overlays.Clear();
+                GMapUI.Zoom = 10;
+                string[] coords = device.Gps.ToString().Split(" ".ToCharArray());
+                string latitudeStr = coords[0];
+                string longitudeStr = coords[1];
+
+                if (double.TryParse(latitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double latitude) &&
+                        double.TryParse(longitudeStr, NumberStyles.Float, CultureInfo.InvariantCulture, out double longitude))
+                {
+                    GMapUI.Position = new PointLatLng(latitude, longitude);
+                    GMapUI.Zoom = 16;
+                    MapMakeMarker(device);
+                }
+                else
+                {
+                    Console.WriteLine("ERROR 19: Failed to parse latitude and longitude.");
+                }
+                BtnClipGPSAddress.Text = $"{device.KvfModel} {device.KvfNumber} {device.DeviceType} - ГК: {device.GKCommon}" +
+                    $"\nАдрес РГИС: {device.AddressRGIS} - Кол-во камер: {device.CamQuant}";
             }
-            BtnClipGPSAddress.Text = $"{device.KvfModel} {device.KvfNumber} {device.DeviceType} - ГК: {device.GKCommon}" +
-                $"\nАдрес РГИС: {device.AddressRGIS} - Кол-во камер: {device.CamQuant}";
         }
 
         public void MapSearchAndShow(string text)
@@ -1784,15 +1848,13 @@ namespace aisha3
 
                 GraphicsPath path = new GraphicsPath();
 
-                // Рисуем вытянутый треугольник с прозрачным основанием
                 path.AddPolygon(new PointF[]
                 {
-            new PointF(width / 2, 0),
-            new PointF(width * 3 / 4, height),
-            new PointF(width / 4, height)
+                    new PointF(width / 2, 0),
+                    new PointF(width * 3 / 4, height),
+                    new PointF(width / 4, height)
                 });
 
-                // Создаем кисть с полупрозрачным цветом
                 Color semiTransparentBlue = Color.FromArgb(128, Color.Blue);
                 using (Brush semiTransparentBrush = new SolidBrush(semiTransparentBlue))
                 {
@@ -1841,6 +1903,18 @@ namespace aisha3
             if (e.Button == MouseButtons.Left)
             {
 
+            }
+        }
+
+        private void BtnShowCamsOnMap_Click(object sender, EventArgs e)
+        {
+            if(DeviceChosen.DeviceType == "перекресток")
+            {
+                foreach (var dictionary in Cams)
+                {
+                    Device cam = dictionary.Value;
+                    MapMakeMarker(cam);
+                }
             }
         }
         //MAP
