@@ -277,6 +277,8 @@
   <ItemGroup>
     <Compile Include="DataGridExtensions.cs" />
     <Compile Include="Device.cs" />
+    <Compile Include="EncryptionHelper.cs" />
+    <Compile Include="FileHelper.cs" />
     <Compile Include="Issue.cs" />
     <Compile Include="KvmHook.cs" />
     <Compile Include="MainForm.cs">

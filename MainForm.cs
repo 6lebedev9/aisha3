@@ -33,6 +33,9 @@ using GMap.NET.WindowsForms.ToolTips;
 using Newtonsoft.Json.Linq;
 using Microsoft.Identity.Client;
 using System.Drawing.Drawing2D;
+using System.Diagnostics;
+using System.Reflection;
+using Newtonsoft.Json;
 
 
 namespace aisha3
@@ -44,12 +47,74 @@ namespace aisha3
         {
             InitializeComponent();
             WindowLocSaveLoad("Load");
+            LoadEncryptedSettings();
             WindowBorderColorLoad();
             CheckConnectAndVersion();
         }
-        //XLS EDIT
-        
+        //AES
 
+        private void LoadEncryptedSettings()
+        {
+            string encryptedSettingsData = FileHelper.LoadEncryptedSettings();
+            if (!string.IsNullOrEmpty(encryptedSettingsData))
+            {
+                DecryptSettingsData(encryptedSettingsData);
+            }
+        }
+        private string DecryptSettingsData(string encryptedData)
+        {
+            string decryptedData = EncryptionHelper.Decrypt(encryptedData);
+
+            string[] settings = decryptedData.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string setting in settings)
+            {
+                string[] parts = setting.Split('=');
+                string settingName = parts[0];
+                string settingValue = parts[1];
+
+                if (settingName == "YaMapHttp")
+                {
+                    Properties.Settings.Default.YaMapHttp = settingValue;
+                    Properties.Settings.Default.Save();
+                }
+                else if (settingName == "CustomRiba")
+                {
+                    Properties.Settings.Default.CustomRiba = settingValue;
+                    Properties.Settings.Default.Save();
+                }
+                else if (settingName == "mssqldb")
+                {
+                    Properties.Settings.Default.mssqldb = settingValue;
+                    Properties.Settings.Default.Save();
+                }
+                else if (settingName == "mssqluser")
+                {
+                    Properties.Settings.Default.mssqluser = settingValue;
+                    Properties.Settings.Default.Save();
+                }
+                else if (settingName == "mssqlpass")
+                {
+                    Properties.Settings.Default.mssqlpass = settingValue;
+                    Properties.Settings.Default.Save();
+                }
+                else if (settingName == "mssqlcatalog")
+                {
+                    Properties.Settings.Default.mssqlcatalog = settingValue;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                }
+            }
+
+            return decryptedData;
+        }
+
+
+        //AES
+
+
+        //XLS EDIT
 
         private void DGV_DragEnter(object sender, DragEventArgs e)
         {
@@ -460,7 +525,7 @@ namespace aisha3
             return null;
         }
 
-        public void CheckConnectAndVersion()
+        public async void CheckConnectAndVersion()
         {
             try
             {
@@ -487,6 +552,33 @@ namespace aisha3
                     if (verCurrent < verInDB)
                     {
                         DBState.BackgroundImage = global::aisha3.Properties.Resources.database3;
+                        bool downloadSuccess = await Mssql.DownloadNewVersionAsync();
+                        if (downloadSuccess)
+                        {
+                            //string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                            //string updaterAppPath = Path.Combine(appDirectory, "updates", "Updater.exe");
+                            //string arguments = "replace";
+                            //Process.Start(updaterAppPath, arguments);
+
+                            string appDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                            string updaterAppPath = Path.Combine(appDirectory, "updates", "Updater.exe");
+
+                            string arguments = "-replace";
+                            ProcessStartInfo startInfo = new ProcessStartInfo
+                            {
+                                FileName = updaterAppPath,
+                                Arguments = arguments,
+                                UseShellExecute = true
+                            };
+                            Process.Start(startInfo);
+
+                            Application.Exit();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error 22 - Failed to download the new version.");
+                        }
+
                     }
                     else
                     {
@@ -929,8 +1021,12 @@ namespace aisha3
         }
         private void DEBUG_Btn_Click(object sender, EventArgs e) //DEBUG BTN
         {
-            Console.WriteLine($"Keys count: {DevicesSort.Count}.");
-
+            string mssqldb = Properties.Settings.Default.mssqldb;
+            string mssqlcatalog = Properties.Settings.Default.mssqlcatalog;
+            string mssqluser = Properties.Settings.Default.mssqluser;
+            string mssqlpass = Properties.Settings.Default.mssqlpass;
+            string mssqlintegrated = Properties.Settings.Default.mssqlintegrated.ToString();
+            MessageBox.Show($"{mssqldb} - {mssqlcatalog} - {mssqluser} - {mssqlpass} - {mssqlintegrated}");
         }
         private void BtnClipAddress_Click(object sender, EventArgs e)
         {

@@ -13,6 +13,8 @@ using MSSQLReader = Microsoft.Data.SqlClient.SqlDataReader;
 using System.Data.Common;
 using MSSQLConnection = Microsoft.Data.SqlClient.SqlConnection;
 using System.Security.Cryptography;
+using System.IO;
+using System.Threading;
 
 namespace aisha3
 {
@@ -54,9 +56,8 @@ namespace aisha3
             try
             {
                 OpenConnection();
-                string selectString = "SELECT version FROM dbo.aishaversions WHERE comment LIKE @comment;";
+                string selectString = "SELECT TOP 1 version FROM dbo.aishaversions ORDER BY version DESC;";
                 MSSQLCmd cmdgetversion = new MSSQLCmd(selectString, conn);
-                cmdgetversion.Parameters.AddWithValue("@comment", "last");
                 MSSQLReader reader = cmdgetversion.ExecuteReader();
                 reader.Read();
                 int output = reader.GetInt32(0);
@@ -71,6 +72,45 @@ namespace aisha3
                 return 0;
             }
         }
+
+        public static Task<bool> DownloadNewVersionAsync()
+        {
+            Thread.Sleep(3000);
+            return Task.Run(() => DownloadNewVersion());
+        }
+
+        public static bool DownloadNewVersion()
+        {
+            try
+            {
+                using (conn)
+                {
+                    OpenConnection();
+                    string query = "SELECT TOP 1 bin FROM aishaversions ORDER BY version DESC";
+                    MSSQLCmd command = new MSSQLCmd(query, conn);
+
+                    if (command.ExecuteScalar() is byte[] newVersionData)
+                    {
+                        string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                        string updatesDirectory = Path.Combine(appDirectory, "updates");
+                        if (!Directory.Exists(updatesDirectory))
+                        {
+                            Directory.CreateDirectory(updatesDirectory);
+                        }
+                        string newFilePath = Path.Combine(updatesDirectory, "aisha3.exe");
+                        File.WriteAllBytes(newFilePath, newVersionData);
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error 21 - downloading new version: " + ex.Message);
+            }
+            return false;
+        }
+
+
         public static Dictionary<int, Device> DevicesbyString(string code)
         {
             try
