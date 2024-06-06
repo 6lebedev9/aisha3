@@ -17,14 +17,11 @@ namespace aisha3
             InitializeComponent();
         }
 
-        //AES
-
+        // AES
         private string CollectSettingsData()
         {
-            // Создайте строку, в которой будете хранить все данные настроек
             StringBuilder settingsData = new StringBuilder();
 
-            // Добавьте данные каждого элемента управления
             settingsData.AppendLine("FormBorderColorR=" + FormBorderColorNumR.Value);
             settingsData.AppendLine("FormBorderColorG=" + FormBorderColorNumG.Value);
             settingsData.AppendLine("FormBorderColorB=" + FormBorderColorNumB.Value);
@@ -36,16 +33,14 @@ namespace aisha3
             settingsData.AppendLine("mssqlpass=" + TBoxSqlPass.Text);
             settingsData.AppendLine("mssqlintegrated=" + CheckBoxIS.Checked);
 
-            // Возвращаем собранные данные в виде строки
             return settingsData.ToString();
         }
-
 
         private void SaveEncryptedSettings()
         {
             string collectedData = CollectSettingsData();
             string encryptedSettingsData = EncryptSettingsData(collectedData);
-            FileHelper.SaveEncryptedSettings(encryptedSettingsData);
+            FileHelper.SaveEncryptedSettings(encryptedSettingsData); // Предполагается, что у вас есть этот метод
         }
 
         private string EncryptSettingsData(string data)
@@ -53,42 +48,27 @@ namespace aisha3
             return EncryptionHelper.Encrypt(data);
         }
 
-        //AES
         private void SaveFormBorderColor(string RGB, byte Value)
         {
-            System.Drawing.Color borderColor = Properties.Settings.Default.FormBorderColor;
+            Color borderColor = Properties.Settings.Default.FormBorderColor;
             switch (RGB)
             {
                 case "R":
-                    byte RchangedColorR = Value;
-                    byte RchangedColorG = borderColor.G;
-                    byte RchangedColorB = borderColor.B;
-                    System.Drawing.Color RchangedColor = Color.FromArgb(RchangedColorR, RchangedColorG, RchangedColorB);
-                    Properties.Settings.Default.FormBorderColor = RchangedColor;
-                    Properties.Settings.Default.Save();
-                    SaveEncryptedSettings();
+                    borderColor = Color.FromArgb(Value, borderColor.G, borderColor.B);
                     break;
                 case "G":
-                    byte GchangedColorR = borderColor.R;
-                    byte GchangedColorG = Value;
-                    byte GchangedColorB = borderColor.B;
-                    System.Drawing.Color GchangedColor = Color.FromArgb(GchangedColorR, GchangedColorG, GchangedColorB);
-                    Properties.Settings.Default.FormBorderColor = GchangedColor;
-                    Properties.Settings.Default.Save();
-                    SaveEncryptedSettings();
+                    borderColor = Color.FromArgb(borderColor.R, Value, borderColor.B);
                     break;
                 case "B":
-                    byte BchangedColorR = borderColor.R;
-                    byte BchangedColorG = borderColor.G;
-                    byte BchangedColorB = Value;
-                    System.Drawing.Color BchangedColor = Color.FromArgb(BchangedColorR, BchangedColorG, BchangedColorB);
-                    Properties.Settings.Default.FormBorderColor = BchangedColor;
-                    Properties.Settings.Default.Save();
-                    SaveEncryptedSettings();
+                    borderColor = Color.FromArgb(borderColor.R, borderColor.G, Value);
                     break;
                 default:
                     break;
             }
+
+            Properties.Settings.Default.FormBorderColor = borderColor;
+            Properties.Settings.Default.Save();
+            SaveEncryptedSettings();
         }
 
         private void FormBorderColorNumR_ValueChanged(object sender, EventArgs e)
@@ -108,42 +88,42 @@ namespace aisha3
 
         private void TBoxYaMaps_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.YaMapHttp = TBoxYaMaps.Text.ToString();
+            Properties.Settings.Default.YaMapHttp = TBoxYaMaps.Text;
             Properties.Settings.Default.Save();
             SaveEncryptedSettings();
         }
 
         private void TBoxCustomRiba_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.CustomRiba = TBoxCustomRiba.Text.ToString();
+            Properties.Settings.Default.CustomRiba = TBoxCustomRiba.Text;
             Properties.Settings.Default.Save();
             SaveEncryptedSettings();
         }
 
         private void TBoxSqlDb_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.mssqldb = TBoxSqlDb.Text.ToString();
+            Properties.Settings.Default.mssqldb = TBoxSqlDb.Text;
             Properties.Settings.Default.Save();
             SaveEncryptedSettings();
         }
 
         private void TBoxSqlCatalog_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.mssqlcatalog = TBoxSqlCatalog.Text.ToString();
+            Properties.Settings.Default.mssqlcatalog = TBoxSqlCatalog.Text;
             Properties.Settings.Default.Save();
             SaveEncryptedSettings();
         }
 
         private void TBoxSqlUser_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.mssqluser = TBoxSqlUser.Text.ToString();
+            Properties.Settings.Default.mssqluser = TBoxSqlUser.Text;
             Properties.Settings.Default.Save();
             SaveEncryptedSettings();
         }
 
         private void TBoxSqlPass_TextChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.mssqlpass = TBoxSqlPass.Text.ToString();
+            Properties.Settings.Default.mssqlpass = TBoxSqlPass.Text;
             Properties.Settings.Default.Save();
             SaveEncryptedSettings();
         }

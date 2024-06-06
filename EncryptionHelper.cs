@@ -7,8 +7,17 @@ namespace aisha3
 {
     public static class EncryptionHelper
     {
-        private static readonly byte[] Key = Encoding.UTF8.GetBytes("your-32-byte-long-key-here-123456789012");
-        private static readonly byte[] IV = Encoding.UTF8.GetBytes("your-16-byte-long-iv!");
+        private static readonly byte[] Key = Encoding.UTF8.GetBytes("12345678901234567890123456789012");
+        private static readonly byte[] IV = Encoding.UTF8.GetBytes("1234567890123456");
+
+        static EncryptionHelper()
+        {
+            // Проверка длины ключа и IV
+            if (Key.Length != 32)
+                throw new ArgumentException("Key length must be 32 bytes for AES-256.");
+            if (IV.Length != 16)
+                throw new ArgumentException("IV length must be 16 bytes.");
+        }
 
         public static string Encrypt(string plainText)
         {

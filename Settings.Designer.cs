@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CheckBoxIS = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.TBoxSqlPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TBoxSqlUser = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.FormBorderColorNumG = new System.Windows.Forms.NumericUpDown();
             this.FormBorderColorNumR = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CheckBoxIS = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FormBorderColorNumB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FormBorderColorNumG)).BeginInit();
@@ -77,6 +77,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(909, 495);
             this.panel1.TabIndex = 0;
+            // 
+            // CheckBoxIS
+            // 
+            this.CheckBoxIS.AutoSize = true;
+            this.CheckBoxIS.Location = new System.Drawing.Point(495, 120);
+            this.CheckBoxIS.Name = "CheckBoxIS";
+            this.CheckBoxIS.Size = new System.Drawing.Size(15, 14);
+            this.CheckBoxIS.TabIndex = 17;
+            this.CheckBoxIS.UseVisualStyleBackColor = true;
+            this.CheckBoxIS.CheckedChanged += new System.EventHandler(this.CheckBoxIS_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(448, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 15);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "IntSec";
             // 
             // TBoxSqlPass
             // 
@@ -150,7 +169,7 @@
             // 
             this.TBoxCustomRiba.Location = new System.Drawing.Point(6, 89);
             this.TBoxCustomRiba.Name = "TBoxCustomRiba";
-            this.TBoxCustomRiba.Size = new System.Drawing.Size(900, 22);
+            this.TBoxCustomRiba.Size = new System.Drawing.Size(896, 22);
             this.TBoxCustomRiba.TabIndex = 7;
             this.TBoxCustomRiba.TextChanged += new System.EventHandler(this.TBoxCustomRiba_TextChanged);
             // 
@@ -159,9 +178,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(407, 15);
+            this.label3.Size = new System.Drawing.Size(653, 15);
             this.label3.TabIndex = 6;
-            this.label3.Text = "CUSTOM кнопка с рыбой - дописать текст после часов и даты";
+            this.label3.Text = "CUSTOM кнопка с рыбой - дописать текст после часов и даты. СОХРАНЯЕТСЯ ПО НАЖАТИЮ" +
+    " \"ENTER\":";
             // 
             // TBoxYaMaps
             // 
@@ -227,25 +247,6 @@
             this.label1.Size = new System.Drawing.Size(260, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "FormBorderColor = R         G         B";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(448, 118);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 15);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "IntSec";
-            // 
-            // CheckBoxIS
-            // 
-            this.CheckBoxIS.AutoSize = true;
-            this.CheckBoxIS.Location = new System.Drawing.Point(495, 120);
-            this.CheckBoxIS.Name = "CheckBoxIS";
-            this.CheckBoxIS.Size = new System.Drawing.Size(15, 14);
-            this.CheckBoxIS.TabIndex = 17;
-            this.CheckBoxIS.UseVisualStyleBackColor = true;
-            this.CheckBoxIS.CheckedChanged += new System.EventHandler(this.CheckBoxIS_CheckedChanged);
             // 
             // Settings
             // 

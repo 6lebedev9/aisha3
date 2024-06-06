@@ -380,6 +380,7 @@
     <None Include="icons\contentcopy.png" />
     <None Include="icons\sync.png" />
     <None Include="icons\database3.png" />
+    <None Include="icons\tactic.png" />
     <Content Include="icon_x256.ico" />
   </ItemGroup>
   <ItemGroup>

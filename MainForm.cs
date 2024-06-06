@@ -513,6 +513,7 @@ namespace aisha3
         public static bool MapOpen = false;
         public static bool CamsOpen = false;
         public static bool SortOpen = false;
+        public static bool IssuesOpen = false;
 
         public string GetDevicePropertyByXlsName(string xlsName, Func<Device, string> propertySelector)
         {
@@ -1492,6 +1493,16 @@ namespace aisha3
             }
             catch (Exception) { }
         }
+        private void BtnIssue0_Click(object sender, EventArgs e)
+        {
+            BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto;
+            BtnIssue2.BackgroundImage = global::aisha3.Properties.Resources.videocamoff;
+            BtnIssue3.BackgroundImage = global::aisha3.Properties.Resources.castwarning;
+            BtnIssue4.BackgroundImage = global::aisha3.Properties.Resources.sunnysnow;
+            BtnIssue5.BackgroundImage = global::aisha3.Properties.Resources.locationoff;
+            BtnIssue6.BackgroundImage = global::aisha3.Properties.Resources.pulsealert;
+            ChosenIssueTheme = 0;
+        }
         private void BtnIssue1_Click(object sender, EventArgs e)
         {
             BtnIssue1.BackgroundImage = global::aisha3.Properties.Resources.nophoto1;
@@ -2026,6 +2037,22 @@ namespace aisha3
                     Device extra = dictionary.Value;
                     MapMakeMarker(extra);
                 }
+            }
+        }
+
+        private void BtnIssues_Click(object sender, EventArgs e)
+        {
+            if(IssuesOpen)
+            {
+                BtnIssues.BackColor = Color.Black;
+                BtnIssues.ForeColor = Color.White;
+                IssuesOpen = false;
+            }
+            else
+            {
+                IssuesOpen = true;
+                BtnIssues.BackColor = Color.White;
+                BtnIssues.ForeColor = Color.Black;
             }
         }
         //MAP
