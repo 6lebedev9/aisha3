@@ -2685,12 +2685,12 @@
             this.BtnShowCamsOnMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnShowCamsOnMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.25F);
             this.BtnShowCamsOnMap.ForeColor = System.Drawing.SystemColors.Control;
-            this.BtnShowCamsOnMap.Location = new System.Drawing.Point(214, 23);
+            this.BtnShowCamsOnMap.Location = new System.Drawing.Point(188, 23);
             this.BtnShowCamsOnMap.Name = "BtnShowCamsOnMap";
             this.BtnShowCamsOnMap.Padding = new System.Windows.Forms.Padding(2);
-            this.BtnShowCamsOnMap.Size = new System.Drawing.Size(216, 27);
+            this.BtnShowCamsOnMap.Size = new System.Drawing.Size(242, 27);
             this.BtnShowCamsOnMap.TabIndex = 16;
-            this.BtnShowCamsOnMap.Text = "показать камеры перекрестка на карте";
+            this.BtnShowCamsOnMap.Text = "показать устройства текущего КВФ на карте";
             this.BtnShowCamsOnMap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnShowCamsOnMap.UseVisualStyleBackColor = true;
             this.BtnShowCamsOnMap.Click += new System.EventHandler(this.BtnShowCamsOnMap_Click);

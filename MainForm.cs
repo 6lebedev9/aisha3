@@ -488,6 +488,7 @@ namespace aisha3
         public static bool Connected = false;
         public static Dictionary<int, Device> Devices = new Dictionary<int, Device>();
         public static Dictionary<int, Device> Cams = new Dictionary<int, Device>();
+        public static Dictionary<int, Device> Extras = new Dictionary<int, Device>();
         public static Dictionary<int, string> GKCommonUniqs = new Dictionary<int, string>();
         public static Dictionary<int, string> KvfModelUniqs = new Dictionary<int, string>();
         public static Dictionary<int, string> DeviceTypeUniqs = new Dictionary<int, string>();
@@ -896,13 +897,19 @@ namespace aisha3
                 {
                     DeviceChosen = Devices[i];
                     MapShowKvf(DeviceChosen);
-                    if (DeviceChosen.DeviceType == "перекресток")
-                    {
-                        Cams.Clear();
-                        ClearAllCamBtns();
-                        Cams = Mssql.CamsbyKvfNumber(DeviceChosen.KvfNumber);
-                        CreateAllCamBtns();
-                    }
+                    //if (DeviceChosen.DeviceType == "перекресток")
+                    //{
+                    //    Cams.Clear();
+                    //    ClearAllCamBtns();
+                    //    Cams = Mssql.CamsbyKvfNumber(DeviceChosen.KvfNumber);
+                    //    CreateAllCamBtns();
+                    //}
+
+                    Cams.Clear();
+                    ClearAllCamBtns();
+                    Cams = Mssql.CamsbyKvfNumber(DeviceChosen.KvfNumber);
+                    CreateAllCamBtns();
+                    Extras = Mssql.ExtrasbyKvfNumber(DeviceChosen.KvfNumber);
                     BtnClipGK.Text = DeviceChosen.GKCommon;
                     BtnClipDeviceType.Text = DeviceChosen.DeviceType;
                     BtnClipKvfModel.Text = DeviceChosen.KvfModel;
@@ -1340,6 +1347,7 @@ namespace aisha3
         {
             Devices?.Clear();
             Cams?.Clear();
+            Extras?.Clear();
             if (TBox.Text.Length >= 3)
             {
                 Devices = Mssql.DevicesbyString(TBox.Text.ToString());
@@ -2003,12 +2011,20 @@ namespace aisha3
 
         private void BtnShowCamsOnMap_Click(object sender, EventArgs e)
         {
-            if(DeviceChosen.DeviceType == "перекресток")
+            if(Cams != null)
             {
                 foreach (var dictionary in Cams)
                 {
                     Device cam = dictionary.Value;
                     MapMakeMarker(cam);
+                }
+            }
+            if (Extras != null)
+            {
+                foreach (var dictionary in Extras)
+                {
+                    Device extra = dictionary.Value;
+                    MapMakeMarker(extra);
                 }
             }
         }
